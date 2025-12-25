@@ -71,7 +71,7 @@ export default function KeyServices() {
                 className="rounded-2xl bg-white p-6 shadow-sm transition-all hover:shadow-md"
                 variants={cardVariants}
               >
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-[#4189DD]">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600">
                   <Icon className="h-6 w-6" />
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900">
@@ -88,7 +88,7 @@ export default function KeyServices() {
         <div className="mt-8 text-center">
           <Link
             href="/services"
-            className="text-sm font-semibold text-[#4189DD] transition hover:text-[#2f72c2]"
+            className="text-sm font-semibold text-blue-600 transition hover:text-blue-700"
           >
             View All Services
           </Link>
@@ -97,3 +97,4 @@ export default function KeyServices() {
     </section>
   );
 }
+

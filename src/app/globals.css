@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --primary-blue: #4189dd;
+  --primary-blue: #0b4f8a;
+  --secondary-blue: #062f54;
 }
 
 body {
@@ -38,3 +39,4 @@ body {
 .animate-slide-up {
   animation: slide-up 0.7s ease-out both;
 }
+

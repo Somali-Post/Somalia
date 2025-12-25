@@ -50,7 +50,7 @@ export default function Navbar() {
             alt="Coat of Arms"
             className="rounded-full"
           />
-          <span className="text-base font-semibold text-[#4189DD] sm:text-lg">
+          <span className="text-base font-semibold text-blue-800 sm:text-lg">
             Federal Republic of Somalia
           </span>
         </div>
@@ -62,7 +62,7 @@ export default function Navbar() {
                 <div key={link.label} className="group relative">
                   <button
                     type="button"
-                    className="flex items-center gap-1 text-sm font-medium text-slate-700 transition hover:text-[#4189DD]"
+                    className="flex items-center gap-1 text-sm font-medium text-slate-700 transition hover:text-blue-600"
                   >
                     {link.label}
                     <ChevronDown className="h-4 w-4" />
@@ -72,7 +72,7 @@ export default function Navbar() {
                       <Link
                         key={child.label}
                         href={child.href}
-                        className="flex items-center rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-[#4189DD]"
+                        className="flex items-center rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
                       >
                         {child.label}
                       </Link>
@@ -86,7 +86,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-slate-700 transition hover:text-[#4189DD]"
+                className="text-sm font-medium text-slate-700 transition hover:text-blue-600"
               >
                 {link.label}
               </Link>
@@ -98,7 +98,7 @@ export default function Navbar() {
           <button
             type="button"
             aria-label="Search"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-[#4189DD] hover:text-[#4189DD]"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-blue-600 hover:text-blue-600"
           >
             <Search className="h-4 w-4" />
           </button>
@@ -111,13 +111,13 @@ export default function Navbar() {
           />
           <button
             type="button"
-            className="rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-[#4189DD] hover:text-[#4189DD] sm:text-sm"
+            className="rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-600 hover:text-blue-600 sm:text-sm"
           >
             Somali | English
           </button>
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-full border border-slate-200 p-2 text-slate-700 shadow-sm transition hover:border-[#4189DD] hover:text-[#4189DD] lg:hidden"
+            className="inline-flex items-center justify-center rounded-full border border-slate-200 p-2 text-slate-700 shadow-sm transition hover:border-blue-600 hover:text-blue-600 lg:hidden"
             onClick={() => setMenuOpen((open) => !open)}
             aria-label="Toggle menu"
           >
@@ -137,7 +137,7 @@ export default function Navbar() {
                     <button
                       type="button"
                       onClick={() => toggleDropdown(link.label)}
-                      className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:text-[#4189DD]"
+                      className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:text-blue-600"
                     >
                       {link.label}
                       <ChevronDown
@@ -152,7 +152,7 @@ export default function Navbar() {
                           <Link
                             key={child.label}
                             href={child.href}
-                            className="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-[#4189DD]"
+                            className="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
                             onClick={() => setMenuOpen(false)}
                           >
                             {child.label}
@@ -168,7 +168,7 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:text-[#4189DD]"
+                  className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:text-blue-600"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
@@ -181,3 +181,4 @@ export default function Navbar() {
     </header>
   );
 }
+

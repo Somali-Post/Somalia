@@ -60,7 +60,7 @@ export default function ContactPage() {
                       key={item.title}
                       className="flex items-start gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-sm"
                     >
-                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-blue-50 text-[#4189DD]">
+                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-blue-50 text-blue-600">
                         <Icon className="h-5 w-5" />
                       </span>
                       <div>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-[#4189DD]"
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-blue-600"
                   />
                 </div>
                 <div className="space-y-2">
@@ -97,14 +97,14 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="email"
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-[#4189DD]"
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-blue-600"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-700">
                     Subject
                   </label>
-                  <select className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 outline-none focus:border-[#4189DD]">
+                  <select className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 outline-none focus:border-blue-600">
                     {SUBJECTS.map((subject) => (
                       <option key={subject} value={subject}>
                         {subject}
@@ -118,12 +118,12 @@ export default function ContactPage() {
                   </label>
                   <textarea
                     rows={5}
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-[#4189DD]"
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-blue-600"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-full bg-[#4189DD] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#2f72c2]"
+                  className="w-full rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
                 >
                   Send Message
                 </button>
@@ -147,3 +147,4 @@ export default function ContactPage() {
     </>
   );
 }
+

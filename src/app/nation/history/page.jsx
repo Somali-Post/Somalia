@@ -124,7 +124,7 @@ export default function HistoryPage() {
                       className="mx-auto h-14 w-14 rounded-full object-contain"
                     />
                   ) : (
-                    <span className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-full bg-blue-50 text-[#4189DD]">
+                    <span className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-full bg-blue-50 text-blue-600">
                       <symbol.icon className="h-6 w-6" />
                     </span>
                   )}
@@ -180,3 +180,4 @@ export default function HistoryPage() {
     </>
   );
 }
+

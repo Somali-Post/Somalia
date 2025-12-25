@@ -20,7 +20,7 @@ export default function Home() {
       <NationalAgencies limit={3} />
       <Vision2060 />
       <LatestNews />
-      <section className="bg-[#4189DD] py-12">
+      <section className="bg-blue-600 py-12">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-center text-white sm:flex-row sm:text-left">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-white/80">
@@ -36,7 +36,7 @@ export default function Home() {
               placeholder="Enter your email"
               className="w-full rounded-full border border-white/30 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/70 outline-none focus:border-white"
             />
-            <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#4189DD]">
+            <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-blue-600">
               Subscribe
             </button>
           </div>
@@ -48,3 +48,4 @@ export default function Home() {
     </>
   );
 }
+

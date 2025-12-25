@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function PageHeader({ title, description, breadcrumbs = [] }) {
   return (
-    <section className="flex h-[40vh] items-center bg-[#4189DD] text-white">
+    <section className="flex h-[40vh] items-center bg-blue-600 text-white">
       <div className="container mx-auto px-6 text-center">
         {breadcrumbs.length > 0 && (
           <nav className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
@@ -39,3 +39,4 @@ export default function PageHeader({ title, description, breadcrumbs = [] }) {
     </section>
   );
 }
+

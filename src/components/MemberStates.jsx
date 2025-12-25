@@ -28,13 +28,13 @@ export default function MemberStates() {
               key={state}
               className="flex flex-col items-center rounded-2xl bg-white p-5 text-center shadow-sm transition hover:shadow-md"
             >
-              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-blue-50 text-[#4189DD]">
+              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-blue-50 text-blue-600">
                 <Map className="h-6 w-6" />
               </div>
               <h3 className="text-sm font-semibold text-slate-900">{state}</h3>
               <Link
                 href="#"
-                className="mt-3 text-xs font-semibold text-[#4189DD] transition hover:text-[#2f72c2]"
+                className="mt-3 text-xs font-semibold text-blue-600 transition hover:text-blue-700"
               >
                 View Profile
               </Link>
@@ -45,3 +45,4 @@ export default function MemberStates() {
     </section>
   );
 }
+

@@ -75,7 +75,7 @@ export default function LatestNews() {
                 </h3>
                 <Link
                   href="#"
-                  className="text-sm font-semibold text-[#4189DD] transition hover:text-[#2f72c2]"
+                  className="text-sm font-semibold text-blue-600 transition hover:text-blue-700"
                 >
                   Read More
                 </Link>
@@ -87,3 +87,4 @@ export default function LatestNews() {
     </section>
   );
 }
+

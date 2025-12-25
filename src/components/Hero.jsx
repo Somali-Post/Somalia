@@ -26,7 +26,7 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="/services"
-                className="rounded-full bg-[#4189DD] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#2f72c2]"
+                className="rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
               >
                 Find a Service
               </Link>
@@ -43,3 +43,4 @@ export default function Hero() {
     </section>
   );
 }
+
