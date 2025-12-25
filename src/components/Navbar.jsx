@@ -67,7 +67,7 @@ export default function Navbar() {
                     {link.label}
                     <ChevronDown className="h-4 w-4" />
                   </button>
-                  <div className="absolute left-0 top-full hidden w-60 translate-y-3 rounded-xl border border-slate-200 bg-white p-3 shadow-lg group-hover:block">
+                  <div className="absolute left-0 top-full hidden w-60 rounded-xl border border-slate-200 bg-white p-3 shadow-lg group-hover:block">
                     {link.children.map((child) => (
                       <Link
                         key={child.label}
