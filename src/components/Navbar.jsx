@@ -27,7 +27,13 @@ const NAV_LINKS = [
       { label: "Member States", href: "/government/states" },
     ],
   },
-  { label: "Services", href: "/services" },
+  {
+    label: "Services",
+    children: [
+      { label: "All Services", href: "/services" },
+      { label: "Emergency Contacts", href: "/services#emergency" },
+    ],
+  },
   { label: "Contact", href: "/contact" },
 ];
 
