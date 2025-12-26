@@ -33,6 +33,7 @@ const NAV_LINKS = [
     children: [
       { label: "All Services", href: "/services" },
       { label: "Emergency Contacts", href: "/services#emergency" },
+      { label: "Invest", href: "/invest" },
     ],
   },
   { label: "Contact", href: "/contact" },
