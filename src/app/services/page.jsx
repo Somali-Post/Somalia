@@ -3,6 +3,7 @@ import { ExternalLink } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
+import FeedbackWidget from "@/components/FeedbackWidget";
 
 const DIGITAL_SERVICES = [
   {
@@ -187,6 +188,11 @@ export default function Page() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      <section className="pb-12">
+        <div className="mx-auto max-w-6xl px-6">
+          <FeedbackWidget />
         </div>
       </section>
       </main>

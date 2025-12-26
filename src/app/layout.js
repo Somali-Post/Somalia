@@ -20,9 +20,26 @@ export const metadata = {
 export const viewport = { width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "GovernmentOrganization",
+    name: "Federal Republic of Somalia",
+    url: "https://somaliagov.netlify.app",
+    logo: "https://somaliagov.netlify.app/logos/coat-of-arms.png",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+252-61-000-0000",
+      contactType: "customer service",
+    },
+  };
+
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         <CookieConsent />
       </body>

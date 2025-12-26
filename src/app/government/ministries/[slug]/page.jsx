@@ -4,6 +4,7 @@ import { CheckCircle, Globe, Mail, MapPin, Phone, Twitter, Facebook } from "luci
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import FeedbackWidget from "@/components/FeedbackWidget";
 import SmartImage from "@/components/SmartImage";
 import { ministries } from "@/data/ministries";
 
@@ -220,6 +221,11 @@ export default async function MinistryProfilePage({ params }) {
                 )}
               </div>
             </aside>
+          </div>
+        </section>
+        <section className="pb-12">
+          <div className="mx-auto max-w-6xl px-6">
+            <FeedbackWidget />
           </div>
         </section>
       </main>

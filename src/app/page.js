@@ -9,6 +9,7 @@ import MinistryDirectory from "@/components/MinistryDirectory";
 import Navbar from "@/components/Navbar";
 import NationalAgencies from "@/components/NationalAgencies";
 import NationalCalendar from "@/components/NationalCalendar";
+import PublicNotices from "@/components/PublicNotices";
 import Vision2060 from "@/components/Vision2060";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <NationalAgencies limit={3} />
       <Vision2060 />
       <LatestNews />
+      <PublicNotices />
       <section className="bg-blue-600 py-12">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-center text-white sm:flex-row sm:text-left">
           <div>
