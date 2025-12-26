@@ -1,106 +1,85 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { ArrowRight, Calendar } from "lucide-react";
 
-const NEWS_ITEMS = [
-  {
-    id: 1,
-    title: "Somalia Officially Joins the East African Community (EAC)",
-    date: "March 04, 2024",
-    category: "Diplomacy",
-    excerpt:
-      "A historic milestone as the Federal Republic becomes the 8th member state of the regional bloc, opening markets and travel opportunities.",
-    image: "/images/hero.jpg",
-  },
-  {
-    id: 2,
-    title: "Historic Achievement: Somalia Reaches HIPC Completion Point",
-    date: "December 13, 2023",
-    category: "Economy",
-    excerpt:
-      "International creditors forgive $4.5 billion in debt, normalizing Somalia's financial relations with the world after three decades.",
-    image: "/images/invest/logistics.jpg",
-  },
-  {
-    id: 3,
-    title: "NIRA Rolls Out Digital National ID Cards Nationwide",
-    date: "September 20, 2024",
-    category: "Technology",
-    excerpt:
-      "The National Identification and Registration Authority accelerates the digital ID campaign to boost security and banking access.",
-    image: "/images/invest/ict.jpg",
-  },
-];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
+import { newsArticles } from "@/data/news";
 
 export default function LatestNews() {
+  const recentNews = newsArticles.slice(0, 3);
+
   return (
-    <section className="bg-white py-12">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-8 text-center">
-          <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-            Latest Government News
-          </h2>
+    <section className="relative bg-slate-50 py-20">
+      <div className="container mx-auto relative z-10 px-6">
+        <div className="mb-12 flex flex-col items-end justify-between gap-6 md:flex-row">
+          <div>
+            <h2 className="mb-4 text-4xl font-bold text-blue-900">
+              Latest Government News
+            </h2>
+            <p className="max-w-xl text-blue-700">
+              Official updates, press releases, and milestones from the Federal
+              Republic.
+            </p>
+          </div>
+          <Link
+            href="/media"
+            className="hidden items-center gap-2 font-semibold text-blue-700 transition-all hover:gap-3 md:flex"
+          >
+            View News Archive <ArrowRight size={20} />
+          </Link>
         </div>
 
-        <motion.div
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {NEWS_ITEMS.map((news) => (
-            <motion.article
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {recentNews.map((news) => (
+            <div
               key={news.id}
-              className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
-              variants={cardVariants}
+              className="group flex h-full flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-md transition-all duration-300 hover:shadow-xl"
             >
-              <div className="relative h-44 w-full overflow-hidden">
+              <div className="relative h-64 w-full overflow-hidden">
                 <Image
                   src={news.image}
                   alt={news.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-              </div>
-              <div className="space-y-3 px-6 py-5">
-                <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                  <span>{news.date}</span>
-                  <span className="text-blue-600">{news.category}</span>
+                <div className="absolute left-4 top-4 rounded-full bg-blue-600/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-lg backdrop-blur-sm">
+                  {news.category}
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900">
+              </div>
+
+              <div className="flex flex-grow flex-col p-6">
+                <div className="mb-3 flex items-center gap-2 text-sm font-medium text-gray-500">
+                  <Calendar size={14} className="text-blue-500" />
+                  {news.date}
+                </div>
+
+                <h3 className="mb-3 line-clamp-3 text-xl font-bold leading-tight text-slate-900 transition-colors group-hover:text-blue-700">
                   {news.title}
                 </h3>
-                <p className="text-sm text-slate-600">{news.excerpt}</p>
+
+                <p className="mb-6 line-clamp-3 flex-grow text-sm leading-relaxed text-gray-600">
+                  {news.excerpt}
+                </p>
+
                 <Link
-                  href="#"
-                  className="inline-flex items-center rounded-full border border-blue-600 px-4 py-2 text-xs font-semibold text-blue-600 transition hover:bg-blue-600 hover:text-white"
+                  href={`/media/${news.id}`}
+                  className="mt-auto inline-flex w-full items-center justify-center rounded-lg border border-blue-100 py-3 font-semibold text-blue-700 transition-colors hover:bg-blue-50"
                 >
                   Read Press Release
                 </Link>
               </div>
-            </motion.article>
+            </div>
           ))}
-        </motion.div>
+        </div>
+
+        <div className="mt-8 text-center md:hidden">
+          <Link
+            href="/media"
+            className="inline-flex items-center gap-2 font-semibold text-blue-700"
+          >
+            View News Archive <ArrowRight size={20} />
+          </Link>
+        </div>
       </div>
     </section>
   );
 }
-
