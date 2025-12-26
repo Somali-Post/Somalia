@@ -39,7 +39,7 @@ export default function KeyServices() {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 24 },
+    hidden: { opacity: 0, y: 20 },
     show: {
       opacity: 1,
       y: 0,
@@ -57,11 +57,12 @@ export default function KeyServices() {
         </div>
 
         <motion.div
+          suppressHydrationWarning
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, margin: "-50px" }}
         >
           {SERVICES.map((service) => {
             const Icon = service.icon;

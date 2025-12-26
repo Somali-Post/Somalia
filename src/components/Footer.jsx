@@ -144,7 +144,22 @@ export default function Footer() {
           <span className="text-center">
             Designed for the People of Somalia
           </span>
-          <span className="text-right">Privacy Policy | Terms of Use | Accessibility</span>
+          <span className="text-right">
+            <Link href="/legal/privacy" className="transition hover:text-white">
+              Privacy Policy
+            </Link>
+            {" | "}
+            <Link href="/legal/terms" className="transition hover:text-white">
+              Terms of Use
+            </Link>
+            {" | "}
+            <Link
+              href="/legal/accessibility"
+              className="transition hover:text-white"
+            >
+              Accessibility
+            </Link>
+          </span>
         </div>
       </div>
     </footer>
