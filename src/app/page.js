@@ -8,6 +8,7 @@ import MemberStates from "@/components/MemberStates";
 import MinistryDirectory from "@/components/MinistryDirectory";
 import Navbar from "@/components/Navbar";
 import NationalAgencies from "@/components/NationalAgencies";
+import NationalCalendar from "@/components/NationalCalendar";
 import Vision2060 from "@/components/Vision2060";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <Leadership />
       <KeyServices />
+      <NationalCalendar />
       <MinistryDirectory limit={6} />
       <NationalAgencies limit={3} />
       <Vision2060 />
