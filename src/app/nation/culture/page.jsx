@@ -89,7 +89,7 @@ export default function CulturePage() {
                       {poet.name}
                     </h3>
                     <p className="text-sm font-semibold text-blue-600">
-                      "{poet.quote}"
+                      &ldquo;{poet.quote}&rdquo;
                     </p>
                     <p className="text-sm text-slate-600">{poet.description}</p>
                   </div>

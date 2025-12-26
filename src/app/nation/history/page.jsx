@@ -74,7 +74,7 @@ export default function HistoryPage() {
                 The Land of Punt
               </h2>
               <p className="text-base text-slate-600">
-                Somalia's story begins with the legendary Land of Punt, famed for
+                Somalia&apos;s story begins with the legendary Land of Punt, famed for
                 its trade with Ancient Egypt. Medieval sultanates such as Adal and
                 Ajuran flourished across the Horn, while Mogadishu emerged as a
                 cosmopolitan hub described by Ibn Battuta as the City of Islam.
@@ -100,7 +100,7 @@ export default function HistoryPage() {
               support, even in the absence of central government.
             </p>
             <p className="text-sm font-semibold text-blue-700">
-              "Dalkaa ninkii lahaa, dabka u qaadaa"
+              &ldquo;Dalkaa ninkii lahaa, dabka u qaadaa&rdquo;
             </p>
           </div>
         </section>
@@ -118,7 +118,7 @@ export default function HistoryPage() {
               </h2>
               <p className="text-base text-slate-600">
                 Reconstruction continues across institutions and infrastructure,
-                reinforced by debt relief victories in 2023 and 2024. Somalia's
+                reinforced by debt relief victories in 2023 and 2024. Somalia&apos;s
                 entry into the East African Community and the return of the
                 diaspora are accelerating investment, education, and a bright
                 national future.

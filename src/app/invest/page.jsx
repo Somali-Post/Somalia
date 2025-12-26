@@ -31,28 +31,39 @@ const PITCH_CARDS = [
 
 const SECTORS = [
   {
-    title: "Agriculture & Livestock",
-    description:
-      "The backbone of the economy. Livestock accounts for 60% of exports. Opportunities in meat processing and modern farming (Bananas, Sesame).",
+    title: "Livestock",
+    description: "The backbone of the economy. World leader in live animal exports.",
     image: "/images/invest/livestock.jpg",
   },
   {
-    title: "Blue Economy & Fisheries",
+    title: "Agriculture",
     description:
-      "With 3,333km of coastline, Somalia has immense potential in industrial fishing, processing, and cold chain logistics.",
+      "Vast arable land along the Shabelle and Jubba rivers. Opportunities in bananas, sesame, and lemons.",
+    image: "/images/invest/agriculture.jpg",
+  },
+  {
+    title: "Renewable Energy",
+    description:
+      "Highest solar potential in the region. Investment ready for wind and solar grids.",
     image: "/images/invest/energy.jpg",
   },
   {
-    title: "Energy & Infrastructure",
+    title: "Ports & Logistics",
     description:
-      "High potential for Renewable Energy (Solar/Wind). Reconstruction of roads, ports, and urban housing is driving a construction boom.",
+      "Strategic location on the Red Sea route. Modernizing ports to serve the Horn of Africa.",
     image: "/images/invest/logistics.jpg",
   },
   {
     title: "ICT & Finance",
     description:
-      "A cashless society with a thriving telecom sector. Opportunities in Fintech, BPO, and digital services.",
-    image: "/images/hero.jpg",
+      "A cashless society driven by mobile money. Thriving telecom and fintech sector.",
+    image: "/images/invest/ict.jpg",
+  },
+  {
+    title: "Tourism & Hospitality",
+    description:
+      "Untapped potential in pristine beaches and historical sites for eco-tourism and hotels.",
+    image: "/images/tourism/hero-1.jpg",
   },
 ];
 
@@ -128,7 +139,7 @@ export default function InvestPage() {
               </h2>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {SECTORS.map((sector) => (
                 <div
                   key={sector.title}

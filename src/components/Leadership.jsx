@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Facebook, Twitter } from "lucide-react";
 
 const LEADERS = [
@@ -45,11 +46,12 @@ export default function Leadership() {
               key={leader.name}
               className="group relative overflow-hidden rounded-3xl border border-slate-100 bg-slate-100 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
             >
-              <div className="aspect-[3/4] w-full">
-                <img
+              <div className="relative aspect-[3/4] w-full">
+                <Image
                   src={leader.image}
                   alt={leader.name}
-                  className="h-full w-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/20 to-transparent" />

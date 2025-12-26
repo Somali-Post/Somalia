@@ -112,7 +112,7 @@ export default function Navbar() {
           >
             <Search className="h-4 w-4" />
           </button>
-          <img
+          <Image
             src="/logos/flag.png"
             alt="Somalia flag"
             width={24}
@@ -195,7 +195,7 @@ export default function Navbar() {
             })}
             <div className="flex items-center justify-between rounded-lg border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-700">
               <span>Somali | English</span>
-              <img
+              <Image
                 src="/logos/flag.png"
                 alt="Somalia flag"
                 width={20}

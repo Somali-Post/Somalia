@@ -81,7 +81,7 @@ export default function VisionPage() {
                 The Journey to 2060
               </h2>
               <p className="mx-auto max-w-3xl text-base text-slate-600">
-                Vision 2060 is Somalia's long-term framework to transform the
+                Vision 2060 is Somalia&apos;s long-term framework to transform the
                 nation into a middle-income economy anchored by effective
                 governance, inclusive growth, and a high quality of life. Recent
                 milestones like the HIPC Debt Relief Completion and accession to
@@ -169,7 +169,7 @@ export default function VisionPage() {
                 National Development Plan (NDP-9)
               </h2>
               <p className="text-sm text-white/80">
-                Access the full policy framework guiding Somalia's long-term
+                Access the full policy framework guiding Somalia&apos;s long-term
                 transformation agenda.
               </p>
             </div>

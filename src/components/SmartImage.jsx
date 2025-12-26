@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function SmartImage({
   src,
@@ -11,8 +12,12 @@ export default function SmartImage({
 }) {
   const [currentSrc, setCurrentSrc] = useState(src);
 
+  useEffect(() => {
+    setCurrentSrc(src);
+  }, [src]);
+
   return (
-    <img
+    <Image
       src={currentSrc}
       alt={alt}
       className={className}
@@ -21,6 +26,7 @@ export default function SmartImage({
           setCurrentSrc(fallbackSrc);
         }
       }}
+      unoptimized
       {...props}
     />
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -59,11 +60,12 @@ export default function LatestNews() {
               className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:shadow-md"
               variants={cardVariants}
             >
-              <div className="h-44 w-full overflow-hidden">
-                <img
+              <div className="relative h-44 w-full overflow-hidden">
+                <Image
                   src={news.image}
                   alt={news.title}
-                  className="h-full w-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div className="space-y-3 px-6 py-5">
