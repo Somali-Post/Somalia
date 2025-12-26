@@ -57,8 +57,9 @@ export default function Navbar() {
             alt="Coat of Arms"
             className="rounded-full"
           />
-          <span className="text-base font-semibold text-blue-800 sm:text-lg">
-            Federal Republic of Somalia
+          <span className="text-sm font-semibold text-blue-800 md:text-lg">
+            <span className="hidden md:inline">Federal Republic of </span>
+            Somalia
           </span>
         </div>
 
@@ -105,7 +106,7 @@ export default function Navbar() {
           <button
             type="button"
             aria-label="Search"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-blue-600 hover:text-blue-600"
+            className="hidden h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-blue-600 hover:text-blue-600 md:inline-flex"
           >
             <Search className="h-4 w-4" />
           </button>
@@ -114,11 +115,11 @@ export default function Navbar() {
             alt="Somalia flag"
             width={24}
             height={24}
-            className="mr-2 h-6 w-6 rounded-full object-cover"
+            className="mr-2 hidden h-6 w-6 rounded-full object-cover md:inline-flex"
           />
           <button
             type="button"
-            className="rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-600 hover:text-blue-600 sm:text-sm"
+            className="hidden rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-600 hover:text-blue-600 md:inline-flex sm:text-sm"
           >
             Somali | English
           </button>
@@ -135,7 +136,15 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="border-t border-slate-100 bg-white lg:hidden">
-          <div className="space-y-2 px-4 py-4">
+          <div className="space-y-4 px-4 py-4">
+            <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-3 py-2">
+              <Search className="h-4 w-4 text-slate-500" />
+              <input
+                type="text"
+                placeholder="Search"
+                className="w-full text-sm text-slate-700 outline-none placeholder:text-slate-400"
+              />
+            </div>
             {NAV_LINKS.map((link) => {
               if (link.children) {
                 const isOpen = openDropdown === link.label;
@@ -182,6 +191,16 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            <div className="flex items-center justify-between rounded-lg border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-700">
+              <span>Somali | English</span>
+              <img
+                src="/logos/flag.png"
+                alt="Somalia flag"
+                width={20}
+                height={20}
+                className="h-5 w-5 rounded-full object-cover"
+              />
+            </div>
           </div>
         </div>
       )}
