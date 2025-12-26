@@ -19,6 +19,7 @@ const NAV_LINKS = [
   {
     label: "Government",
     children: [
+      { label: "Constitution", href: "/government/constitution" },
       { label: "The Executive", href: "/government/executive" },
       { label: "The Cabinet", href: "/government/cabinet" },
       { label: "The Parliament", href: "/government/parliament" },
