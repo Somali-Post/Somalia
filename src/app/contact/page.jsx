@@ -1,39 +1,51 @@
 "use client";
 
-import { Clock, Globe, Mail, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
+import {
+  Facebook,
+  Instagram,
+  Mail,
+  MapPin,
+  Mic,
+  Twitter,
+} from "lucide-react";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 
-const CONTACT_ITEMS = [
-  {
-    title: "Main Office",
-    description: "Villa Somalia, Mogadishu, Federal Republic of Somalia",
-    icon: MapPin,
-  },
+const CONTACT_CARDS = [
   {
     title: "General Inquiries",
-    description: "info@opm.gov.so",
+    value: "info@opm.gov.so",
+    description: "For general government questions.",
     icon: Mail,
   },
   {
     title: "Media & Press",
-    description: "media@opm.gov.so",
-    icon: Globe,
+    value: "media@opm.gov.so",
+    description: "For official statements and press accreditation.",
+    icon: Mic,
   },
   {
-    title: "Working Hours",
-    description: "Sat - Thu: 8:00 AM - 4:00 PM (East Africa Time)",
-    icon: Clock,
+    title: "Visit Us",
+    value: "Villa Somalia, Mogadishu",
+    description: "Office of the Prime Minister.",
+    icon: MapPin,
   },
 ];
 
-const SUBJECTS = [
+const DEPARTMENTS = [
   "General Inquiry",
-  "Press",
-  "Visa Service",
-  "Citizenship",
+  "Press Office",
+  "Protocol",
+  "Citizen Services",
+];
+
+const SOCIALS = [
+  { label: "X", href: "https://x.com/somalia", icon: Twitter },
+  { label: "Facebook", href: "https://www.facebook.com/Somalia/", icon: Facebook },
+  { label: "Instagram", href: "https://www.instagram.com/somalia/", icon: Instagram },
 ];
 
 export default function ContactPage() {
@@ -43,48 +55,46 @@ export default function ContactPage() {
       <main className="bg-white text-slate-900">
         <PageHeader
           title="Contact Us"
-          description="Get in touch with the Federal Government of Somalia"
+          description="How can we assist you today? Reach out to the Federal Government of Somalia."
         />
 
-        <section className="py-16">
-          <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.1fr_1fr]">
-            <div className="space-y-6">
-              <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-                Official Contact Channels
-              </h2>
-              <div className="grid gap-4">
-                {CONTACT_ITEMS.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={item.title}
-                      className="flex items-start gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-sm"
-                    >
-                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-blue-50 text-blue-600">
-                        <Icon className="h-5 w-5" />
-                      </span>
-                      <div>
-                        <p className="text-sm font-semibold text-slate-900">
-                          {item.title}
-                        </p>
-                        <p className="mt-1 text-sm text-slate-600">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+        <section className="-mt-16 pb-16">
+          <div className="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-3">
+            {CONTACT_CARDS.map((card) => {
+              const Icon = card.icon;
+              return (
+                <div
+                  key={card.title}
+                  className="rounded-2xl border border-slate-100 bg-white p-6 shadow-lg"
+                >
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <p className="text-sm font-semibold text-slate-500">
+                    {card.title}
+                  </p>
+                  <p className="mt-2 text-lg font-semibold text-slate-900">
+                    {card.value}
+                  </p>
+                  <p className="mt-2 text-sm text-slate-600">
+                    {card.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
 
-            <div className="rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
-              <h3 className="text-lg font-semibold text-slate-900">
-                Send an Inquiry
-              </h3>
+        <section className="pb-16">
+          <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-lg">
+              <h2 className="text-2xl font-semibold text-slate-900">
+                Send a Message
+              </h2>
               <form className="mt-6 space-y-5">
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-700">
-                    Full Name
+                    Name
                   </label>
                   <input
                     type="text"
@@ -93,7 +103,7 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-700">
-                    Email Address
+                    Email
                   </label>
                   <input
                     type="email"
@@ -102,19 +112,28 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-700">
-                    Subject
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-blue-600"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-slate-700">
+                    Department
                   </label>
                   <select className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 outline-none focus:border-blue-600">
-                    {SUBJECTS.map((subject) => (
-                      <option key={subject} value={subject}>
-                        {subject}
+                    {DEPARTMENTS.map((dept) => (
+                      <option key={dept} value={dept}>
+                        {dept}
                       </option>
                     ))}
                   </select>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-700">
-                    Message
+                    Your Message
                   </label>
                   <textarea
                     rows={5}
@@ -125,9 +144,65 @@ export default function ContactPage() {
                   type="submit"
                   className="w-full rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
                 >
-                  Send Message
+                  Submit Inquiry
                 </button>
               </form>
+            </div>
+
+            <div className="space-y-6">
+              <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-slate-900">
+                  Other Ways to Connect
+                </h3>
+                <div className="mt-4 space-y-4 text-sm text-slate-600">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+                      Working Hours
+                    </p>
+                    <p className="mt-2 font-semibold text-slate-700">
+                      Sat - Thu: 8:00 AM - 4:00 PM (East Africa Time)
+                    </p>
+                    <p className="mt-1 text-slate-500">Friday: Closed</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+                      Specific Ministries
+                    </p>
+                    <p className="mt-2 text-slate-600">
+                      Looking for a specific department? Find direct contact info
+                      for Education, Health, or Immigration in our directory.
+                    </p>
+                    <Link
+                      href="/government/ministries"
+                      className="mt-3 inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700"
+                    >
+                      Browse Ministry Directory -&gt;
+                    </Link>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
+                      Social Media
+                    </p>
+                    <div className="mt-3 flex gap-3">
+                      {SOCIALS.map((social) => {
+                        const Icon = social.icon;
+                        return (
+                          <a
+                            key={social.label}
+                            href={social.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-blue-600 hover:text-blue-600"
+                            aria-label={social.label}
+                          >
+                            <Icon className="h-5 w-5" />
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -147,4 +222,3 @@ export default function ContactPage() {
     </>
   );
 }
-
