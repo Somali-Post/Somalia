@@ -1,5 +1,7 @@
 import { ExternalLink } from "lucide-react";
 
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 
 const DIGITAL_SERVICES = [
@@ -70,11 +72,13 @@ const EMERGENCY_CONTACTS = [
 
 export default function Page() {
   return (
-    <div className="bg-white text-slate-900">
-      <PageHeader
-        title="Citizen Services"
-        description="Access government services online and offline."
-      />
+    <>
+      <Navbar />
+      <main className="bg-white text-slate-900">
+        <PageHeader
+          title="Citizen Services"
+          description="Access government services online and offline."
+        />
 
       <section className="py-14">
         <div className="mx-auto max-w-6xl px-6">
@@ -185,6 +189,8 @@ export default function Page() {
           </div>
         </div>
       </section>
-    </div>
+      </main>
+      <Footer />
+    </>
   );
 }

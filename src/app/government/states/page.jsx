@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Briefcase, MapPin } from "lucide-react";
 
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 
 export default function StatesPage() {
@@ -65,11 +67,13 @@ export default function StatesPage() {
   ];
 
   return (
-    <main className="bg-white text-slate-900">
-      <PageHeader
-        title="Federal Member States"
-        description="The Federal Republic is comprised of five Member States and the Benadir Regional Administration."
-      />
+    <>
+      <Navbar />
+      <main className="bg-white text-slate-900">
+        <PageHeader
+          title="Federal Member States"
+          description="The Federal Republic is comprised of five Member States and the Benadir Regional Administration."
+        />
 
       <section className="py-16">
         <div className="mx-auto max-w-6xl px-6">
@@ -158,6 +162,8 @@ export default function StatesPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }

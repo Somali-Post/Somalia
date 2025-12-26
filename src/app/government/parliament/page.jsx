@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 
 const LOWER_HOUSE = {
@@ -108,11 +110,13 @@ function LeadershipSection({ title, membersLabel, data, background }) {
 
 export default function ParliamentPage() {
   return (
-    <main className="bg-white text-slate-900">
-      <PageHeader
-        title="The Federal Parliament"
-        description="The Bicameral Legislative Branch of the Federal Republic"
-      />
+    <>
+      <Navbar />
+      <main className="bg-white text-slate-900">
+        <PageHeader
+          title="The Federal Parliament"
+          description="The Bicameral Legislative Branch of the Federal Republic"
+        />
 
       <section className="py-14">
         <div className="mx-auto max-w-4xl px-6 text-center">
@@ -138,6 +142,8 @@ export default function ParliamentPage() {
         data={UPPER_HOUSE}
         background="bg-slate-50"
       />
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }

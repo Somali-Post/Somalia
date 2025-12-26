@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Twitter } from "lucide-react";
 
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 
 const LEADERSHIP = [
@@ -32,11 +34,13 @@ const LEADERSHIP = [
 
 export default function ExecutivePage() {
   return (
-    <main className="bg-white text-slate-900">
-      <PageHeader
-        title="The Executive Branch"
-        description="The highest level of government leadership."
-      />
+    <>
+      <Navbar />
+      <main className="bg-white text-slate-900">
+        <PageHeader
+          title="The Executive Branch"
+          description="The highest level of government leadership."
+        />
 
       <section className="py-16">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.1fr_1fr] lg:items-center">
@@ -149,6 +153,8 @@ export default function ExecutivePage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }

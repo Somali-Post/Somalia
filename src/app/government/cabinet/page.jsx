@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import { ministries } from "@/data/ministries";
 
@@ -27,11 +29,13 @@ const LEADERSHIP = [
 
 export default function CabinetPage() {
   return (
-    <main className="bg-white text-slate-900">
-      <PageHeader
-        title="The Cabinet"
-        description="The Council of Ministers of the Federal Republic of Somalia"
-      />
+    <>
+      <Navbar />
+      <main className="bg-white text-slate-900">
+        <PageHeader
+          title="The Cabinet"
+          description="The Council of Ministers of the Federal Republic of Somalia"
+        />
 
       <section className="py-16">
         <div className="mx-auto max-w-6xl px-6">
@@ -142,6 +146,8 @@ export default function CabinetPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }
