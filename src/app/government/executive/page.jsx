@@ -98,12 +98,16 @@ export default function ExecutivePage() {
                   leader.featured ? "lg:scale-[1.03] lg:shadow-md" : ""
                 }`}
               >
-                <div className="relative h-72">
+                <div className="relative h-80">
                   <Image
                     src={leader.image}
                     alt={leader.name}
                     fill
-                    className="object-cover"
+                    className={`h-full w-full object-cover ${
+                      leader.name === "H.E. Jibril Abdirashid Haji"
+                        ? "object-[center_-24px]"
+                        : "object-top"
+                    }`}
                   />
                 </div>
                 <div className="flex h-full flex-col gap-3 p-6">

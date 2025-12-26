@@ -54,12 +54,16 @@ export default function CabinetPage() {
                 key={leader.name}
                 className="w-full max-w-xl overflow-hidden rounded-xl bg-white shadow-lg"
               >
-                <div className="relative h-[300px]">
+                <div className="relative h-80">
                   <Image
                     src={leader.image}
                     alt={leader.name}
                     fill
-                    className="object-cover object-top"
+                    className={`h-full w-full object-cover ${
+                      leader.name === "H.E. Jibril Abdirashid Haji"
+                        ? "object-[center_-24px]"
+                        : "object-top"
+                    }`}
                   />
                 </div>
                 <div className="p-6 text-center">
@@ -79,12 +83,16 @@ export default function CabinetPage() {
                   key={leader.name}
                   className="overflow-hidden rounded-xl bg-white shadow-lg"
                 >
-                  <div className="relative h-[300px]">
+                  <div className="relative h-80">
                     <Image
                       src={leader.image}
                       alt={leader.name}
                       fill
-                      className="object-cover object-top"
+                      className={`h-full w-full object-cover ${
+                        leader.name === "H.E. Jibril Abdirashid Haji"
+                          ? "object-[center_-24px]"
+                          : "object-top"
+                      }`}
                     />
                   </div>
                   <div className="p-6 text-center">
