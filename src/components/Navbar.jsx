@@ -41,6 +41,7 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
+  const [lang, setLang] = useState("EN");
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
 
@@ -121,9 +122,10 @@ export default function Navbar() {
           />
           <button
             type="button"
-            className="hidden rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-600 hover:text-blue-600 md:inline-flex sm:text-sm"
+            onClick={() => setLang((current) => (current === "EN" ? "SO" : "EN"))}
+            className="hidden cursor-pointer rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-600 hover:bg-gray-100 hover:text-blue-600 md:inline-flex sm:text-sm"
           >
-            Somali | English
+            {lang === "EN" ? "Somali | English" : "English | Soomaali"}
           </button>
           <button
             type="button"
@@ -193,8 +195,12 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <div className="flex items-center justify-between rounded-lg border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-700">
-              <span>Somali | English</span>
+            <button
+              type="button"
+              onClick={() => setLang((current) => (current === "EN" ? "SO" : "EN"))}
+              className="flex w-full cursor-pointer items-center justify-between rounded-lg border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-gray-100"
+            >
+              <span>{lang === "EN" ? "Somali | English" : "English | Soomaali"}</span>
               <Image
                 src="/logos/flag.png"
                 alt="Somalia flag"
@@ -202,7 +208,7 @@ export default function Navbar() {
                 height={20}
                 className="h-5 w-5 rounded-full object-cover"
               />
-            </div>
+            </button>
           </div>
         </div>
       )}

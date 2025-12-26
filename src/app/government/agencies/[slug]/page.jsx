@@ -90,14 +90,16 @@ export default async function AgencyProfilePage({ params }) {
                       {directorSocials.map((social) => {
                         const Icon = social.icon;
                         return (
-                          <Link
+                          <a
                             key={social.key}
                             href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-yellow-400/40 text-yellow-300 transition hover:border-white hover:text-white"
                             aria-label={social.label}
                           >
                             <Icon className="h-4 w-4" />
-                          </Link>
+                          </a>
                         );
                       })}
                     </div>
@@ -152,7 +154,7 @@ export default async function AgencyProfilePage({ params }) {
                   href={agency.contact.website}
                   className="mt-5 inline-flex w-full items-center justify-center rounded-full border border-blue-600 px-4 py-2 text-sm font-semibold text-blue-600 transition hover:bg-blue-600 hover:text-white"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <Globe className="mr-2 h-4 w-4" />
                   Visit Website

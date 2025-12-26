@@ -95,7 +95,7 @@ export default function Footer() {
                       className="transition hover:text-white"
                       href={link.href}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                     >
                       {link.label}
                     </a>
@@ -125,7 +125,7 @@ export default function Footer() {
                     key={social.label}
                     href={social.href}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-yellow-500 hover:text-yellow-500"
                     aria-label={social.label}
                   >
