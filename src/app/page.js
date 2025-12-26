@@ -1,3 +1,4 @@
+import EmergencyBar from "@/components/EmergencyBar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import KeyServices from "@/components/KeyServices";
@@ -44,6 +45,7 @@ export default function Home() {
       </section>
       <div className="h-10" />
       <MemberStates />
+      <EmergencyBar />
       <Footer />
     </>
   );
