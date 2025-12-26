@@ -1,0 +1,13 @@
+{
+  "name": "Federal Republic of Somalia",
+  "short_name": "Somali Govt",
+  "description": "Official Government Portal",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0B4F8A",
+  "icons": [
+    { "src": "/logos/coat-of-arms.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/logos/coat-of-arms.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
