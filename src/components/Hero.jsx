@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import GlobalSearch from "@/components/GlobalSearch";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-blue-900 to-blue-800 py-20 text-white">
@@ -33,19 +34,7 @@ export default function Hero() {
           </h1>
           <p className="text-xl text-blue-100">Peace, Progress, and Prosperity.</p>
 
-          <div className="flex w-full flex-col gap-3 sm:flex-row">
-            <input
-              type="text"
-              placeholder="Search for services, ministries, or documents..."
-              className="w-full rounded-lg border border-white/20 bg-white px-4 py-4 text-base text-slate-900 shadow-lg outline-none placeholder:text-slate-400 focus:border-blue-300"
-            />
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-4 text-sm font-semibold text-white shadow-lg transition hover:bg-blue-700"
-            >
-              Search
-            </button>
-          </div>
+          <GlobalSearch />
 
           <p className="text-sm text-white/70">
             Popular: Passport, Visa, Jobs, Tender
