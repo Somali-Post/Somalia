@@ -68,9 +68,6 @@ export default function MinistryDirectory({ limit }) {
                       <h3 className="text-lg font-semibold text-slate-900">
                         {ministry.name}
                       </h3>
-                      <p className="text-xs font-semibold text-slate-500">
-                        {ministry.acronym}
-                      </p>
                     </div>
                   </div>
                   <p className="text-sm text-slate-600 line-clamp-2">

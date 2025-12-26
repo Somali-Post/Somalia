@@ -38,9 +38,6 @@ export default function NationalAgencies({ limit }) {
                     />
                   </span>
                   <div>
-                    <p className="text-sm font-semibold text-blue-600">
-                      {agency.acronym}
-                    </p>
                     <p className="text-sm font-semibold text-slate-900">
                       {agency.name}
                     </p>

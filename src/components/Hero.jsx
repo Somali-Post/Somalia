@@ -7,18 +7,6 @@ import GlobalSearch from "@/components/GlobalSearch";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-blue-900 to-blue-800 py-20 text-white">
-      <div className="pointer-events-none absolute inset-0">
-        <svg
-          viewBox="0 0 24 24"
-          className="absolute right-[-120px] top-1/2 h-[520px] w-[520px] -translate-y-1/2 text-white opacity-[0.05]"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:48px_48px] opacity-30" />
-      </div>
-
       <div className="container mx-auto flex min-h-[600px] flex-col items-center gap-12 px-6 lg:flex-row lg:justify-between">
         <motion.div
           initial={{ opacity: 0, x: -24 }}

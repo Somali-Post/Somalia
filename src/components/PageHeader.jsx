@@ -1,23 +1,25 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function PageHeader({ title, description, breadcrumb = [] }) {
   return (
     <section className="relative flex min-h-[40vh] items-center overflow-hidden border-b-4 border-yellow-500 bg-blue-900 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-blue-800 via-blue-900 to-slate-900 text-white">
-      <div className="pointer-events-none absolute inset-0">
-        <svg
-          viewBox="0 0 24 24"
-          className="absolute bottom-[-50px] right-[-50px] h-[500px] w-[500px] text-white opacity-[0.05]"
-          fill="currentColor"
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <Image
+          src="/logos/coat-of-arms.png"
+          alt=""
+          width={500}
+          height={500}
+          className="absolute -right-10 -bottom-20 h-[500px] w-[500px] rotate-12 object-contain grayscale opacity-10 contrast-150 mix-blend-overlay"
           aria-hidden="true"
-        >
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
+          priority
+        />
       </div>
 
-      <div className="container mx-auto flex h-full flex-col justify-center px-6">
+      <div className="container relative z-10 mx-auto flex h-full flex-col justify-center px-6">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
