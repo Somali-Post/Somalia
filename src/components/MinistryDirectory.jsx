@@ -58,6 +58,8 @@ export default function MinistryDirectory({ limit }) {
                       <SmartImage
                         src={logoSrc}
                         alt={`${ministry.acronym} logo`}
+                        width={40}
+                        height={40}
                         className="h-full w-full object-contain"
                         fallbackSrc="/logos/coat-of-arms.png"
                       />

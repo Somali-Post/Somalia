@@ -4,8 +4,10 @@ import Link from "next/link";
 import {
   Facebook,
   Instagram,
+  Linkedin,
   Mail,
   MapPin,
+  MessageCircle,
   Mic,
   Twitter,
 } from "lucide-react";
@@ -46,6 +48,12 @@ const SOCIALS = [
   { label: "X", href: "https://x.com/somalia", icon: Twitter },
   { label: "Facebook", href: "https://www.facebook.com/Somalia/", icon: Facebook },
   { label: "Instagram", href: "https://www.instagram.com/somalia/", icon: Instagram },
+  {
+    label: "LinkedIn",
+    href: "https://so.linkedin.com/company/federalgovernmentofsomalia",
+    icon: Linkedin,
+  },
+  { label: "Reddit", href: "https://www.reddit.com/r/Somalia/", icon: MessageCircle },
 ];
 
 export default function ContactPage() {
@@ -58,7 +66,7 @@ export default function ContactPage() {
           description="How can we assist you today? Reach out to the Federal Government of Somalia."
         />
 
-        <section className="-mt-16 pb-16">
+        <section className="py-12">
           <div className="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-3">
             {CONTACT_CARDS.map((card) => {
               const Icon = card.icon;
@@ -183,7 +191,7 @@ export default function ContactPage() {
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
                       Social Media
                     </p>
-                    <div className="mt-3 flex gap-3">
+                    <div className="mt-3 flex gap-4">
                       {SOCIALS.map((social) => {
                         const Icon = social.icon;
                         return (
@@ -191,8 +199,8 @@ export default function ContactPage() {
                             key={social.label}
                             href={social.href}
                             target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-blue-600 hover:text-blue-600"
+                            rel="noopener noreferrer"
+                            className="rounded-full bg-gray-100 p-3 text-blue-600 transition-colors hover:bg-blue-100"
                             aria-label={social.label}
                           >
                             <Icon className="h-5 w-5" />
