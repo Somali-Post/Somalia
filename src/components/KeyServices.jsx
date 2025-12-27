@@ -6,11 +6,6 @@ import { Book, Briefcase, Globe, UserCheck } from "lucide-react";
 
 const SERVICES = [
   {
-    title: "E-Passport Portal",
-    description: "Apply for passports and track your application online.",
-    icon: Book,
-  },
-  {
     title: "Visa Application",
     description: "Submit visa requests and view entry requirements.",
     icon: Globe,

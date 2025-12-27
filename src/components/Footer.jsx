@@ -21,10 +21,9 @@ const GOVERNMENT_LINKS = [
 ];
 
 const SERVICE_LINKS = [
-  { label: "E-Passport", href: "/services" },
   { label: "Visa Application", href: "/services" },
   { label: "Business Registration (SBRS)", href: "https://ebusiness.gov.so" },
-  { label: "National ID (NIRA)", href: "/services" },
+  { label: "National ID (NIRA)", href: "/government/agencies/nira" },
   { label: "Invest in Somalia", href: "/invest" },
   { label: "Vision 2060", href: "/government/vision" },
 ];
@@ -139,20 +138,20 @@ export default function Footer() {
       </div>
 
       <div className="bg-blue-900">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-6 text-xs text-blue-100 md:flex-row md:items-center md:justify-between">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-6 text-center text-xs text-blue-100 md:flex-row md:text-left">
           <span>© 2025 Federal Republic of Somalia. All Rights Reserved.</span>
           <span className="text-center">
             Designed for the People of Somalia
           </span>
-          <span className="text-right">
+          <span className="flex flex-wrap items-center justify-center gap-2 md:justify-end">
             <Link href="/legal/privacy" className="transition hover:text-white">
               Privacy Policy
             </Link>
-            {" | "}
+            <span className="text-blue-100/60">|</span>
             <Link href="/legal/terms" className="transition hover:text-white">
               Terms of Use
             </Link>
-            {" | "}
+            <span className="text-blue-100/60">|</span>
             <Link
               href="/legal/accessibility"
               className="transition hover:text-white"
