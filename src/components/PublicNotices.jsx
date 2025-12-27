@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Download } from "lucide-react";
 
 const TENDERS = [
@@ -10,15 +11,6 @@ const TENDERS = [
   {
     title: "Construction of Galkayo Regional Road (Ref: MOPW/2025/04)",
     closing: "Feb 15",
-  },
-];
-
-const VACANCIES = [
-  {
-    title: "Senior Policy Advisor - Ministry of Planning.",
-  },
-  {
-    title: "IT Systems Administrator - NIRA.",
   },
 ];
 
@@ -62,17 +54,18 @@ export default function PublicNotices() {
             <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
               Civil Service Vacancies
             </h3>
-            {VACANCIES.map((vacancy) => (
-              <div
-                key={vacancy.title}
-                className="flex items-start justify-between gap-4 rounded-lg bg-gray-50 p-4 shadow-sm border-l-4 border-blue-900"
+            <div className="rounded-lg bg-gray-50 p-4 shadow-sm border-l-4 border-blue-900">
+              <p className="text-sm font-semibold text-slate-900">
+                View all current government and private sector vacancies via
+                the National Job Board.
+              </p>
+              <Link
+                href="/services/jobs"
+                className="mt-3 inline-flex items-center text-sm font-semibold text-blue-700 transition hover:text-blue-800"
               >
-                <p className="text-sm font-semibold text-slate-900">
-                  {vacancy.title}
-                </p>
-                <Download className="mt-1 h-5 w-5 text-blue-700" />
-              </div>
-            ))}
+                Browse Jobs -&gt;
+              </Link>
+            </div>
           </div>
         </div>
       </div>

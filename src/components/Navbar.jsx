@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ChevronDown, Menu, Search, X } from "lucide-react";
+import { Briefcase, ChevronDown, Menu, Search, X } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -34,6 +34,7 @@ const NAV_LINKS = [
     children: [
       { label: "All Services", href: "/services" },
       { label: "Emergency Contacts", href: "/services#emergency" },
+      { label: "Jobs & Careers", href: "/services/jobs", icon: Briefcase },
       { label: "Invest", href: "/invest" },
     ],
   },
@@ -79,15 +80,19 @@ export default function Navbar() {
                     <ChevronDown className="h-4 w-4" />
                   </button>
                   <div className="absolute left-0 top-full hidden w-60 rounded-xl border border-slate-200 bg-white p-3 shadow-lg group-hover:block">
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.label}
-                        href={child.href}
-                        className="flex items-center rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
+                    {link.children.map((child) => {
+                      const Icon = child.icon;
+                      return (
+                        <Link
+                          key={child.label}
+                          href={child.href}
+                          className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
+                        >
+                          {Icon && <Icon className="h-4 w-4 text-blue-600" />}
+                          {child.label}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               );
@@ -168,16 +173,22 @@ export default function Navbar() {
                     </button>
                     {isOpen && (
                       <div className="space-y-1 pl-3">
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.label}
-                            href={child.href}
-                            className="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
-                            onClick={() => setMenuOpen(false)}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
+                        {link.children.map((child) => {
+                          const Icon = child.icon;
+                          return (
+                            <Link
+                              key={child.label}
+                              href={child.href}
+                              className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
+                              onClick={() => setMenuOpen(false)}
+                            >
+                              {Icon && (
+                                <Icon className="h-4 w-4 text-blue-600" />
+                              )}
+                              {child.label}
+                            </Link>
+                          );
+                        })}
                       </div>
                     )}
                   </div>

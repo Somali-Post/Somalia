@@ -12,6 +12,8 @@ const SERVICES = [
   { name: "E-Visa", url: "/services" },
   { name: "Business Registration", url: "/services" },
   { name: "National Exam Results", url: "/services" },
+  { name: "Public Sector Jobs", url: "/services/jobs" },
+  { name: "Vacancies", url: "/services/jobs" },
 ];
 
 export default function GlobalSearch() {
