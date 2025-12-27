@@ -4,60 +4,102 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const FEED_URLS = [
-  "https://somalijobs.com/feed",
-  "https://joblink.so/feed",
+const RELIEFWEB_URL =
+  "https://api.reliefweb.int/v1/jobs?appname=rwint-user-0&profile=list&preset=latest&limit=10&filter[field]=country.name&filter[value]=Somalia";
+
+const RSS_FEEDS = [
+  { url: "https://somalijobs.com/feed", source: "SomaliJobs" },
+  { url: "https://qaranjobs.com/feed", source: "QaranJobs" },
+  { url: "https://joblink.so/feed", source: "JobLink" },
+  { url: "https://shaqodoon.net/feed", source: "Shaqodoon" },
 ];
 
 const parser = new Parser();
 
-const getHostname = (url) => {
-  try {
-    return new URL(url).hostname.replace("www.", "");
-  } catch {
-    return "Unknown source";
+const formatDate = (value) => {
+  if (!value) {
+    return "";
   }
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return "";
+  }
+  return date.toISOString().split("T")[0];
 };
 
-export async function GET() {
-  const feeds = await Promise.all(
-    FEED_URLS.map(async (feedUrl) => {
-      try {
-        const feed = await parser.parseURL(feedUrl);
-        return { feedUrl, feed };
-      } catch {
-        return { feedUrl, feed: null };
-      }
-    })
-  );
+const normalizeTitle = (title) => (title || "").trim() || "Untitled role";
 
-  const jobs = feeds.flatMap(({ feedUrl, feed }) => {
-    if (!feed || !Array.isArray(feed.items)) {
+const normalizeCompany = (company) => (company || "").trim() || "Unknown";
+
+const mapReliefWeb = (item) => {
+  const fields = item.fields || {};
+  return {
+    id: item.id || fields.url || fields.title,
+    title: normalizeTitle(fields.title),
+    company: normalizeCompany(fields.organization?.[0]?.name),
+    date: formatDate(fields.date?.created),
+    source: "ReliefWeb",
+    url: fields.url,
+    tags: ["UN", "Verified"],
+    badge: "UN / International",
+    badgeColor: "blue",
+  };
+};
+
+const mapRssItem = (item, sourceName) => ({
+  id: item.guid || item.id || item.link,
+  title: normalizeTitle(item.title),
+  company: normalizeCompany(
+    item.creator || item.author || item["dc:creator"] || sourceName,
+  ),
+  date: formatDate(item.isoDate || item.pubDate),
+  source: sourceName,
+  url: item.link,
+  tags: ["Local"],
+  badge: "Local / Private Sector",
+  badgeColor: "green",
+});
+
+export async function GET() {
+  const [reliefResponse, ...rssResponses] = await Promise.all([
+    fetch(RELIEFWEB_URL, { next: { revalidate: 0 } }),
+    ...RSS_FEEDS.map(async (feed) => {
+      try {
+        const parsed = await parser.parseURL(feed.url);
+        return { feed, data: parsed };
+      } catch {
+        return { feed, data: null };
+      }
+    }),
+  ]);
+
+  let reliefJobs = [];
+  try {
+    if (reliefResponse.ok) {
+      const reliefJson = await reliefResponse.json();
+      reliefJobs = (reliefJson?.data || []).map(mapReliefWeb);
+    }
+  } catch {
+    reliefJobs = [];
+  }
+
+  const rssJobs = rssResponses.flatMap(({ feed, data }) => {
+    if (!data || !Array.isArray(data.items)) {
       return [];
     }
-
-    const sourceName = feed.title || getHostname(feedUrl);
-
-    return feed.items
+    return data.items
       .filter((item) => item?.link)
-      .map((item) => ({
-        title: item.title || "Untitled role",
-        link: item.link,
-        company:
-          item.creator ||
-          item.author ||
-          item["dc:creator"] ||
-          sourceName,
-        pubDate: item.isoDate || item.pubDate || "",
-        source: sourceName,
-      }));
+      .map((item) => mapRssItem(item, feed.source));
   });
 
-  jobs.sort((a, b) => {
-    const timeA = Date.parse(a.pubDate) || 0;
-    const timeB = Date.parse(b.pubDate) || 0;
-    return timeB - timeA;
-  });
+  const jobs = [...reliefJobs, ...rssJobs]
+    .filter((job) => job.url)
+    .sort((a, b) => {
+      const timeA = Date.parse(a.date) || 0;
+      const timeB = Date.parse(b.date) || 0;
+      return timeB - timeA;
+    })
+    .slice(0, 50);
 
   return NextResponse.json({
     updatedAt: new Date().toISOString(),

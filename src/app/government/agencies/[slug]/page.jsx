@@ -51,6 +51,8 @@ export default async function AgencyProfilePage({ params }) {
                   <SmartImage
                     src={logoSrc}
                     alt={`${agency.acronym} logo`}
+                    width={40}
+                    height={40}
                     className="h-10 w-10 object-contain"
                     fallbackSrc="/logos/coat-of-arms.png"
                   />
