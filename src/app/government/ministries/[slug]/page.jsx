@@ -84,6 +84,8 @@ export default async function MinistryProfilePage({ params }) {
                   <SmartImage
                     src={ministerImage}
                     alt={ministry.ministerName}
+                    width={320}
+                    height={400}
                     className="h-full w-full object-cover object-top"
                     fallbackSrc="/images/minister-placeholder.jpg"
                   />

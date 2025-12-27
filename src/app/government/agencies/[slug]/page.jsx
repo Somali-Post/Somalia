@@ -78,6 +78,8 @@ export default async function AgencyProfilePage({ params }) {
                   <SmartImage
                     src={directorImage}
                     alt={agency.directorName}
+                    width={320}
+                    height={400}
                     className="h-full w-full object-cover object-top"
                     fallbackSrc="/images/minister-placeholder.jpg"
                   />
