@@ -20,9 +20,9 @@ export default function AccessibilityPage() {
           description="Ensuring equal access for all citizens."
         />
 
-        <section className="-mt-20 relative z-10 px-6 pb-20">
+        <section className="relative z-10 mt-0 px-6 pb-20 md:-mt-20">
           <div className="mx-auto max-w-4xl">
-            <div className="overflow-hidden rounded-xl border-t-8 border-blue-900 bg-white shadow-2xl">
+            <div className="relative z-20 overflow-hidden rounded-xl border-t-8 border-blue-900 bg-white shadow-2xl">
               <div className="p-10 md:p-16">
                 <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
                   <h2 className="text-2xl font-semibold text-blue-900">

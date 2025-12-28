@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Briefcase, ChevronDown, Menu, Search, X } from "lucide-react";
+import { ChevronDown, Menu, Search, X } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -34,7 +34,7 @@ const NAV_LINKS = [
     children: [
       { label: "All Services", href: "/services" },
       { label: "Emergency Contacts", href: "/services#emergency" },
-      { label: "Jobs & Careers", href: "/services/jobs", icon: Briefcase },
+      { label: "Jobs & Careers", href: "/services/jobs" },
       { label: "Invest", href: "/invest" },
     ],
   },

@@ -79,7 +79,7 @@ export default function TourismPage() {
       <Navbar />
       <main className="bg-white text-slate-900">
         <section className="relative h-[70vh] min-h-[520px] overflow-hidden">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="sync">
             <motion.div
               key={CAROUSEL_IMAGES[activeIndex]}
               className="absolute inset-0"
