@@ -1,0 +1,396 @@
+{
+  "Navbar": {
+    "brand_prefix": "Jamhuuriyadda Federaalka ee",
+    "brand_name": "Soomaaliya",
+    "search_placeholder": "Raadi",
+    "language_toggle_en": "Soomaali | English",
+    "language_toggle_so": "English | Soomaali",
+    "links": {
+      "home": "Bogga Hore",
+      "nation": "Qaranka",
+      "nation_children": [
+        "Taariikhda",
+        "Dhaqanka iyo Dadka",
+        "Cuntada iyo Hidaha Cuntada",
+        "Dalxiiska"
+      ],
+      "government": "Dawladda",
+      "government_children": [
+        "Dastuurka",
+        "Himilada Qaranka 2060",
+        "Laanta Fulinta",
+        "Golaha Wasiirrada",
+        "Baarlamaanka",
+        "Wasaaradaha",
+        "Hay’adaha Qaranka",
+        "Dawladdaha Xubnaha ka ah Federaalka"
+      ],
+      "services": "Adeegyada",
+      "services_children": [
+        "Dhammaan Adeegyada",
+        "Xiriirrada Degdegga ah",
+        "Shaqooyin iyo Xirfado",
+        "Maalgelin"
+      ],
+      "contact": "Nala Soo Xiriir"
+    }
+  },
+
+  "Footer": {
+    "brand": "Jamhuuriyadda Federaalka ee Soomaaliya",
+    "description": "Bogga rasmiga ah ee isgaarsiinta iyo macluumaadka dadweynaha ee Dowladda Federaalka Soomaaliya.",
+    "address": "Villa Soomaaliya, Muqdisho, Soomaaliya",
+    "governance": {
+      "title": "Maamul iyo Hoggaamin",
+      "links": [
+        "Laanta Fulinta",
+        "Golaha Wasiirrada",
+        "Baarlamaanka",
+        "Wasaaradaha",
+        "Dawladdaha Xubnaha ka ah Federaalka",
+        "Dastuurka"
+      ]
+    },
+    "services": {
+      "title": "Adeegyo iyo Kheyraad",
+      "links": [
+        "Codsiga Visa",
+        "Diiwaangelinta Ganacsiga (SBRS)",
+        "Aqoonsiga Qaranka (NIRA)",
+        "Maalgeli Soomaaliya",
+        "Himilada 2060"
+      ]
+    },
+    "connect": {
+      "title": "Nagala Xiriir",
+      "email": "info@opm.gov.so",
+      "social": [
+        "X",
+        "Facebook",
+        "Instagram",
+        "LinkedIn",
+        "Reddit"
+      ]
+    },
+    "legal": {
+      "copyright": "© 2025 Jamhuuriyadda Federaalka ee Soomaaliya. Dhammaan xuquuqda way xafidan yihiin.",
+      "tagline": "Loogu talagalay Dadka Soomaaliyeed",
+      "links": [
+        "Siyaasadda Asturnaanta",
+        "Shuruudaha Isticmaalka",
+        "Helitaan"
+      ]
+    }
+  },
+
+  "Hero": {
+    "badge": "Bogga Rasmiga ah ee Dowladda Federaalka",
+    "title": "Jamhuuriyadda Federaalka ee Soomaaliya",
+    "subtitle": "Nabad, Horumar, iyo Barwaaqo.",
+    "popular": "Caanka ah: Baasaboor, Visa, Shaqooyin, Qandaraasyo"
+  },
+
+  "EmergencyBar": {
+    "title": "LAMBARRO DEGDEG AH:",
+    "contacts": [
+      { "label": "Booliiska", "number": "888" },
+      { "label": "Ambalaas", "number": "999" },
+      { "label": "Dab-damis", "number": "555" },
+      { "label": "Bisha Cas", "number": "446" },
+      { "label": "Khadka Talooyinka NISA", "number": "991" }
+    ]
+  },
+
+  "KeyServices": {
+    "title": "Adeegyada Dowladda ee Online",
+    "services": [
+      {
+        "title": "Codsiga Visa",
+        "description": "Gudbi codsiyada Visa una hubso shuruudaha gelitaanka."
+      },
+      {
+        "title": "Diiwaangelinta Ganacsiga",
+        "description": "Diiwaangeli ganacsiyo cusub isla markaana maamul rukhsadaha."
+      },
+      {
+        "title": "Aqoonsiga Qaranka",
+        "description": "Hel adeegyada aqoonsiga dijitaalka ah iyo cusboonaysiinta."
+      },
+      {
+        "title": "Bogga E-Baasaboor",
+        "description": "Codso ama cusboonaysii Baasaboor Soomaaliga Biometric."
+      }
+    ],
+    "cta": "Eeg Dhammaan Adeegyada →"
+  },
+
+  "CookieConsent": {
+    "message": "Waxaan isticmaalnaa cookies si aan u wanaajino khibraddaada isla markaana u falanqeyno isticmaalka bogga. Markaad sii waddo, waxaad oggolaatay isticmaalka cookies. <privacyLink>Akhri Siyaasadda Asturnaanta</privacyLink>",
+    "decline": "Diid",
+    "accept": "Aqbal"
+  },
+
+  "InvestPage": {
+    "title": "Maalgeli Soomaaliya",
+    "description": "Furitaanka awoodda Geeska Afrika — suuq furan oo u diyaarsan koboc iyo hal-abuurnimo.",
+    "sections": {
+      "pitch": {
+        "eyebrow": "Maxay Soomaaliya?",
+        "title": "Soo-jeedinta Maalgashiga",
+        "cards": [
+          {
+            "title": "Goob Istaraatiiji ah",
+            "description": "Albaabka u dhexeeya Badda Cas iyo Badweynta Hindiya, kuna xira Afrika, Bariga Dhexe, iyo Aasiya."
+          },
+          {
+            "title": "Kheyraad Aan Weli La Faa’iideysan",
+            "description": "Xeebta ugu dheer Afrika, dhul beereed ballaaran, iyo keyd tamareed oo aan la horumarin."
+          },
+          {
+            "title": "Jawiga Ganacsi ee La Casriyeeyay",
+            "description": "Xeerarka cusub ee shirkadaha iyo nidaamka SBRS ayaa fududeeyay bilaabista ganacsiga."
+          }
+        ]
+      },
+      "sectors": {
+        "eyebrow": "Qeybaha Muhiimka ah",
+        "title": "Qeybaha Mudnaanta u leh Maalgashiga",
+        "items": [
+          {
+            "title": "Xoolaha Nool",
+            "description": "Tiirka dhaqaalaha qaranka iyo hormuudka dhoofinta xoolaha nool."
+          },
+          {
+            "title": "Beeraha",
+            "description": "Dhul bacrin ah oo ku teedsan wabiyada Shabeelle iyo Jubba."
+          },
+          {
+            "title": "Tamarta La Cusboonaysiin Karo",
+            "description": "Awood sare oo qorrax iyo dabayl ah oo diyaar u ah maalgelin."
+          },
+          {
+            "title": "Dekedaha iyo Saadka",
+            "description": "Goob istaraatiiji ah oo ku taal marinada ganacsiga caalamiga ah."
+          },
+          {
+            "title": "ICT iyo Maaliyadda",
+            "description": "Bulsho ku tiirsan lacagaha mobilka iyo adeegyada fintech."
+          },
+          {
+            "title": "Dalxiiska iyo Martigelinta",
+            "description": "Xeebo dabiici ah iyo goobo taariikhi ah oo leh fursado dalxiis."
+          }
+        ]
+      },
+      "steps": {
+        "eyebrow": "Sameynta Ganacsi",
+        "title": "Bilow Safarkaaga",
+        "items": [
+          {
+            "title": "Diiwaangeli Shirkad",
+            "description": "Gudbi codsigaaga adigoo adeegsanaya bogga SBRS."
+          },
+          {
+            "title": "Hel Rukhsad",
+            "description": "La shaqee Wasaaradda Ganacsiga si aad u hesho rukhsadaha."
+          },
+          {
+            "title": "Dhiirrigelinta Maalgashiga",
+            "description": "La xiriir SOMINVEST si aad u hesho dhiirrigelinta mudnaanta leh."
+          }
+        ],
+        "sbrs_link_label": "Booqo SBRS",
+        "cta": "Booqo Bogga Ganacsiga ee Online (SBRS)"
+      }
+    }
+  },
+
+  "VisionPage": {
+    "title": "Himilada Qaranka ee Boqol-Sano 2060",
+    "description": "Khariidad-hagaajin lagu gaari karo Soomaaliya ammaan ah, dimoqraadi ah, isla markaana barwaaqo ah marka la gaaro boqol-guuradii xornimada.",
+    "sections": {
+      "mission": {
+        "eyebrow": "Hawlgalka Aasaasiga ah",
+        "title": "Safarka ku wajahan 2060",
+        "body": "Himilada 2060 waa qaab-dhismeedka fog ee Soomaaliya u dejisay isbeddel qaran, kuna saleysan maamul hufan, koboc loo wada dhan yahay, iyo tayada nololeed oo sarreysa."
+      },
+      "pillars": {
+        "eyebrow": "Tiirarka NDP-9",
+        "title": "Afarta Tiir ee Horumarka",
+        "items": [
+          {
+            "title": "Siyaasad loo wada dhan yahay & Dimuqraadiyeyn",
+            "description": "Dhameystirka Dastuurka Federaalka iyo hirgelinta hal-qof-hal-cod."
+          },
+          {
+            "title": "Amni & Ku-dhaqanka Sharciga",
+            "description": "La wareegidda amniga qaranka, dib-u-dhiska Ciidanka Qaranka, iyo maxkamado madax-bannaan."
+          },
+          {
+            "title": "Koboca Dhaqaalaha",
+            "description": "Ka faa’iideysiga Dhaqaalaha Buluugga ah, beeraha, iyo tamarta."
+          },
+          {
+            "title": "Horumarinta Bulshada",
+            "description": "Maalgelinta waxbarashada, caafimaadka, iyo awoodsiinta haweenka iyo dhalinyarada."
+          }
+        ]
+      },
+      "milestones": {
+        "eyebrow": "Marxaladaha Muhiimka ah",
+        "title": "Jidka loo Marayo 2060",
+        "items": [
+          {
+            "year": "2023",
+            "title": "Ku Biirista EAC",
+            "description": "Xubin ka noqoshada Bulshada Bariga Afrika."
+          },
+          {
+            "year": "2024",
+            "title": "Cafinta Daymaha (HIPC)",
+            "description": "Dhameystirka hanaanka cafinta daymaha."
+          },
+          {
+            "year": "2025",
+            "title": "Dib-u-eegista Dastuurka & Doorashooyinka",
+            "description": "Horumarinta dimuqraadiyadda iyo maamul-wanaagga."
+          },
+          {
+            "year": "2030",
+            "title": "Himilooyinka SDGs",
+            "description": "Horumar la taaban karo oo ku wajahan SDGs."
+          },
+          {
+            "year": "2060",
+            "title": "Xuska Boqol-Guurada",
+            "description": "Soomaaliya ammaan ah, dimuqraadi ah, oo barwaaqo ah."
+          }
+        ]
+      },
+      "downloads": {
+        "eyebrow": "Soo Degso",
+        "title": "Qorshaha Horumarinta Qaranka (NDP-9)",
+        "body": "Hel dukumiintiga siyaasadeed ee hagaya isbeddelka fog ee qaranka.",
+        "cta": "Soo Degso Qorshaha Horumarinta Qaranka (NDP-9)"
+      }
+    }
+  },
+
+  "ServicesPage": {
+    "title": "Adeegyada Muwaadiniinta",
+    "description": "Hel adeegyada dowladda, kuwa online iyo kuwa goob-joog ah.",
+    "sections": {
+      "digital": {
+        "eyebrow": "Dowlad-Dijitaal",
+        "title": "Adeegyada Dijitaalka ah",
+        "description": "Bogag ammaan ah oo lagu helo adeegyada muhiimka ah ee dowladda.",
+        "items": [
+          {
+            "title": "Diiwaangelinta Ganacsiga",
+            "description": "Ku diiwaangeli shirkad adigoo adeegsanaya SBRS."
+          },
+          {
+            "title": "Codsiga E-Visa",
+            "description": "Codso Visa gelitaan (Dalxiis/Ganacsi)."
+          },
+          {
+            "title": "Natiijooyinka Imtixaannada Qaranka",
+            "description": "Hubi natiijooyinka Fasalka 8aad iyo 12aad."
+          },
+          {
+            "title": "Macluumaadka Baasaboor",
+            "description": "Soo degso foomamka iyo shuruudaha."
+          }
+        ],
+        "cta": "Booqo bogga"
+      },
+      "general": {
+        "eyebrow": "Adeegyada Aasaasiga ah",
+        "title": "Adeegyada Guud",
+        "description": "Adeegyo si toos ah looga helo xafiisyada gobollada.",
+        "items": [
+          {
+            "title": "Ruqsadda Darawalnimada",
+            "description": "Waxaa laga helaa Taliska Booliiska Taraafikada iyo xarumaha gobollada."
+          },
+          {
+            "title": "Diiwaangelinta Rayidka",
+            "description": "Shahaadooyinka Dhalashada iyo Guurka ee Degmooyinka."
+          },
+          {
+            "title": "Diiwaangelinta Dhulka",
+            "description": "Maamulka Gobolka Banaadir / Maxkamadaha Maxalliga ah."
+          }
+        ]
+      },
+      "emergency": {
+        "eyebrow": "Badbaado",
+        "title": "Gargaarka Degdegga ah",
+        "description": "Lambarrada degdegga ah ee xaaladaha halista ah.",
+        "items": [
+          {
+            "title": "Booliis",
+            "number": "888",
+            "description": "Ka warbixinta dambiyada iyo khataraha degdegga ah."
+          },
+          {
+            "title": "Ambalaas",
+            "number": "999",
+            "description": "Gargaarka caafimaad ee degdegga ah."
+          },
+          {
+            "title": "Dab-damis",
+            "number": "555",
+            "description": "La-tacaalidda dabka iyo samatabbixinta."
+          },
+          {
+            "title": "Bisha Cas",
+            "number": "446",
+            "description": "Gargaarka bani’aadantinimo."
+          },
+          {
+            "title": "Khadka Talooyinka NISA",
+            "number": "991",
+            "description": "Warbixinno amni iyo digniino khatar."
+          }
+        ]
+      }
+    }
+  },
+
+  "ConstitutionPage": {
+    "title": "Dastuurka Ku-Meelgaarka ah",
+    "description": "Sharciga ugu sarreeya ee Jamhuuriyadda Federaalka ee Soomaaliya.",
+    "toc": {
+      "title": "Tusmada Mawduuca",
+      "download": "Soo Degso PDF"
+    },
+    "overview": {
+      "eyebrow": "Guudmar",
+      "title": "Qaab-dhismeedka Dastuuriga ah",
+      "download": "Soo Degso Dastuurka oo Dhammaystiran (PDF)"
+    },
+    "sections": [
+      {
+        "title": "Cutubka 1aad: Ku Dhawaaqidda Jamhuuriyadda",
+        "body": "Soomaaliya waa Jamhuuriyad Federaalka ah, Madax-bannaan, Dimuqraadi ah, kuna dhisan Dastuurka iyo Shareecada Islaamka."
+      },
+      {
+        "title": "Cutubka 2aad: Xuquuqda Aasaasiga ah",
+        "body": "Karaamada aadanaha, sinaanta, xorriyadda hadalka, iyo xuquuqda eedeysanaha waa la dhowrayaa."
+      },
+      {
+        "title": "Cutubka 3aad: Dhulka iyo Hantida",
+        "body": "Dhulku waa hanti dadweyne oo ay maamusho dowladda."
+      },
+      {
+        "title": "Cutubka 4aad: Matalaadda Dadweynaha",
+        "body": "Doorashooyinka iyo xisbiyada siyaasadeed ayaa saldhig u ah matalaadda."
+      },
+      {
+        "title": "Cutubka 5aad: Qaybsiga Awoodaha",
+        "body": "Awoodaha waxaa loo kala saaray Dowladda Federaalka iyo Dowlad-goboleedyada."
+      }
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 
 import SmartImage from "@/components/SmartImage";
@@ -101,4 +101,5 @@ export default function MinistryDirectory({ limit }) {
     </section>
   );
 }
+
 

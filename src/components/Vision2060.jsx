@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 export default function Vision2060() {
   return (
@@ -28,3 +28,4 @@ export default function Vision2060() {
     </section>
   );
 }
+

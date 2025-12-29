@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function CookieConsent() {
+  const t = useTranslations("CookieConsent");
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -37,24 +39,30 @@ export default function CookieConsent() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="text-sm text-gray-300">
                 <p>
-                  We use cookies to improve your experience and analyze site traffic. By continuing, you agree to our use of cookies.{' '}
-                  <Link href="/privacy-policy" className="underline hover:text-white">
-                    Read Privacy Policy
-                  </Link>
+                  {t.rich("message", {
+                    privacyLink: (chunks) => (
+                      <Link
+                        href="/legal/privacy"
+                        className="underline hover:text-white"
+                      >
+                        {chunks}
+                      </Link>
+                    ),
+                  })}
                 </p>
               </div>
-              <div className="flex items-center gap-4 flex-shrink-0">
+              <div className="flex items-center gap-4 shrink-0">
                 <button
                   onClick={handleDecline}
                   className="text-gray-300 hover:text-white font-medium text-sm px-6 py-2 rounded-lg"
                 >
-                  Decline
+                  {t("decline")}
                 </button>
                 <button
                   onClick={handleAccept}
                   className="bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-bold px-6 py-2 rounded-lg text-sm"
                 >
-                  Accept
+                  {t("accept")}
                 </button>
               </div>
             </div>

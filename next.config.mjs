@@ -1,4 +1,5 @@
 import withPWA from "@ducanh2912/next-pwa";
+import createNextIntlPlugin from "next-intl/plugin";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -6,7 +7,11 @@ const nextConfig = {
   turbopack: {},
 };
 
-export default withPWA({
+const withNextIntl = createNextIntlPlugin("./i18n.js");
+
+const withPwa = withPWA({
   dest: "public",
   disable: process.env.NODE_ENV === "development",
-})(nextConfig);
+});
+
+export default withNextIntl(withPwa(nextConfig));

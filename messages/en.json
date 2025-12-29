@@ -1,0 +1,387 @@
+{
+  "Navbar": {
+    "brand_prefix": "Federal Republic of",
+    "brand_name": "Somalia",
+    "search_placeholder": "Search",
+    "language_toggle_en": "Somali | English",
+    "language_toggle_so": "English | Soomaali",
+    "links": {
+      "home": "Home",
+      "nation": "The Nation",
+      "nation_children": [
+        "History",
+        "Culture & People",
+        "Food & Cuisine",
+        "Tourism"
+      ],
+      "government": "Government",
+      "government_children": [
+        "Constitution",
+        "National Vision 2060",
+        "The Executive",
+        "The Cabinet",
+        "The Parliament",
+        "Ministries",
+        "National Agencies",
+        "Member States"
+      ],
+      "services": "Services",
+      "services_children": [
+        "All Services",
+        "Emergency Contacts",
+        "Jobs & Careers",
+        "Invest"
+      ],
+      "contact": "Contact"
+    }
+  },
+  "Footer": {
+    "brand": "Federal Republic of Somalia",
+    "description": "Official communications and public information portal of the Federal Government.",
+    "address": "Villa Somalia, Mogadishu, Somalia",
+    "governance": {
+      "title": "Governance",
+      "links": [
+        "The Executive",
+        "The Cabinet",
+        "Parliament",
+        "Ministries",
+        "Member States",
+        "The Constitution"
+      ]
+    },
+    "services": {
+      "title": "Services & Resources",
+      "links": [
+        "Visa Application",
+        "Business Registration (SBRS)",
+        "National ID (NIRA)",
+        "Invest in Somalia",
+        "Vision 2060"
+      ]
+    },
+    "connect": {
+      "title": "Connect With Us",
+      "email": "info@opm.gov.so",
+      "social": [
+        "X",
+        "Facebook",
+        "Instagram",
+        "LinkedIn",
+        "Reddit"
+      ]
+    },
+    "legal": {
+      "copyright": "ЖИ 2025 Federal Republic of Somalia. All Rights Reserved.",
+      "tagline": "Designed for the People of Somalia",
+      "links": [
+        "Privacy Policy",
+        "Terms of Use",
+        "Accessibility"
+      ]
+    }
+  },
+  "Hero": {
+    "badge": "Official Portal of the Federal Government",
+    "title": "Federal Republic of Somalia",
+    "subtitle": "Peace, Progress, and Prosperity.",
+    "popular": "Popular: Passport, Visa, Jobs, Tender"
+  },
+  "EmergencyBar": {
+    "title": "EMERGENCY HOTLINES:",
+    "contacts": [
+      { "label": "Police", "number": "888" },
+      { "label": "Ambulance", "number": "999" },
+      { "label": "Fire", "number": "555" },
+      { "label": "Red Crescent", "number": "446" },
+      { "label": "NISA Tip-line", "number": "991" }
+    ]
+  },
+  "KeyServices": {
+    "title": "Online Government Services",
+    "services": [
+      {
+        "title": "Visa Application",
+        "description": "Submit visa requests and view entry requirements."
+      },
+      {
+        "title": "Business Registration",
+        "description": "Register new businesses and manage permits."
+      },
+      {
+        "title": "National ID",
+        "description": "Access digital identity services and updates."
+      },
+      {
+        "title": "E-Passport Portal",
+        "description": "Apply for or renew your Somali Biometric Passport."
+      }
+    ],
+    "cta": "View All Services ->"
+  },
+  "CookieConsent": {
+    "message": "We use cookies to improve your experience and analyze site traffic. By continuing, you agree to our use of cookies. <privacyLink>Read Privacy Policy</privacyLink>",
+    "decline": "Decline",
+    "accept": "Accept"
+  },
+  "InvestPage": {
+    "title": "Invest in Somalia",
+    "description": "Unlocking the potential of the Horn of Africa. A frontier for growth and innovation.",
+    "sections": {
+      "pitch": {
+        "eyebrow": "Why Somalia?",
+        "title": "The Investment Pitch",
+        "cards": [
+          {
+            "title": "Strategic Location",
+            "description": "The gateway to the Red Sea and Indian Ocean, connecting African markets to the Middle East and Asia."
+          },
+          {
+            "title": "Untapped Resources",
+            "description": "Home to the longest coastline in Africa, vast arable land, and unexploited energy reserves."
+          },
+          {
+            "title": "Reformed Business Climate",
+            "description": "New Company Laws and the One-Stop Business Registration System (SBRS) make starting a business faster than ever."
+          }
+        ]
+      },
+      "sectors": {
+        "eyebrow": "Key Sectors",
+        "title": "Priority Investment Sectors",
+        "items": [
+          {
+            "title": "Livestock",
+            "description": "The backbone of the economy. World leader in live animal exports."
+          },
+          {
+            "title": "Agriculture",
+            "description": "Vast arable land along the Shabelle and Jubba rivers. Opportunities in bananas, sesame, and lemons."
+          },
+          {
+            "title": "Renewable Energy",
+            "description": "Highest solar potential in the region. Investment ready for wind and solar grids."
+          },
+          {
+            "title": "Ports & Logistics",
+            "description": "Strategic location on the Red Sea route. Modernizing ports to serve the Horn of Africa."
+          },
+          {
+            "title": "ICT & Finance",
+            "description": "A cashless society driven by mobile money. Thriving telecom and fintech sector."
+          },
+          {
+            "title": "Tourism & Hospitality",
+            "description": "Untapped potential in pristine beaches and historical sites for eco-tourism and hotels."
+          }
+        ]
+      },
+      "steps": {
+        "eyebrow": "Doing Business",
+        "title": "Start Your Journey",
+        "items": [
+          {
+            "title": "Register Company",
+            "description": "Submit your application through the SBRS portal."
+          },
+          {
+            "title": "Obtain License",
+            "description": "Coordinate with the Ministry of Commerce for licensing."
+          },
+          {
+            "title": "Investment Incentives",
+            "description": "Engage SOMINVEST for priority sector incentives."
+          }
+        ],
+        "sbrs_link_label": "Visit SBRS",
+        "cta": "Visit the Online Business Portal (SBRS)"
+      }
+    }
+  },
+  "VisionPage": {
+    "title": "Centennial Vision 2060",
+    "description": "A roadmap to a secure, democratic, and prosperous Somalia by our 100th year of independence.",
+    "sections": {
+      "mission": {
+        "eyebrow": "The Core Mission",
+        "title": "The Journey to 2060",
+        "body": "Vision 2060 is Somalia's long-term framework to transform the nation into a middle-income economy anchored by effective governance, inclusive growth, and a high quality of life. Recent milestones like the HIPC Debt Relief Completion and accession to the East African Community (EAC) provide critical foundations for sustained national renewal."
+      },
+      "pillars": {
+        "eyebrow": "NDP-9 Pillars",
+        "title": "The Four Pillars of Development",
+        "items": [
+          {
+            "title": "Inclusive Politics & Democratization",
+            "description": "Finalizing the Federal Constitution, implementing One Person, One Vote elections, and strengthening the federal member state system."
+          },
+          {
+            "title": "Security & Rule of Law",
+            "description": "Assuming full security responsibility from ATMIS, rebuilding the National Army (SNA), and establishing independent courts to ensure justice for all."
+          },
+          {
+            "title": "Economic Growth",
+            "description": "Leveraging the Blue Economy (Fisheries), modernizing Agriculture, and energy diversification. Creating a welcoming climate for foreign and diaspora investment."
+          },
+          {
+            "title": "Social Development",
+            "description": "Investing in human capital: Universal primary education, accessible healthcare, and empowering women and youth in the workforce."
+          }
+        ]
+      },
+      "milestones": {
+        "eyebrow": "Key Milestones",
+        "title": "The Road to 2060",
+        "items": [
+          {
+            "year": "2023",
+            "title": "Admission to EAC",
+            "description": "Joining the East African Community."
+          },
+          {
+            "year": "2024",
+            "title": "Debt Relief (HIPC)",
+            "description": "Completion of the debt relief process."
+          },
+          {
+            "year": "2025",
+            "title": "Constitutional Review & Elections",
+            "description": "Advancing electoral reforms and governance."
+          },
+          {
+            "year": "2030",
+            "title": "Achieving SDGs",
+            "description": "Progress toward the Sustainable Development Goals."
+          },
+          {
+            "year": "2060",
+            "title": "Centennial Celebration",
+            "description": "A secure, democratic, and prosperous Somalia."
+          }
+        ]
+      },
+      "downloads": {
+        "eyebrow": "Downloads",
+        "title": "National Development Plan (NDP-9)",
+        "body": "Access the full policy framework guiding Somalia's long-term transformation agenda.",
+        "cta": "Download National Development Plan (NDP-9)"
+      }
+    }
+  },
+  "ServicesPage": {
+    "title": "Citizen Services",
+    "description": "Access government services online and offline.",
+    "sections": {
+      "digital": {
+        "eyebrow": "E-Government",
+        "title": "Digital Services",
+        "description": "Secure portals to access core government services online.",
+        "items": [
+          {
+            "title": "Business Registration",
+            "description": "Register a company online via SBRS."
+          },
+          {
+            "title": "E-Visa Application",
+            "description": "Apply for entry visa (Tourist/Business)."
+          },
+          {
+            "title": "National Exam Results",
+            "description": "Check Grade 8 & 12 results."
+          },
+          {
+            "title": "Passport Information",
+            "description": "Download forms and view requirements."
+          }
+        ],
+        "cta": "Visit portal"
+      },
+      "general": {
+        "eyebrow": "Essential Services",
+        "title": "General Services",
+        "description": "In-person services delivered through regional offices.",
+        "items": [
+          {
+            "title": "Driver's License",
+            "description": "Available at Traffic Police HQ and Regional Centers."
+          },
+          {
+            "title": "Civil Registration",
+            "description": "Birth and Marriage Certificates at Local Municipality."
+          },
+          {
+            "title": "Land Registration",
+            "description": "Benadir Regional Administration / Local Courts."
+          }
+        ]
+      },
+      "emergency": {
+        "eyebrow": "Safety",
+        "title": "Emergency Assistance",
+        "description": "Immediate support numbers for urgent situations.",
+        "items": [
+          {
+            "title": "Police",
+            "number": "888",
+            "description": "For reporting crimes and immediate danger."
+          },
+          {
+            "title": "Ambulance",
+            "number": "999",
+            "description": "Medical emergencies and urgent transport."
+          },
+          {
+            "title": "Fire",
+            "number": "555",
+            "description": "Fire outbreaks and rescue response."
+          },
+          {
+            "title": "Red Crescent",
+            "number": "446",
+            "description": "Humanitarian relief and emergency support."
+          },
+          {
+            "title": "NISA Tip-line",
+            "number": "991",
+            "description": "Security tips and threat reporting."
+          }
+        ]
+      }
+    }
+  },
+  "ConstitutionPage": {
+    "title": "The Provisional Constitution",
+    "description": "The Supreme Law of the Federal Republic of Somalia.",
+    "toc": {
+      "title": "Table of Contents",
+      "download": "Download PDF"
+    },
+    "overview": {
+      "eyebrow": "Overview",
+      "title": "The Constitutional Framework",
+      "download": "Download Full Constitution (PDF)"
+    },
+    "sections": [
+      {
+        "title": "Chapter 1: Declaration of the Republic",
+        "body": "Somalia is a Federal, Sovereign, and Democratic Republic based on the Constitution and Islamic Sharia."
+      },
+      {
+        "title": "Chapter 2: Fundamental Rights",
+        "body": "Human dignity, equality, freedom of expression, and the rights of the accused are protected."
+      },
+      {
+        "title": "Chapter 3: Land & Property",
+        "body": "Land belongs to the people and is regulated by the state."
+      },
+      {
+        "title": "Chapter 4: Public Representation",
+        "body": "Elections and political parties form the basis of representation."
+      },
+      {
+        "title": "Chapter 5: Devolution of Powers",
+        "body": "Powers are distributed between the Federal Government and Member States."
+      }
+    ]
+  }
+}

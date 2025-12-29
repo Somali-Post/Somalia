@@ -1,13 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { ChevronDown, Menu, Search, X } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
+  { key: "home", label: "Home", href: "/" },
   {
+    key: "nation",
     label: "The Nation",
     children: [
       { label: "History", href: "/nation/history" },
@@ -17,6 +20,7 @@ const NAV_LINKS = [
     ],
   },
   {
+    key: "gov",
     label: "Government",
     children: [
       { label: "Constitution", href: "/government/constitution" },
@@ -30,6 +34,7 @@ const NAV_LINKS = [
     ],
   },
   {
+    key: "services",
     label: "Services",
     children: [
       { label: "All Services", href: "/services" },
@@ -38,17 +43,41 @@ const NAV_LINKS = [
       { label: "Invest", href: "/invest" },
     ],
   },
-  { label: "Contact", href: "/contact" },
+  { key: "contact", label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
-  const [lang, setLang] = useState("EN");
+  const t = useTranslations("Navbar");
+  const pathname = usePathname();
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
 
-  const toggleDropdown = (label) => {
-    setOpenDropdown((current) => (current === label ? null : label));
+  const toggleDropdown = (key) => {
+    setOpenDropdown((current) => (current === key ? null : key));
   };
+
+  const toggleLanguage = () => {
+    if (!pathname) {
+      return;
+    }
+
+    if (pathname.startsWith("/en")) {
+      router.push(pathname.replace("/en", "/so"));
+      return;
+    }
+
+    if (pathname.startsWith("/so")) {
+      router.push(pathname.replace("/so", "/en"));
+      return;
+    }
+
+    router.push(`/en${pathname.startsWith("/") ? pathname : `/${pathname}`}`);
+  };
+
+  const languageLabel = pathname?.startsWith("/so")
+    ? "English | Soomaali"
+    : "Somali | English";
 
   return (
     <header className="sticky top-0 z-50 h-20 bg-white shadow-sm">
@@ -76,7 +105,7 @@ export default function Navbar() {
                     type="button"
                     className="flex items-center gap-1 text-sm font-medium text-slate-700 transition hover:text-blue-600"
                   >
-                    {link.label}
+                    {link.key ? t(link.key) : link.label}
                     <ChevronDown className="h-4 w-4" />
                   </button>
                   <div className="absolute left-0 top-full hidden w-60 rounded-xl border border-slate-200 bg-white p-3 shadow-lg group-hover:block">
@@ -104,7 +133,7 @@ export default function Navbar() {
                 href={link.href}
                 className="text-sm font-medium text-slate-700 transition hover:text-blue-600"
               >
-                {link.label}
+                {link.key ? t(link.key) : link.label}
               </Link>
             );
           })}
@@ -127,10 +156,10 @@ export default function Navbar() {
           />
           <button
             type="button"
-            onClick={() => setLang((current) => (current === "EN" ? "SO" : "EN"))}
+            onClick={toggleLanguage}
             className="hidden cursor-pointer rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-600 hover:bg-gray-100 hover:text-blue-600 md:inline-flex sm:text-sm"
           >
-            {lang === "EN" ? "Somali | English" : "English | Soomaali"}
+            {languageLabel}
           </button>
           <button
             type="button"
@@ -156,15 +185,15 @@ export default function Navbar() {
             </div>
             {NAV_LINKS.map((link) => {
               if (link.children) {
-                const isOpen = openDropdown === link.label;
+                const isOpen = openDropdown === link.key;
                 return (
                   <div key={link.label} className="space-y-2">
                     <button
                       type="button"
-                      onClick={() => toggleDropdown(link.label)}
+                      onClick={() => toggleDropdown(link.key)}
                       className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:text-blue-600"
                     >
-                      {link.label}
+                      {link.key ? t(link.key) : link.label}
                       <ChevronDown
                         className={`h-4 w-4 transition ${
                           isOpen ? "rotate-180" : ""
@@ -202,16 +231,16 @@ export default function Navbar() {
                   className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:text-blue-600"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {link.label}
+                  {link.key ? t(link.key) : link.label}
                 </Link>
               );
             })}
             <button
               type="button"
-              onClick={() => setLang((current) => (current === "EN" ? "SO" : "EN"))}
+              onClick={toggleLanguage}
               className="flex w-full cursor-pointer items-center justify-between rounded-lg border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-gray-100"
             >
-              <span>{lang === "EN" ? "Somali | English" : "English | Soomaali"}</span>
+              <span>{languageLabel}</span>
               <Image
                 src="/logos/flag.png"
                 alt="Somalia flag"
@@ -226,4 +255,5 @@ export default function Navbar() {
     </header>
   );
 }
+
 

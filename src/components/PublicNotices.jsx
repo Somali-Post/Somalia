@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Download } from "lucide-react";
 
 const TENDERS = [
@@ -72,3 +72,4 @@ export default function PublicNotices() {
     </section>
   );
 }
+

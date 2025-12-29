@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Building2, FileText } from "lucide-react";
 
 import { agencies } from "@/data/agencies";
@@ -199,3 +199,4 @@ export default function GlobalSearch() {
     </div>
   );
 }
+

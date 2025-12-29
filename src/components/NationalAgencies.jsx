@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 import SmartImage from "@/components/SmartImage";
 import { agencies } from "@/data/agencies";
@@ -72,3 +72,4 @@ export default function NationalAgencies({ limit }) {
     </section>
   );
 }
+

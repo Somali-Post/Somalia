@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { ArrowRight, Calendar } from "lucide-react";
 
 import { newsArticles } from "@/data/news";
@@ -83,3 +83,4 @@ export default function LatestNews() {
     </section>
   );
 }
+

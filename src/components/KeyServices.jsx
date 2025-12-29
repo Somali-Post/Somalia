@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { Book, Briefcase, Globe, UserCheck } from "lucide-react";
 
@@ -98,4 +98,5 @@ export default function KeyServices() {
     </section>
   );
 }
+
 
