@@ -20,6 +20,11 @@ const SERVICES = [
     description: "Access digital identity services and updates.",
     icon: UserCheck,
   },
+  {
+    title: "E-Passport Portal",
+    description: "Apply for or renew your Somali Biometric Passport.",
+    icon: Book,
+  },
 ];
 
 export default function KeyServices() {
@@ -86,7 +91,7 @@ export default function KeyServices() {
             href="/services"
             className="text-sm font-semibold text-blue-600 transition hover:text-blue-700"
           >
-            View All Services
+            {"View All Services ->"}
           </Link>
         </div>
       </div>

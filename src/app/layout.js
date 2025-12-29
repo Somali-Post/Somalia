@@ -14,10 +14,13 @@ export const metadata = {
   description:
     "The official digital gateway to the Government of Somalia. Access services, ministries, and news from the Federal Republic.",
   icons: { icon: "/favicon.ico" },
-  themeColor: "#0B4F8A",
 };
 
-export const viewport = { width: "device-width", initialScale: 1 };
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0B4F8A",
+};
 
 export default function RootLayout({ children }) {
   const jsonLd = {
