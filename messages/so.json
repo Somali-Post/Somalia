@@ -35,7 +35,8 @@
       }
     },
     "brand_full": "Jamhuuriyadda Federaalka Soomaaliya",
-    "language_toggle_short": "EN | SO | AR"
+    "language_toggle_short": "EN | SO | AR",
+    "brand_name_mobile": "Soomaaliya"
   },
   "Footer": {
     "brand": "Jamhuuriyadda Federaalka ee Soomaaliya",
