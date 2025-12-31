@@ -26,7 +26,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang={locale} dir={dir}>
       <body
-        className={`${
+        className={`${arabic.variable} ${
           locale === "ar" ? arabic.className : inter.className
         } antialiased`}
       >

@@ -118,7 +118,12 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 h-20 bg-white shadow-sm">
       <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
-        <Link href={`/${locale}`} className="flex items-center gap-3">
+        <Link
+          href={`/${locale}`}
+          className={`flex min-w-0 items-center gap-3 ${
+            locale === "ar" ? "font-arabic" : ""
+          }`}
+        >
           <Image
             src="/logos/coat-of-arms.png"
             width={45}
@@ -131,7 +136,7 @@ export default function Navbar() {
               {tNav("brand_prefix")}{" "}
               <br className="hidden lg:block" /> {tNav("brand_name")}
             </span>
-            <span className="block text-base font-semibold text-blue-800 md:hidden">
+            <span className="block max-w-[8.5rem] truncate text-base font-semibold text-blue-800 md:hidden">
               {tNav("brand_name_mobile")}
             </span>
           </div>
@@ -180,7 +185,7 @@ export default function Navbar() {
           })}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           <button
             type="button"
             aria-label="Search"

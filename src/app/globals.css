@@ -11,6 +11,10 @@ body {
   color: #1f2937;
 }
 
+.font-arabic {
+  font-family: var(--font-arabic);
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
