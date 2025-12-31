@@ -19,7 +19,7 @@ export default function PageHeader({ title, description, breadcrumb = [] }) {
         />
       </div>
 
-      <div className="container relative z-10 mx-auto flex h-full flex-col justify-center px-6">
+      <div className="container relative z-10 mx-auto flex h-full flex-col justify-center px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export default function PageHeader({ title, description, breadcrumb = [] }) {
             </nav>
           )}
 
-          <h1 className="text-5xl font-bold text-white">{title}</h1>
+          <h1 className="text-3xl font-bold text-white md:text-5xl">{title}</h1>
 
           {description && (
             <p className="max-w-2xl text-lg font-light text-blue-100">

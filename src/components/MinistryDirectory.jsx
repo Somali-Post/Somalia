@@ -58,7 +58,7 @@ export default function MinistryDirectory({ limit }) {
                 variants={cardVariants}
               >
                 <div className="border-t-4 border-blue-500" />
-                <div className="flex h-full flex-col gap-4 px-6 pb-6 pt-5">
+                <div className="flex h-full flex-col gap-4 p-6">
                   <div className="flex items-center gap-3">
                     <span className="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-slate-100 bg-white">
                       <SmartImage

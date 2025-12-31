@@ -1,7 +1,13 @@
 import { NextIntlClientProvider } from "next-intl";
+import { Noto_Sans_Arabic } from "next/font/google";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import CookieConsent from "@/components/CookieConsent";
 import { routing } from "@/i18n/routing";
+
+const arabic = Noto_Sans_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-arabic",
+});
 
 export const metadata = {
   title: {
@@ -47,7 +53,7 @@ export default async function LocaleLayout({ children, params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <NextIntlClientProvider locale={locale} messages={messages}>
-        <div dir={dir}>
+        <div dir={dir} className={locale === "ar" ? arabic.className : ""}>
           {children}
           <CookieConsent />
         </div>

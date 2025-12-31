@@ -57,7 +57,6 @@ export default function NationalAgencies({ limit }) {
                     {t("view_profile")}
                   </Link>
                 </div>
-                <span className="pointer-events-none absolute bottom-0 right-0 h-20 w-20 -translate-x-4 translate-y-4 rounded-full bg-blue-600/10" />
               </article>
             );
           })}
