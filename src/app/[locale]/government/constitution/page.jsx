@@ -2,50 +2,23 @@
 
 import { Link } from "@/i18n/navigation";
 import { FileDown } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 
-const SECTIONS = [
-  {
-    id: "chapter-1",
-    title: "Chapter 1: Declaration of the Republic",
-    body:
-      "Somalia is a Federal, Sovereign, and Democratic Republic based on the Constitution and Islamic Sharia.",
-  },
-  {
-    id: "chapter-2",
-    title: "Chapter 2: Fundamental Rights",
-    body:
-      "Human dignity, equality, freedom of expression, and the rights of the accused are protected.",
-  },
-  {
-    id: "chapter-3",
-    title: "Chapter 3: Land & Property",
-    body: "Land belongs to the people and is regulated by the state.",
-  },
-  {
-    id: "chapter-4",
-    title: "Chapter 4: Public Representation",
-    body: "Elections and political parties form the basis of representation.",
-  },
-  {
-    id: "chapter-5",
-    title: "Chapter 5: Devolution of Powers",
-    body:
-      "Powers are distributed between the Federal Government and Member States.",
-  },
-];
-
 export default function ConstitutionPage() {
+  const t = useTranslations("ConstitutionPage");
+  const sections = t.raw("sections");
+
   return (
     <>
       <Navbar />
       <main className="bg-white text-slate-900">
         <PageHeader
-          title="The Provisional Constitution"
-          description="The Supreme Law of the Federal Republic of Somalia."
+          title={t("title")}
+          description={t("description")}
         />
 
         <section className="py-16">
@@ -54,21 +27,21 @@ export default function ConstitutionPage() {
               <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
                 <div className="flex items-center justify-between">
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-                    Table of Contents
+                    {t("toc.title")}
                   </p>
                   <Link
                     href="#"
                     className="inline-flex items-center gap-2 rounded-full border border-blue-600 px-4 py-2 text-xs font-semibold text-blue-600 transition hover:bg-blue-600 hover:text-white"
                   >
                     <FileDown className="h-4 w-4" />
-                    Download PDF
+                    {t("toc.download")}
                   </Link>
                 </div>
                 <ul className="mt-6 space-y-3 text-sm text-slate-600">
-                  {SECTIONS.map((section) => (
-                    <li key={section.id}>
+                  {sections.map((section, index) => (
+                    <li key={`${section.title}-${index}`}>
                       <a
-                        href={`#${section.id}`}
+                        href={`#section-${index}`}
                         className="font-semibold text-slate-700 hover:text-blue-600"
                       >
                         {section.title}
@@ -83,7 +56,7 @@ export default function ConstitutionPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-                    Overview
+                    {t("overview.eyebrow")}
                   </p>
                   <h2
                     className="text-3xl font-semibold text-blue-900"
@@ -91,7 +64,7 @@ export default function ConstitutionPage() {
                       fontFamily: '"Playfair Display", "Times New Roman", serif',
                     }}
                   >
-                    The Constitutional Framework
+                    {t("overview.title")}
                   </h2>
                 </div>
                 <Link
@@ -99,14 +72,14 @@ export default function ConstitutionPage() {
                   className="hidden items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-xs font-semibold text-white transition hover:bg-blue-700 sm:inline-flex"
                 >
                   <FileDown className="h-4 w-4" />
-                  Download Full Constitution (PDF)
+                  {t("overview.download")}
                 </Link>
               </div>
 
-              {SECTIONS.map((section) => (
+              {sections.map((section, index) => (
                 <section
-                  key={section.id}
-                  id={section.id}
+                  key={`${section.title}-${index}`}
+                  id={`section-${index}`}
                   className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
                 >
                   <h3

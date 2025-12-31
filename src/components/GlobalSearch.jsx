@@ -2,35 +2,36 @@
 
 import { useMemo, useState } from "react";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { Building2, FileText } from "lucide-react";
 
 import { agencies } from "@/data/agencies";
 import { jobListings } from "@/data/jobs-static";
 import { ministries } from "@/data/ministries";
 
-const staticPages = [
+const STATIC_PAGES = [
   {
-    name: "Constitution",
+    nameKey: "static_pages.constitution",
     url: "/government/constitution",
     keywords: "law legal rights",
   },
   {
-    name: "Vision 2060",
+    nameKey: "static_pages.vision",
     url: "/government/vision",
     keywords: "plan strategy ndp",
   },
   {
-    name: "Invest in Somalia",
+    nameKey: "static_pages.invest",
     url: "/invest",
     keywords: "business economy trade",
   },
   {
-    name: "E-Services",
+    nameKey: "static_pages.services",
     url: "/services",
     keywords: "passport visa application",
   },
   {
-    name: "Jobs & Careers",
+    nameKey: "static_pages.jobs",
     url: "/services/jobs",
     keywords: "work vacancy employment somali",
   },
@@ -38,6 +39,7 @@ const staticPages = [
 
 export default function GlobalSearch() {
   const [query, setQuery] = useState("");
+  const t = useTranslations("GlobalSearch");
 
   const results = useMemo(() => {
     const term = query.trim().toLowerCase();
@@ -68,8 +70,10 @@ export default function GlobalSearch() {
         label: ministry.name,
         url: `/government/ministries/${ministry.slug}`,
         meta: matchesAny([ministry.ministerName])
-          ? `Minister: ${ministry.ministerName?.replace(/^H\.E\.\s*/, "")}`
-          : "Ministry",
+          ? t("meta.minister", {
+              name: ministry.ministerName?.replace(/^H\.E\.\s*/, ""),
+            })
+          : t("meta.ministry"),
       }));
 
     const agencyResults = agencies
@@ -80,7 +84,7 @@ export default function GlobalSearch() {
         type: "Agency",
         label: agency.name,
         url: `/government/agencies/${agency.slug}`,
-        meta: "Agency",
+        meta: t("meta.agency"),
       }));
 
     const jobResults = jobListings
@@ -92,20 +96,20 @@ export default function GlobalSearch() {
         meta: job.company,
       }));
 
-    const pageResults = staticPages
-      .filter((page) => matchesAny([page.name, page.keywords]))
-      .map((page) => ({
+    const pageResults = STATIC_PAGES.filter((page) =>
+      matchesAny([t(page.nameKey), page.keywords]),
+    ).map((page) => ({
         type: "Page",
-        label: page.name,
+        label: t(page.nameKey),
         url: page.url,
-        meta: "Page",
+        meta: t("meta.page"),
       }));
 
     return {
       government: [...ministryResults, ...agencyResults].slice(0, 5),
       services: [...jobResults, ...pageResults].slice(0, 5),
     };
-  }, [query]);
+  }, [query, t]);
 
   return (
     <div className="relative w-full">
@@ -114,14 +118,14 @@ export default function GlobalSearch() {
           type="text"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Search for services, ministries, or documents..."
+          placeholder={t("placeholder")}
           className="w-full rounded-lg border border-white/20 bg-white px-4 py-4 text-base text-slate-900 shadow-xl outline-none placeholder:text-slate-400 focus:border-blue-300"
         />
         <button
           type="button"
           className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-4 text-sm font-semibold text-white shadow-lg transition hover:bg-blue-700"
         >
-          Search
+          {t("button")}
         </button>
       </div>
 
@@ -132,7 +136,7 @@ export default function GlobalSearch() {
               {results.government.length > 0 && (
                 <div className="border-b border-slate-100">
                   <p className="px-4 pt-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                    Government
+                    {t("sections.government")}
                   </p>
                   <ul className="pb-3">
                     {results.government.map((result) => (
@@ -162,7 +166,7 @@ export default function GlobalSearch() {
               {results.services.length > 0 && (
                 <div>
                   <p className="px-4 pt-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                    Services & Opportunities
+                    {t("sections.services")}
                   </p>
                   <ul className="pb-3">
                     {results.services.map((result) => (
@@ -191,7 +195,7 @@ export default function GlobalSearch() {
             </div>
           ) : (
             <div className="px-4 py-4 text-sm text-slate-500">
-              No results found.
+              {t("no_results")}
             </div>
           )}
         </div>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import {
   Facebook,
   Instagram,
@@ -12,35 +13,40 @@ import {
 } from "lucide-react";
 
 const GOVERNMENT_LINKS = [
-  { label: "The Executive", href: "/government/executive" },
-  { label: "The Cabinet", href: "/government/cabinet" },
-  { label: "Parliament", href: "/government/parliament" },
-  { label: "Ministries", href: "/government/ministries" },
-  { label: "Member States", href: "/government/states" },
-  { label: "The Constitution", href: "/government/constitution" },
+  { href: "/government/executive" },
+  { href: "/government/cabinet" },
+  { href: "/government/parliament" },
+  { href: "/government/ministries" },
+  { href: "/government/states" },
+  { href: "/government/constitution" },
 ];
 
 const SERVICE_LINKS = [
-  { label: "Visa Application", href: "/services" },
-  { label: "Business Registration (SBRS)", href: "https://ebusiness.gov.so" },
-  { label: "National ID (NIRA)", href: "/government/agencies/nira" },
-  { label: "Invest in Somalia", href: "/invest" },
-  { label: "Vision 2060", href: "/government/vision" },
+  { href: "/services" },
+  { href: "https://ebusiness.gov.so" },
+  { href: "/government/agencies/nira" },
+  { href: "/invest" },
+  { href: "/government/vision" },
 ];
 
 const SOCIAL_LINKS = [
-  { label: "X", href: "https://x.com/somalia", icon: Twitter },
-  { label: "Facebook", href: "https://www.facebook.com/Somalia/", icon: Facebook },
-  { label: "Instagram", href: "https://www.instagram.com/somalia/", icon: Instagram },
+  { href: "https://x.com/somalia", icon: Twitter },
+  { href: "https://www.facebook.com/Somalia/", icon: Facebook },
+  { href: "https://www.instagram.com/somalia/", icon: Instagram },
   {
-    label: "LinkedIn",
     href: "https://so.linkedin.com/company/federalgovernmentofsomalia",
     icon: Linkedin,
   },
-  { label: "Reddit", href: "https://www.reddit.com/r/Somalia/", icon: MessageCircle },
+  { href: "https://www.reddit.com/r/Somalia/", icon: MessageCircle },
 ];
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+  const governanceLinks = t.raw("governance.links");
+  const serviceLinks = t.raw("services.links");
+  const socialLabels = t.raw("connect.social");
+  const legalLinks = t.raw("legal.links");
+
   return (
     <footer className="text-white">
       <div className="bg-blue-950 py-16">
@@ -54,79 +60,79 @@ export default function Footer() {
                 alt="Coat of Arms"
                 className="rounded-full"
               />
-              <p className="text-lg font-semibold">
-                Federal Republic of Somalia
-              </p>
+              <p className="text-lg font-semibold">{t("brand")}</p>
             </div>
-            <p className="text-sm text-blue-100">
-              Official communications and public information portal of the
-              Federal Government.
-            </p>
-            <p className="text-sm text-blue-100">
-              Villa Somalia, Mogadishu, Somalia
-            </p>
+            <p className="text-sm text-blue-100">{t("description")}</p>
+            <p className="text-sm text-blue-100">{t("address")}</p>
           </div>
 
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-yellow-500">
-              Governance
+              {t("governance.title")}
             </h3>
             <ul className="mt-5 space-y-3 text-sm text-blue-100">
-              {GOVERNMENT_LINKS.map((link) => (
-                <li key={link.label}>
-                  <Link className="transition hover:text-white" href={link.href}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {GOVERNMENT_LINKS.map((link, index) => {
+                const label = governanceLinks[index] ?? "";
+                return (
+                  <li key={link.href}>
+                    <Link className="transition hover:text-white" href={link.href}>
+                      {label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-yellow-500">
-              Services & Resources
+              {t("services.title")}
             </h3>
             <ul className="mt-5 space-y-3 text-sm text-blue-100">
-              {SERVICE_LINKS.map((link) => (
-                <li key={link.label}>
-                  {link.href.startsWith("http") ? (
-                    <a
-                      className="transition hover:text-white"
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link className="transition hover:text-white" href={link.href}>
-                      {link.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
+              {SERVICE_LINKS.map((link, index) => {
+                const label = serviceLinks[index] ?? "";
+                return (
+                  <li key={link.href}>
+                    {link.href.startsWith("http") ? (
+                      <a
+                        className="transition hover:text-white"
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {label}
+                      </a>
+                    ) : (
+                      <Link className="transition hover:text-white" href={link.href}>
+                        {label}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
           <div className="space-y-5">
             <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-yellow-500">
-              Connect With Us
+              {t("connect.title")}
             </h3>
             <div className="flex items-center gap-3 text-sm text-blue-100">
               <Mail className="h-4 w-4 text-yellow-500" />
-              <span>info@opm.gov.so</span>
+              <span>{t("connect.email")}</span>
             </div>
             <div className="flex flex-wrap gap-3">
-              {SOCIAL_LINKS.map((social) => {
+              {SOCIAL_LINKS.map((social, index) => {
                 const Icon = social.icon;
+                const label = socialLabels[index] ?? "";
                 return (
                   <a
-                    key={social.label}
+                    key={social.href}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-yellow-500 hover:text-yellow-500"
-                    aria-label={social.label}
+                    aria-label={label}
                   >
                     <Icon className="h-5 w-5" />
                   </a>
@@ -139,24 +145,22 @@ export default function Footer() {
 
       <div className="bg-blue-900">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-6 text-center text-xs text-blue-100 md:flex-row md:text-left">
-          <span>© 2025 Federal Republic of Somalia. All Rights Reserved.</span>
-          <span className="text-center">
-            Designed for the People of Somalia
-          </span>
+          <span>{t("legal.copyright")}</span>
+          <span className="text-center">{t("legal.tagline")}</span>
           <span className="flex flex-wrap items-center justify-center gap-2 md:justify-end">
             <Link href="/legal/privacy" className="transition hover:text-white">
-              Privacy Policy
+              {legalLinks[0] ?? ""}
             </Link>
             <span className="text-blue-100/60">|</span>
             <Link href="/legal/terms" className="transition hover:text-white">
-              Terms of Use
+              {legalLinks[1] ?? ""}
             </Link>
             <span className="text-blue-100/60">|</span>
             <Link
               href="/legal/accessibility"
               className="transition hover:text-white"
             >
-              Accessibility
+              {legalLinks[2] ?? ""}
             </Link>
           </span>
         </div>
@@ -164,4 +168,3 @@ export default function Footer() {
     </footer>
   );
 }
-

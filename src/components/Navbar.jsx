@@ -5,79 +5,115 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { ChevronDown, Menu, Search, X } from "lucide-react";
 
-const NAV_LINKS = [
-  { key: "home", label: "Home", href: "/" },
-  {
-    key: "nation",
-    label: "The Nation",
-    children: [
-      { label: "History", href: "/nation/history" },
-      { label: "Culture & People", href: "/nation/culture" },
-      { label: "Food & Cuisine", href: "/nation/food" },
-      { label: "Tourism", href: "/nation/tourism" },
-    ],
-  },
-  {
-    key: "gov",
-    label: "Government",
-    children: [
-      { label: "Constitution", href: "/government/constitution" },
-      { label: "National Vision 2060", href: "/government/vision" },
-      { label: "The Executive", href: "/government/executive" },
-      { label: "The Cabinet", href: "/government/cabinet" },
-      { label: "The Parliament", href: "/government/parliament" },
-      { label: "Ministries", href: "/government/ministries" },
-      { label: "National Agencies", href: "/government/agencies" },
-      { label: "Member States", href: "/government/states" },
-    ],
-  },
-  {
-    key: "services",
-    label: "Services",
-    children: [
-      { label: "All Services", href: "/services" },
-      { label: "Emergency Contacts", href: "/services#emergency" },
-      { label: "Jobs & Careers", href: "/services/jobs" },
-      { label: "Invest", href: "/invest" },
-    ],
-  },
-  { key: "contact", label: "Contact", href: "/contact" },
-];
-
 export default function Navbar() {
-  const t = useTranslations("Navbar");
+  const tNav = useTranslations("Navbar");
+  const t = useTranslations("Navbar.links");
   const pathname = usePathname();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const LOCALES = ["en", "so", "ar"];
 
   const toggleDropdown = (key) => {
     setOpenDropdown((current) => (current === key ? null : key));
   };
 
-  const toggleLanguage = () => {
-    if (!pathname) {
-      return;
+  const getPathForLocale = (targetLocale) => {
+    const normalized = pathname?.startsWith("/") ? pathname : `/${pathname || ""}`;
+    const segments = normalized.split("/");
+    const currentLocale = segments[1];
+
+    if (!LOCALES.includes(currentLocale)) {
+      return `/${targetLocale}${normalized === "/" ? "" : normalized}`;
     }
 
-    if (pathname.startsWith("/en")) {
-      router.push(pathname.replace("/en", "/so"));
-      return;
-    }
-
-    if (pathname.startsWith("/so")) {
-      router.push(pathname.replace("/so", "/en"));
-      return;
-    }
-
-    router.push(`/en${pathname.startsWith("/") ? pathname : `/${pathname}`}`);
+    segments[1] = targetLocale;
+    return segments.join("/");
   };
 
-  const languageLabel = pathname?.startsWith("/so")
-    ? "English | Soomaali"
-    : "Somali | English";
+  const locale = pathname?.startsWith("/ar")
+    ? "ar"
+    : pathname?.startsWith("/so")
+    ? "so"
+    : "en";
+
+  const NAV_LINKS = [
+    { id: "home", label: tNav("home"), href: "/" },
+    {
+      id: "nation",
+      label: tNav("nation"),
+      children: [
+        { id: "history", label: t("nation.history"), href: "/nation/history" },
+        { id: "culture", label: t("nation.culture"), href: "/nation/culture" },
+        { id: "food", label: t("nation.food"), href: "/nation/food" },
+        { id: "tourism", label: t("nation.tourism"), href: "/nation/tourism" },
+      ],
+    },
+    {
+      id: "gov",
+      label: tNav("gov"),
+      children: [
+        {
+          id: "constitution",
+          label: t("government.constitution"),
+          href: "/government/constitution",
+        },
+        {
+          id: "vision",
+          label: t("government.vision"),
+          href: "/government/vision",
+        },
+        {
+          id: "executive",
+          label: t("government.executive"),
+          href: "/government/executive",
+        },
+        {
+          id: "cabinet",
+          label: t("government.cabinet"),
+          href: "/government/cabinet",
+        },
+        {
+          id: "parliament",
+          label: t("government.parliament"),
+          href: "/government/parliament",
+        },
+        {
+          id: "ministries",
+          label: t("government.ministries"),
+          href: "/government/ministries",
+        },
+        {
+          id: "agencies",
+          label: t("government.agencies"),
+          href: "/government/agencies",
+        },
+        {
+          id: "states",
+          label: t("government.states"),
+          href: "/government/states",
+        },
+      ],
+    },
+    {
+      id: "services",
+      label: tNav("services"),
+      children: [
+        { id: "all", label: t("services.all"), href: "/services" },
+        {
+          id: "emergency",
+          label: t("services.emergency"),
+          href: "/services#emergency",
+        },
+        { id: "jobs", label: t("services.jobs"), href: "/services/jobs" },
+        { id: "invest", label: t("services.invest"), href: "/invest" },
+      ],
+    },
+    { id: "contact", label: tNav("contact"), href: "/contact" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 h-20 bg-white shadow-sm">
@@ -91,8 +127,7 @@ export default function Navbar() {
             className="rounded-full"
           />
           <span className="text-sm font-semibold text-blue-800 md:text-lg">
-            <span className="hidden md:inline">Federal Republic of </span>
-            Somalia
+            {tNav("brand_full")}
           </span>
         </div>
 
@@ -100,12 +135,12 @@ export default function Navbar() {
           {NAV_LINKS.map((link) => {
             if (link.children) {
               return (
-                <div key={link.label} className="group relative">
+                <div key={link.id} className="group relative">
                   <button
                     type="button"
                     className="flex items-center gap-1 text-sm font-medium text-slate-700 transition hover:text-blue-600"
                   >
-                    {link.key ? t(link.key) : link.label}
+                    {link.label}
                     <ChevronDown className="h-4 w-4" />
                   </button>
                   <div className="absolute left-0 top-full hidden w-60 rounded-xl border border-slate-200 bg-white p-3 shadow-lg group-hover:block">
@@ -113,7 +148,7 @@ export default function Navbar() {
                       const Icon = child.icon;
                       return (
                         <Link
-                          key={child.label}
+                          key={`${link.id}-${child.id}`}
                           href={child.href}
                           className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
                         >
@@ -129,11 +164,11 @@ export default function Navbar() {
 
             return (
               <Link
-                key={link.label}
+                key={link.id}
                 href={link.href}
                 className="text-sm font-medium text-slate-700 transition hover:text-blue-600"
               >
-                {link.key ? t(link.key) : link.label}
+                {link.label}
               </Link>
             );
           })}
@@ -154,13 +189,30 @@ export default function Navbar() {
             height={24}
             className="mr-2 hidden h-6 w-6 rounded-full object-cover md:inline-flex"
           />
-          <button
-            type="button"
-            onClick={toggleLanguage}
-            className="hidden cursor-pointer rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-600 hover:bg-gray-100 hover:text-blue-600 md:inline-flex sm:text-sm"
-          >
-            {languageLabel}
-          </button>
+          <div className="flex items-center bg-slate-100 rounded-full p-1 border border-slate-200">
+            {LOCALES.map((lang) => (
+              <button
+                key={lang}
+                onClick={() => router.push(getPathForLocale(lang))}
+                className={`relative z-10 px-3 py-1.5 text-xs font-bold transition-colors duration-200 ${
+                  locale === lang
+                    ? "text-blue-900"
+                    : "text-slate-500 hover:text-slate-700"
+                }`}
+                type="button"
+                aria-label={`Switch language to ${lang}`}
+              >
+                {locale === lang && (
+                  <motion.div
+                    layoutId="active-lang-pill"
+                    className="absolute inset-0 z-[-1] rounded-full bg-white shadow-sm"
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                )}
+                {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-full border border-slate-200 p-2 text-slate-700 shadow-sm transition hover:border-blue-600 hover:text-blue-600 lg:hidden"
@@ -179,21 +231,21 @@ export default function Navbar() {
               <Search className="h-4 w-4 text-slate-500" />
               <input
                 type="text"
-                placeholder="Search"
+                placeholder={tNav("search_placeholder")}
                 className="w-full text-sm text-slate-700 outline-none placeholder:text-slate-400"
               />
             </div>
             {NAV_LINKS.map((link) => {
               if (link.children) {
-                const isOpen = openDropdown === link.key;
+                const isOpen = openDropdown === link.id;
                 return (
-                  <div key={link.label} className="space-y-2">
+                  <div key={link.id} className="space-y-2">
                     <button
                       type="button"
-                      onClick={() => toggleDropdown(link.key)}
+                      onClick={() => toggleDropdown(link.id)}
                       className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:text-blue-600"
                     >
-                      {link.key ? t(link.key) : link.label}
+                      {link.label}
                       <ChevronDown
                         className={`h-4 w-4 transition ${
                           isOpen ? "rotate-180" : ""
@@ -206,7 +258,7 @@ export default function Navbar() {
                           const Icon = child.icon;
                           return (
                             <Link
-                              key={child.label}
+                              key={`${link.id}-${child.id}`}
                               href={child.href}
                               className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-blue-600"
                               onClick={() => setMenuOpen(false)}
@@ -226,29 +278,42 @@ export default function Navbar() {
 
               return (
                 <Link
-                  key={link.label}
+                  key={link.id}
                   href={link.href}
                   className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:text-blue-600"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {link.key ? t(link.key) : link.label}
+                  {link.label}
                 </Link>
               );
             })}
-            <button
-              type="button"
-              onClick={toggleLanguage}
-              className="flex w-full cursor-pointer items-center justify-between rounded-lg border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-gray-100"
-            >
-              <span>{languageLabel}</span>
-              <Image
-                src="/logos/flag.png"
-                alt="Somalia flag"
-                width={20}
-                height={20}
-                className="h-5 w-5 rounded-full object-cover"
-              />
-            </button>
+            <div className="flex items-center bg-slate-100 rounded-full p-1 border border-slate-200">
+              {LOCALES.map((lang) => (
+                <button
+                  key={`mobile-${lang}`}
+                  onClick={() => {
+                    router.push(getPathForLocale(lang));
+                    setMenuOpen(false);
+                  }}
+                  className={`relative z-10 px-3 py-1.5 text-xs font-bold transition-colors duration-200 ${
+                    locale === lang
+                      ? "text-blue-900"
+                      : "text-slate-500 hover:text-slate-700"
+                  }`}
+                  type="button"
+                  aria-label={`Switch language to ${lang}`}
+                >
+                  {locale === lang && (
+                    <motion.div
+                      layoutId="active-lang-pill"
+                      className="absolute inset-0 z-[-1] rounded-full bg-white shadow-sm"
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                  {lang.toUpperCase()}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}

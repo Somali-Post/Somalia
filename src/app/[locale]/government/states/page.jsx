@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { Briefcase, MapPin } from "lucide-react";
 
 import Footer from "@/components/Footer";
@@ -9,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 
 export default function StatesPage() {
+  const t = useTranslations("StatesPage");
   const states = [
     {
       name: "Puntland State",
@@ -71,8 +73,8 @@ export default function StatesPage() {
       <Navbar />
       <main className="bg-white text-slate-900">
         <PageHeader
-          title="Federal Member States"
-          description="The Federal Republic is comprised of five Member States and the Benadir Regional Administration."
+          title={t("title")}
+          description={t("description")}
         />
 
       <section className="py-16">
@@ -114,7 +116,7 @@ export default function StatesPage() {
                       <MapPin className="mt-0.5 h-4 w-4 text-blue-600" />
                       <div>
                         <p className="text-xs uppercase tracking-wide text-slate-400">
-                          Capital
+                          {t("labels.capital")}
                         </p>
                         <p className="font-semibold text-slate-700">
                           {state.capital}
@@ -123,7 +125,7 @@ export default function StatesPage() {
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-wide text-slate-400">
-                        President
+                        {t("labels.president")}
                       </p>
                       <p className="font-semibold text-slate-700">
                         {state.president}
@@ -133,7 +135,7 @@ export default function StatesPage() {
                       <Briefcase className="mt-0.5 h-4 w-4 text-blue-600" />
                       <div>
                         <p className="text-xs uppercase tracking-wide text-slate-400">
-                          Economy
+                          {t("labels.economy")}
                         </p>
                         <p className="font-semibold text-slate-700">
                           {state.economy}
@@ -149,11 +151,11 @@ export default function StatesPage() {
                       rel="noopener noreferrer"
                       className="mt-auto inline-flex items-center justify-center rounded-full border border-blue-600 px-4 py-2 text-xs font-semibold text-blue-600 transition hover:bg-blue-600 hover:text-white"
                     >
-                      Visit Official Website
+                      {t("buttons.visit_website")}
                     </Link>
                   ) : (
                     <span className="mt-auto inline-flex items-center justify-center rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-400">
-                      Website Unavailable
+                      {t("buttons.website_unavailable")}
                     </span>
                   )}
                 </div>

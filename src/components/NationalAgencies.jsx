@@ -1,11 +1,16 @@
 "use client";
 
 import { Link } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
 
 import SmartImage from "@/components/SmartImage";
-import { agencies } from "@/data/agencies";
+import { agencies as agenciesEn } from "@/data/agencies";
+import { agencies as agenciesSo } from "@/data/agencies-so";
 
 export default function NationalAgencies({ limit }) {
+  const t = useTranslations("NationalAgencies");
+  const locale = useLocale();
+  const agencies = locale === "so" ? agenciesSo : agenciesEn;
   const visibleAgencies =
     typeof limit === "number" ? agencies.slice(0, limit) : agencies;
 
@@ -14,7 +19,7 @@ export default function NationalAgencies({ limit }) {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-8 text-center">
           <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-            National Agencies
+            {t("title")}
           </h2>
         </div>
 
@@ -41,7 +46,7 @@ export default function NationalAgencies({ limit }) {
                     <p className="text-sm font-semibold text-slate-900">
                       {agency.name}
                     </p>
-                    <p className="text-xs text-slate-500">{agency.role}</p>
+                    <p className="text-xs text-slate-500">{agency.title}</p>
                   </div>
                 </div>
                 <div className="mt-5">
@@ -49,7 +54,7 @@ export default function NationalAgencies({ limit }) {
                     href={`/government/agencies/${agency.slug}`}
                     className="text-sm font-semibold text-blue-600 transition hover:text-blue-700"
                   >
-                    View Profile
+                    {t("view_profile")}
                   </Link>
                 </div>
                 <span className="pointer-events-none absolute bottom-0 right-0 h-20 w-20 -translate-x-4 translate-y-4 rounded-full bg-blue-600/10" />
@@ -64,7 +69,7 @@ export default function NationalAgencies({ limit }) {
               href="/government/agencies"
               className="inline-flex items-center justify-center rounded-full border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-blue-600 hover:text-blue-600"
             >
-              View All Agencies -&gt;
+              {t("view_all")}
             </Link>
           </div>
         )}

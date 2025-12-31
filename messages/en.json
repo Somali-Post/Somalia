@@ -1,39 +1,41 @@
 {
   "Navbar": {
+    "home": "Home",
+    "nation": "The Nation",
+    "gov": "Government",
+    "services": "Services",
+    "contact": "Contact",
     "brand_prefix": "Federal Republic of",
     "brand_name": "Somalia",
     "search_placeholder": "Search",
     "language_toggle_en": "Somali | English",
     "language_toggle_so": "English | Soomaali",
     "links": {
-      "home": "Home",
-      "nation": "The Nation",
-      "nation_children": [
-        "History",
-        "Culture & People",
-        "Food & Cuisine",
-        "Tourism"
-      ],
-      "government": "Government",
-      "government_children": [
-        "Constitution",
-        "National Vision 2060",
-        "The Executive",
-        "The Cabinet",
-        "The Parliament",
-        "Ministries",
-        "National Agencies",
-        "Member States"
-      ],
-      "services": "Services",
-      "services_children": [
-        "All Services",
-        "Emergency Contacts",
-        "Jobs & Careers",
-        "Invest"
-      ],
-      "contact": "Contact"
-    }
+      "nation": {
+        "history": "History",
+        "culture": "Culture & People",
+        "tourism": "Tourism",
+        "food": "Food & Cuisine"
+      },
+      "government": {
+        "constitution": "Constitution",
+        "vision": "National Vision 2060",
+        "executive": "The Executive",
+        "cabinet": "The Cabinet",
+        "parliament": "The Parliament",
+        "ministries": "Ministries",
+        "agencies": "National Agencies",
+        "states": "Member States"
+      },
+      "services": {
+        "all": "All Services",
+        "emergency": "Emergency Contacts",
+        "jobs": "Jobs & Careers",
+        "invest": "Invest"
+      }
+    },
+    "brand_full": "Federal Republic of Somalia",
+    "language_toggle_short": "EN | SO | AR"
   },
   "Footer": {
     "brand": "Federal Republic of Somalia",
@@ -90,11 +92,26 @@
   "EmergencyBar": {
     "title": "EMERGENCY HOTLINES:",
     "contacts": [
-      { "label": "Police", "number": "888" },
-      { "label": "Ambulance", "number": "999" },
-      { "label": "Fire", "number": "555" },
-      { "label": "Red Crescent", "number": "446" },
-      { "label": "NISA Tip-line", "number": "991" }
+      {
+        "label": "Police",
+        "number": "888"
+      },
+      {
+        "label": "Ambulance",
+        "number": "999"
+      },
+      {
+        "label": "Fire",
+        "number": "555"
+      },
+      {
+        "label": "Red Crescent",
+        "number": "446"
+      },
+      {
+        "label": "NISA Tip-line",
+        "number": "991"
+      }
     ]
   },
   "KeyServices": {
@@ -279,19 +296,23 @@
         "items": [
           {
             "title": "Business Registration",
-            "description": "Register a company online via SBRS."
+            "description": "Register a company online via SBRS.",
+            "href": "https://ebusiness.gov.so"
           },
           {
             "title": "E-Visa Application",
-            "description": "Apply for entry visa (Tourist/Business)."
+            "description": "Apply for entry visa (Tourist/Business).",
+            "href": "https://visa.gov.so"
           },
           {
             "title": "National Exam Results",
-            "description": "Check Grade 8 & 12 results."
+            "description": "Check Grade 8 & 12 results.",
+            "href": "https://soneb.gov.so"
           },
           {
             "title": "Passport Information",
-            "description": "Download forms and view requirements."
+            "description": "Download forms and view requirements.",
+            "href": "https://immigration.gov.so"
           }
         ],
         "cta": "Visit portal"
@@ -383,5 +404,731 @@
         "body": "Powers are distributed between the Federal Government and Member States."
       }
     ]
+  },
+  "PrivacyPage": {
+    "title": "Privacy Policy",
+    "description": "How we protect your personal data and rights.",
+    "last_updated": "Last Updated: December 2025",
+    "key_takeaways_title": "Key Takeaways",
+    "key_takeaways_body": "This portal processes data under the Data Protection Act of 2023 and Article 14 of the Provisional Constitution (Right to Privacy). Data is collected only for service delivery, stored within Somalia, and protected by national encryption standards.",
+    "sections": [
+      {
+        "title": "Legal Basis",
+        "content": "Processing of personal data is governed by the Data Protection Act of 2023 and Article 14 of the Provisional Constitution, which guarantees the right to privacy. We process data only when there is a lawful basis and a clear public service purpose."
+      },
+      {
+        "title": "Data Collection and Use",
+        "content": "We collect limited usage data (including cookies and analytics) to ensure secure, reliable, and efficient service delivery. Personal data provided through forms or service applications (including passport or identification services) is collected solely to provide the requested service, verify identity, and fulfill legal obligations."
+      },
+      {
+        "title": "Data Sovereignty and Security",
+        "content": "All citizen data is stored securely on servers within the Federal Republic of Somalia and encrypted according to national standards. We apply administrative, technical, and physical safeguards to protect data from unauthorized access, alteration, or disclosure."
+      },
+      {
+        "title": "Your Rights",
+        "content": "Citizens have the right to access, rectify, or request deletion of their personal data in accordance with the Data Protection Act of 2023. Requests should be directed through the National Identification and Registration Authority (NIRA), which is the authorized body for identity and data governance services."
+      }
+    ]
+  },
+  "TermsPage": {
+    "title": "Terms & Conditions",
+    "description": "Rules governing the use of the Official Government Portal.",
+    "last_updated": "Last Updated: December 2025",
+    "sections": [
+      {
+        "title": "1. Introduction",
+        "content": "These Terms & Conditions govern access to and use of the Official Government Portal. By using this portal, you agree to comply with these terms and all applicable laws of the Federal Republic of Somalia."
+      },
+      {
+        "title": "2. Disclaimer",
+        "content": "Information on this portal is for general guidance. Official Gazettes and legal decrees take precedence in all matters of law and policy."
+      },
+      {
+        "title": "3. Intellectual Property",
+        "content": "All content, including the Coat of Arms and Ministry Logos, is property of the Federal Government of Somalia. Unauthorized use, reproduction, or distribution is prohibited."
+      },
+      {
+        "title": "4. Misuse and Security",
+        "content": "Any attempt to hack, scrape, disrupt, or otherwise interfere with this service is a criminal offense under the National Penal Code. The Government reserves the right to investigate and prosecute unlawful activity."
+      },
+      {
+        "title": "5. Governing Law",
+        "content": "These terms are governed by the laws of the Federal Republic of Somalia. Disputes shall be subject to the exclusive jurisdiction of the courts in Mogadishu."
+      }
+    ]
+  },
+  "AccessibilityPage": {
+    "title": "Accessibility Statement",
+    "description": "Ensuring equal access for all citizens.",
+    "last_updated": "Last Updated: December 2025",
+    "sections": {
+      "standard": {
+        "title": "Our Accessibility Standard",
+        "body": "We strive to meet WCAG 2.1 Level AA standards and evaluate the portal regularly to improve access for all users."
+      },
+      "features": {
+        "title": "Compliance Features",
+        "items": [
+          "Screen reader compatibility for core service flows.",
+          "Keyboard navigation across primary menus and forms.",
+          "High-contrast text for improved readability."
+        ]
+      },
+      "inclusion": {
+        "title": "Commitment to Inclusion",
+        "body": "The Federal Government is committed to digital inclusion for persons with disabilities and will continue to improve accessibility features in line with international standards."
+      },
+      "feedback": {
+        "title": "Feedback",
+        "email": "accessibility@opm.gov.so",
+        "body": "If you encounter barriers, please contact <emailLink>accessibility@opm.gov.so</emailLink>."
+      }
+    }
+  },
+  "ExecutivePage": {
+    "title": "The Executive Branch",
+    "description": "The highest level of government leadership.",
+    "presidency": {
+      "eyebrow": "The Presidency",
+      "name": "H.E. Hassan Sheikh Mohamud",
+      "title": "President of the Federal Republic of Somalia",
+      "bio": "Elected in May 2022, H.E. Hassan Sheikh Mohamud serves as the Head of State and symbol of national unity. He is the Commander-in-Chief of the Armed Forces."
+    },
+    "office": {
+      "eyebrow": "Office of the Prime Minister",
+      "title": "The Government Leadership",
+      "description": "The Cabinet leadership responsible for execution of national policy.",
+      "leaders": [
+        {
+          "name": "H.E. Salah Ahmed Jama",
+          "title": "Deputy Prime Minister"
+        },
+        {
+          "name": "H.E. Hamza Abdi Barre",
+          "title": "Prime Minister",
+          "role": "Head of Government, responsible for the Council of Ministers and implementation of national policy."
+        },
+        {
+          "name": "H.E. Jibril Abdirashid Haji",
+          "title": "Second Deputy Prime Minister",
+          "note": "Appointed 2025."
+        }
+      ]
+    },
+    "mandate": {
+      "eyebrow": "Role & Mandate",
+      "title": "Executive Functions",
+      "body": "The Executive Branch is responsible for enforcing laws, conducting foreign affairs, and managing the day-to-day operations of the federal government. It is accountable to the Parliament.",
+      "cta": "View the Full Council of Ministers"
+    }
+  },
+  "CabinetPage": {
+    "title": "The Cabinet",
+    "description": "The Council of Ministers of the Federal Republic of Somalia",
+    "leadership": {
+      "eyebrow": "Cabinet Leadership",
+      "title": "Executive Leadership",
+      "leaders": [
+        {
+          "name": "H.E. Hamza Abdi Barre",
+          "title": "Prime Minister"
+        },
+        {
+          "name": "H.E. Salah Ahmed Jama",
+          "title": "Deputy Prime Minister"
+        },
+        {
+          "name": "H.E. Jibril Abdirashid Haji",
+          "title": "Second Deputy Prime Minister"
+        }
+      ]
+    },
+    "members": {
+      "eyebrow": "Cabinet Members",
+      "title": "Federal Ministers",
+      "view_profile": "View Profile"
+    }
+  },
+  "ParliamentPage": {
+    "title": "The Federal Parliament",
+    "description": "The Bicameral Legislative Branch of the Federal Republic",
+    "intro": "The Federal Parliament consists of two houses: The House of the People (275 seats) and the Upper House (54 seats). It is responsible for enacting laws, oversight of the executive, and representing the Somali people.",
+    "lower_house": {
+      "title": "The House of the People (Lower House)",
+      "members_label": "275 Members",
+      "speaker_title": "Speaker of the House of the People",
+      "deputy_titles": [
+        "First Deputy Speaker",
+        "Second Deputy Speaker"
+      ],
+      "members": {
+        "speaker": "H.E. Sheikh Adan Mohamed Nur \"Madobe\"",
+        "deputies": [
+          "Hon. Saï¿½diya Yasin Haji Samatar",
+          "Hon. Abdullahi Omar Abshirow"
+        ]
+      }
+    },
+    "upper_house": {
+      "title": "The Upper House (Senate)",
+      "members_label": "54 Members",
+      "speaker_title": "Speaker of the Upper House",
+      "deputy_titles": [
+        "First Deputy Speaker",
+        "Second Deputy Speaker"
+      ],
+      "members": {
+        "speaker": "H.E. Abdi Hashi Abdullahi",
+        "deputies": [
+          "Hon. Ali Shabaan Ibrahim",
+          "Hon. Abdullahi Ali Hirsi \"Timaï¿½adde\""
+        ]
+      }
+    }
+  },
+  "StatesPage": {
+    "title": "Federal Member States",
+    "description": "The Federal Republic is comprised of five Member States and the Benadir Regional Administration.",
+    "labels": {
+      "capital": "Capital",
+      "president": "President",
+      "economy": "Economy"
+    },
+    "buttons": {
+      "visit_website": "Visit Official Website",
+      "website_unavailable": "Website Unavailable"
+    },
+    "states": [
+      {
+        "name": "Puntland State",
+        "capital": "Garowe",
+        "president": "H.E. Said Abdullahi Deni",
+        "economy": "Livestock, Fisheries, Frankincense"
+      },
+      {
+        "name": "Galmudug State",
+        "capital": "Dhusamareb",
+        "president": "H.E. Ahmed Abdi Kariye (Qoorqoor)",
+        "economy": "Livestock, Agriculture"
+      },
+      {
+        "name": "Jubaland State",
+        "capital": "Kismayo",
+        "president": "H.E. Ahmed Mohamed Islam (Madobe)",
+        "economy": "Port Trade, Agriculture, Fisheries"
+      },
+      {
+        "name": "South West State",
+        "capital": "Baidoa",
+        "president": "H.E. Abdiaziz Hassan Mohamed (Laftagareen)",
+        "economy": "Agriculture (Sorghum/Maize), Livestock"
+      },
+      {
+        "name": "Hirshabelle State",
+        "capital": "Jowhar",
+        "president": "H.E. Ali Abdullahi Hussein (Gudlawe)",
+        "economy": "Agriculture (Shabelle River), Livestock"
+      },
+      {
+        "name": "Benadir Regional Administration",
+        "capital": "Mogadishu",
+        "president": "H.E. Mohamed Ahmed (Governor)",
+        "economy": "Commerce, Service Sector, Logistics"
+      }
+    ]
+  },
+  "NationalCalendar": {
+    "title": "Important National Dates",
+    "events": [
+      {
+        "day": "21",
+        "month": "JAN",
+        "title": "Somali Language Day",
+        "description": "Celebrating the adoption of the Somali Latin script in 1972."
+      },
+      {
+        "day": "08",
+        "month": "MAR",
+        "title": "International Women's Day",
+        "description": "Honoring the contribution of Somali women to nation-building."
+      },
+      {
+        "day": "12",
+        "month": "APR",
+        "title": "National Army Day",
+        "description": "Commemorating the establishment of the Somali National Armed Forces."
+      },
+      {
+        "day": "15",
+        "month": "MAY",
+        "title": "SYL Day",
+        "description": "Honoring the Somali Youth League founders of 1943."
+      },
+      {
+        "day": "26",
+        "month": "JUN",
+        "title": "Independence Day (North)",
+        "description": "Independence of Northern regions from British Protectorate."
+      },
+      {
+        "day": "01",
+        "month": "JUL",
+        "title": "Republic Day",
+        "description": "Union of North & South and birth of the Somali Republic in 1960."
+      },
+      {
+        "day": "12",
+        "month": "OCT",
+        "title": "National Flag Day",
+        "description": "Celebrating the adoption of the blue flag and white star in 1954."
+      }
+    ]
+  },
+  "FeedbackWidget": {
+    "question": "Was this page helpful?",
+    "yes": "Yes",
+    "no": "No",
+    "thanks": "Thank you for your feedback!"
+  },
+  "PublicNotices": {
+    "eyebrow": "Transparency",
+    "title": "Public Notices & Procurement",
+    "active_tenders_title": "Active Tenders",
+    "civil_service_vacancies_title": "Civil Service Vacancies",
+    "closing_prefix": "Closing:",
+    "tenders": [
+      {
+        "title": "Procurement of Solar Panels for Ministry of Energy (Ref: MOE/2025/01)",
+        "closing": "Jan 30"
+      },
+      {
+        "title": "Construction of Galkayo Regional Road (Ref: MOPW/2025/04)",
+        "closing": "Feb 15"
+      }
+    ],
+    "vacancies_body": "View all current government and private sector vacancies via the National Job Board.",
+    "browse_jobs": "Browse Jobs ->"
+  },
+  "LatestNews": {
+    "title": "Latest Government News",
+    "description": "Official updates, press releases, and milestones from the Federal Republic.",
+    "view_archive": "View News Archive",
+    "read_press_release": "Read Press Release"
+  },
+  "GlobalSearch": {
+    "placeholder": "Search for services, ministries, or documents...",
+    "button": "Search",
+    "sections": {
+      "government": "Government",
+      "services": "Services & Opportunities"
+    },
+    "no_results": "No results found.",
+    "meta": {
+      "minister": "Minister: {name}",
+      "ministry": "Ministry",
+      "agency": "Agency",
+      "page": "Page"
+    },
+    "static_pages": {
+      "constitution": "Constitution",
+      "vision": "Vision 2060",
+      "invest": "Invest in Somalia",
+      "services": "E-Services",
+      "jobs": "Jobs & Careers"
+    }
+  },
+  "PostalService": {
+    "title": "Connecting Somalia to the World",
+    "track_placeholder": "Enter Tracking Number...",
+    "track_button": "Track"
+  },
+  "MinistryDirectory": {
+    "title": "Federal Ministries",
+    "view_profile": "View Profile",
+    "view_all": "View All Ministries ->"
+  },
+  "MinistriesPage": {
+    "title": "Ministries Directory"
+  },
+  "GovernmentPage": {
+    "title": "Government",
+    "description": "Explore the institutions, leadership, and strategic direction of the Federal Republic.",
+    "header": {
+      "eyebrow": "Institutions",
+      "title": "Federal Government Directory",
+      "description": "Quick access to the core branches and national bodies."
+    },
+    "learn_more": "Learn more",
+    "sections": {
+      "executive": {
+        "title": "The Executive",
+        "description": "Leadership of the Head of State and Government."
+      },
+      "cabinet": {
+        "title": "The Cabinet",
+        "description": "Council of Ministers and federal portfolios."
+      },
+      "parliament": {
+        "title": "The Parliament",
+        "description": "Bicameral legislature and representation."
+      },
+      "ministries": {
+        "title": "Ministries",
+        "description": "Federal ministries and mandates."
+      },
+      "agencies": {
+        "title": "National Agencies",
+        "description": "Independent authorities and commissions."
+      },
+      "states": {
+        "title": "Member States",
+        "description": "Federal member states and regional administration."
+      },
+      "constitution": {
+        "title": "The Constitution",
+        "description": "The supreme law of the Federal Republic."
+      },
+      "vision": {
+        "title": "National Vision 2060",
+        "description": "Long-term strategy and NDP-9 pillars."
+      }
+    }
+  },
+  "NationalAgencies": {
+    "title": "National Agencies",
+    "view_profile": "View Profile",
+    "view_all": "View All Agencies ->"
+  },
+  "AgenciesPage": {
+    "title": "National Agencies",
+    "description": "Independent authorities serving the public interest."
+  },
+  "Vision2060": {
+    "label": "VISION 2060",
+    "title": "A Peaceful, Prosperous, and Proud Somalia.",
+    "description": "Our strategic roadmap for development, stability, and democratic governance.",
+    "cta": "Download Strategy"
+  },
+  "MediaPage": {
+    "title": "Government Newsroom",
+    "description": "Press releases, official statements, and updates from the Federal Republic.",
+    "latest_title": "Latest Press Releases",
+    "latest_description": "Verified updates from the Office of the Prime Minister.",
+    "filters": {
+      "all": "All",
+      "politics": "Politics",
+      "economy": "Economy",
+      "diplomacy": "Diplomacy"
+    },
+    "read_press_release": "Read Press Release",
+    "press_contact": "For press accreditation, contact <emailLink>media@opm.gov.so</emailLink>."
+  },
+  "MemberStates": {
+    "title": "Federal Member States",
+    "view_profile": "View Profile",
+    "states": [
+      "Galmudug State",
+      "Hirshabelle State",
+      "Jubaland State",
+      "Puntland State",
+      "South West State",
+      "Benadir Regional Administration"
+    ]
+  },
+  "Breadcrumbs": {
+    "home": "Home",
+    "government": "Government",
+    "ministries": "Ministries",
+    "agencies": "Agencies"
+  },
+  "MinistryProfile": {
+    "about_title": "About the Ministry",
+    "responsibilities_title": "Key Responsibilities",
+    "departments_title": "Organizational Structure",
+    "contact_title": "Contact Information",
+    "visit_website": "Visit Website",
+    "minister_title": "Minister of {name}"
+  },
+  "AgencyProfile": {
+    "mandate_title": "Mandate & Functions",
+    "contact_title": "Contact Details",
+    "visit_website": "Visit Website"
+  },
+  "ContactPage": {
+    "title": "Contact Us",
+    "description": "How can we assist you today? Reach out to the Federal Government of Somalia.",
+    "cards": [
+      {
+        "title": "General Inquiries",
+        "value": "info@opm.gov.so",
+        "description": "For general government questions."
+      },
+      {
+        "title": "Media & Press",
+        "value": "media@opm.gov.so",
+        "description": "For official statements and press accreditation."
+      },
+      {
+        "title": "Visit Us",
+        "value": "Villa Somalia, Mogadishu",
+        "description": "Office of the Prime Minister."
+      }
+    ],
+    "form": {
+      "title": "Send a Message",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "department": "Department",
+      "message": "Your Message",
+      "submit": "Submit Inquiry"
+    },
+    "departments": [
+      "General Inquiry",
+      "Press Office",
+      "Protocol",
+      "Citizen Services"
+    ],
+    "other_ways": {
+      "title": "Other Ways to Connect",
+      "hours_label": "Working Hours",
+      "hours_week": "Sat - Thu: 8:00 AM - 4:00 PM (East Africa Time)",
+      "hours_weekend": "Friday: Closed",
+      "ministries_label": "Specific Ministries",
+      "ministries_body": "Looking for a specific department? Find direct contact info for Education, Health, or Immigration in our directory.",
+      "ministries_cta": "Browse Ministry Directory ->",
+      "social_label": "Social Media"
+    }
+  },
+  "NotFound": {
+    "title": "404 - Page Not Found",
+    "description": "The requested page could not be found on the Federal Government Portal.",
+    "return_home": "Return Home",
+    "browse_ministries": "Browse Ministries",
+    "contact_support": "Contact Support"
+  },
+  "PressReleasePage": {
+    "title": "Press Release",
+    "description": "Official Communications & News",
+    "return_home": "Return to Homepage"
+  },
+  "Leadership": {
+    "title": "Executive Leadership",
+    "leaders": [
+      {
+        "role": "President",
+        "name": "H.E. Hassan Sheikh Mohamud",
+        "title": "President of the Federal Republic"
+      },
+      {
+        "role": "Prime Minister",
+        "name": "H.E. Hamza Abdi Barre",
+        "title": "Prime Minister of the Federal Republic"
+      },
+      {
+        "role": "Speaker",
+        "name": "H.E. Sheikh Adan Mohamed Nur",
+        "title": "Speaker of the House of the People"
+      },
+      {
+        "role": "Speaker",
+        "name": "H.E. Abdi Hashi Abdullahi",
+        "title": "Speaker of the Upper House"
+      }
+    ]
+  },
+  "HomePage": {
+    "newsletter": {
+      "eyebrow": "Stay Informed",
+      "title": "Subscribe to Newsletter",
+      "placeholder": "Enter your email",
+      "button": "Subscribe"
+    }
+  },
+  "HistoryPage": {
+    "title": "Our History",
+    "description": "From the Land of Punt to a Rising Republic: A story of resilience.",
+    "sections": {
+      "ancient": {
+        "eyebrow": "Ancient Roots",
+        "title": "The Land of Punt",
+        "body": "Somalia's story begins with the legendary Land of Punt, famed for its trade with Ancient Egypt. Medieval sultanates such as Adal and Ajuran flourished across the Horn, while Mogadishu emerged as a cosmopolitan hub described by Ibn Battuta as the City of Islam."
+      },
+      "struggle": {
+        "eyebrow": "The Struggle & Resilience",
+        "title": "A Period of Resilience",
+        "body": "The collapse of the state in 1991 and the civil war that followed tested the nation. Yet Somali communities kept commerce, faith, and culture alive through resilience, entrepreneurship, and mutual support, even in the absence of central government.",
+        "quote": "?Dalkaa ninkii lahaa, dabka u qaadaa?"
+      },
+      "rising": {
+        "eyebrow": "The Rising",
+        "title": "Somalia Rising: Vision 2060",
+        "body": "Reconstruction continues across institutions and infrastructure, reinforced by debt relief victories in 2023 and 2024. Somalia's entry into the East African Community and the return of the diaspora are accelerating investment, education, and a bright national future."
+      },
+      "facts": {
+        "eyebrow": "National Facts 2025",
+        "title": "Somalia at a Glance",
+        "items": [
+          {
+            "title": "Location",
+            "description": "Horn of Africa, gateway to the Red Sea & Indian Ocean."
+          },
+          {
+            "title": "Coastline",
+            "description": "3,333 km - The longest in mainland Africa."
+          },
+          {
+            "title": "Economy",
+            "description": "Livestock (50% of exports), Agriculture (Bananas/Sesame), Frankincense."
+          },
+          {
+            "title": "Capital",
+            "description": "Mogadishu (The White Pearl)."
+          },
+          {
+            "title": "Regions",
+            "description": "18 Pre-war Regions, organized into 5 Federal Member States + Benadir."
+          },
+          {
+            "title": "Official Languages",
+            "description": "Somali (Maxaa-tiri) & Arabic."
+          }
+        ]
+      }
+    }
+  },
+  "CulturePage": {
+    "hero": {
+      "eyebrow": "People & Culture",
+      "title": "The Nation of Poets",
+      "subtitle": "A heritage of oral tradition, hospitality, and resilience."
+    },
+    "poets": {
+      "eyebrow": "The Poets",
+      "title": "Masters of the Oral Tradition",
+      "items": [
+        {
+          "name": "Mohamed Ibrahim Warsame \"Hadraawi\"",
+          "quote": "Jacayl dhiig ma lagu qoray?",
+          "description": "The Shakespeare of Somalia, known for weaving social justice into romantic verse."
+        },
+        {
+          "name": "Sayid Mohamed Abdullah Hassan",
+          "quote": "Dulmiga waan diiday, dalkayga waan dafiraa.",
+          "description": "The leader of the Dervish state who used poetry as a weapon against colonialism."
+        },
+        {
+          "name": "Abdullahi Suldaan \"Timacade\"",
+          "quote": "Kaana siib, kana saar.",
+          "description": "The poet of Independence, celebrating the birth of the Republic in 1960."
+        }
+      ]
+    },
+    "customs": {
+      "eyebrow": "Social Customs",
+      "title": "Soo Dhawoow: The Art of Hospitality",
+      "body": "Hospitality is a duty in Somali culture. A guest is a blessing from God, and generosity is a mark of honor. Refusing offered food or tea is often considered impolite.",
+      "caption": "Shaah (Spiced Tea) is the center of social life, spiced with cardamom and cloves."
+    },
+    "tradition": {
+      "eyebrow": "Tradition",
+      "title": "Rhythm of the Land",
+      "body": "The Dhaanto dance, often compared to early reggae rhythms, celebrates unity and courage, while Buraanbur honors the poetic artistry of Somali women. Traditional dress such as the Guntiino and the Macawis remain proud symbols of identity."
+    }
+  },
+  "FoodPage": {
+    "hero": {
+      "eyebrow": "Somali Cuisine",
+      "title": "Flavors of the Horn",
+      "subtitle": "A fusion of African, Arab, and Indian influences, centered on Halal traditions and generous hospitality."
+    },
+    "philosophy": {
+      "eyebrow": "The Philosophy",
+      "title": "Soo Dhawoow (Welcome)",
+      "body": "In Somalia, food is a love language. To host a guest is a blessing. It is customary to share the best cut of meat and the freshest milk with visitors."
+    },
+    "dishes": {
+      "eyebrow": "The National Dishes",
+      "title": "Signature Plates",
+      "items": [
+        {
+          "title": "Bariis Iskukaris",
+          "description": "Fragrant rice spiced with cardamom, cumin, and cloves, served with tender goat or camel meat."
+        },
+        {
+          "title": "Canjeero (Anjero)",
+          "description": "A fermented sourdough pancake, the staple of every Somali breakfast, often dipped in sesame oil and sugar."
+        },
+        {
+          "title": "Sambusa",
+          "description": "Crispy triangular pastries filled with spiced minced meat, onions, and green chilies. The ultimate snack."
+        },
+        {
+          "title": "Xalwo (Halwa)",
+          "description": "The Sultan of Sweets. A dense, gelatinous confection made from sugar, cornstarch, and spices, reserved for weddings and Eid."
+        }
+      ]
+    },
+    "tea": {
+      "eyebrow": "Tea Culture",
+      "title": "The Art of Shaah",
+      "body": "Shaah is the linchpin of social life. Brewed with cardamom (hayl) and cloves, and served with plenty of sugar. It is drunk in the afternoon ('Asariya') as a time to connect and exchange news.",
+      "tags": {
+        "rituals": "Shaah Rituals",
+        "halal": "Halal Traditions"
+      }
+    }
+  },
+  "TourismPage": {
+    "hero": {
+      "eyebrow": "Somalia Tourism Guide",
+      "title": "Discover the Pearl of the Indian Ocean.",
+      "subtitle": "Ancient History. Pristine Beaches. Resilient Spirit."
+    },
+    "essentials": {
+      "eyebrow": "Practical Guide",
+      "title": "Travel Essentials",
+      "items": [
+        {
+          "title": "Visas & Entry",
+          "description": "Visa on Arrival (VOA) is available at Aden Adde International Airport ($60). E-Visa services are rolling out at visa.gov.so."
+        },
+        {
+          "title": "The Cashless Economy (EVC+)",
+          "description": "Somalia is a cashless society. Mobile money (EVC Plus/Zaad) is used for everything from coffee to taxis."
+        },
+        {
+          "title": "Security & Logistics",
+          "description": "Mogadishu has secure Green Zones. Visitors are advised to coordinate with local hosts or security details for excursions. Liido Beach and Peace Park are popular secure public spots."
+        }
+      ]
+    },
+    "destinations": {
+      "eyebrow": "Top Destinations",
+      "title": "Must-Visit Locations",
+      "items": [
+        {
+          "title": "Liido Beach",
+          "description": "The vibrant heart of Mogadishu's social life. Seafood cafes, ocean breeze, and resilience."
+        },
+        {
+          "title": "Laas Geel",
+          "description": "5,000-year-old rock art near Hargeisa. One of the best-preserved Neolithic sites in Africa."
+        },
+        {
+          "title": "National Museum",
+          "description": "Recently reopened, housing the artifacts and history of the Somali people."
+        },
+        {
+          "title": "Jazeera Beach",
+          "description": "A serene, pristine stretch of coast for those seeking quiet beauty."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Ready to Visit?",
+      "title": "Start planning your journey.",
+      "button": "Find a Registered Tour Operator"
+    }
   }
 }

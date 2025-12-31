@@ -11,7 +11,8 @@ export default function CookieConsent() {
 
   useEffect(() => {
     if (localStorage.getItem("cookieConsent") === null) {
-      setIsVisible(true);
+      const raf = requestAnimationFrame(() => setIsVisible(true));
+      return () => cancelAnimationFrame(raf);
     }
   }, []);
 

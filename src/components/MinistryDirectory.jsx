@@ -2,11 +2,16 @@
 
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
 
 import SmartImage from "@/components/SmartImage";
-import { ministries } from "@/data/ministries";
+import { ministries as ministriesEn } from "@/data/ministries";
+import { ministries as ministriesSo } from "@/data/ministries-so";
 
 export default function MinistryDirectory({ limit }) {
+  const t = useTranslations("MinistryDirectory");
+  const locale = useLocale();
+  const ministries = locale === "so" ? ministriesSo : ministriesEn;
   const visibleMinistries = typeof limit === "number" ? ministries.slice(0, limit) : ministries;
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -32,7 +37,7 @@ export default function MinistryDirectory({ limit }) {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-8 text-center">
           <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-            Federal Ministries
+            {t("title")}
           </h2>
         </div>
 
@@ -79,7 +84,7 @@ export default function MinistryDirectory({ limit }) {
                       href={`/government/ministries/${ministry.slug}`}
                       className="inline-flex items-center rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-700 transition hover:border-blue-600 hover:text-blue-600"
                     >
-                      View Profile
+                      {t("view_profile")}
                     </Link>
                   </div>
                 </div>
@@ -93,7 +98,7 @@ export default function MinistryDirectory({ limit }) {
               href="/government/ministries"
               className="inline-flex items-center justify-center rounded-full border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-blue-600 hover:text-blue-600"
             >
-              View All Ministries -&gt;
+              {t("view_all")}
             </Link>
           </div>
         )}

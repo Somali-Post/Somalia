@@ -1,52 +1,14 @@
 "use client";
 
-const EVENTS = [
-  {
-    day: "21",
-    month: "JAN",
-    title: "Somali Language Day",
-    desc: "Celebrating the adoption of the Somali Latin script in 1972.",
-  },
-  {
-    day: "08",
-    month: "MAR",
-    title: "International Women's Day",
-    desc: "Honoring the contribution of Somali women to nation-building.",
-  },
-  {
-    day: "12",
-    month: "APR",
-    title: "National Army Day",
-    desc: "Commemorating the establishment of the Somali National Armed Forces.",
-  },
-  {
-    day: "15",
-    month: "MAY",
-    title: "SYL Day",
-    desc: "Honoring the Somali Youth League founders of 1943.",
-  },
-  {
-    day: "26",
-    month: "JUN",
-    title: "Independence Day (North)",
-    desc: "Independence of Northern regions from British Protectorate.",
-  },
-  {
-    day: "01",
-    month: "JUL",
-    title: "Republic Day",
-    desc: "Union of North & South and birth of the Somali Republic in 1960.",
-  },
-  {
-    day: "12",
-    month: "OCT",
-    title: "National Flag Day",
-    desc: "Celebrating the adoption of the blue flag and white star in 1954.",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function NationalCalendar() {
-  const scrollingEvents = [...EVENTS, ...EVENTS];
+  const t = useTranslations("NationalCalendar");
+  const events = t.raw("events");
+  const scrollingEvents = [
+    ...(Array.isArray(events) ? events : []),
+    ...(Array.isArray(events) ? events : []),
+  ];
 
   return (
     <section className="w-full overflow-hidden bg-slate-50 py-12">
@@ -70,7 +32,7 @@ export default function NationalCalendar() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-8 text-center">
           <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-            Important National Dates
+            {t("title")}
           </h2>
         </div>
       </div>
@@ -91,7 +53,9 @@ export default function NationalCalendar() {
               <h3 className="text-base font-semibold text-blue-900">
                 {event.title}
               </h3>
-              <p className="mt-1 text-sm text-slate-600">{event.desc}</p>
+              <p className="mt-1 text-sm text-slate-600">
+                {event.description}
+              </p>
             </div>
           </article>
         ))}

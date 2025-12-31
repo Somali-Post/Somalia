@@ -3,31 +3,13 @@
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { Book, Briefcase, Globe, UserCheck } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-const SERVICES = [
-  {
-    title: "Visa Application",
-    description: "Submit visa requests and view entry requirements.",
-    icon: Globe,
-  },
-  {
-    title: "Business Registration",
-    description: "Register new businesses and manage permits.",
-    icon: Briefcase,
-  },
-  {
-    title: "National ID",
-    description: "Access digital identity services and updates.",
-    icon: UserCheck,
-  },
-  {
-    title: "E-Passport Portal",
-    description: "Apply for or renew your Somali Biometric Passport.",
-    icon: Book,
-  },
-];
+const SERVICE_ICONS = [Globe, Briefcase, UserCheck, Book];
 
 export default function KeyServices() {
+  const t = useTranslations("KeyServices");
+  const services = t.raw("services");
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -52,7 +34,7 @@ export default function KeyServices() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-8 text-center">
           <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-            Online Government Services
+            {t("title")}
           </h2>
         </div>
 
@@ -64,11 +46,11 @@ export default function KeyServices() {
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {SERVICES.map((service) => {
-            const Icon = service.icon;
+          {services.map((service, index) => {
+            const Icon = SERVICE_ICONS[index] ?? Globe;
             return (
               <motion.article
-                key={service.title}
+                key={`${service.title}-${index}`}
                 className="rounded-2xl bg-white p-6 shadow-sm transition-all hover:shadow-md"
                 variants={cardVariants}
               >
@@ -91,7 +73,7 @@ export default function KeyServices() {
             href="/services"
             className="text-sm font-semibold text-blue-600 transition hover:text-blue-700"
           >
-            {"View All Services ->"}
+            {t("cta")}
           </Link>
         </div>
       </div>

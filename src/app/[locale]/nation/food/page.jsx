@@ -2,38 +2,25 @@
 
 import Image from "next/image";
 import { Coffee, Flame, Utensils, Wheat } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-const DISHES = [
-  {
-    title: "Bariis Iskukaris",
-    description:
-      "Fragrant rice spiced with cardamom, cumin, and cloves, served with tender goat or camel meat.",
-    image: "/images/food/bariis.jpg",
-  },
-  {
-    title: "Canjeero (Anjero)",
-    description:
-      "A fermented sourdough pancake, the staple of every Somali breakfast, often dipped in sesame oil and sugar.",
-    image: "/images/food/canjeero.jpg",
-  },
-  {
-    title: "Sambusa",
-    description:
-      "Crispy triangular pastries filled with spiced minced meat, onions, and green chilies. The ultimate snack.",
-    image: "/images/food/sambusa.jpg",
-  },
-  {
-    title: "Xalwo (Halwa)",
-    description:
-      "The Sultan of Sweets. A dense, gelatinous confection made from sugar, cornstarch, and spices, reserved for weddings and Eid.",
-    image: "/images/food/halwa.jpg",
-  },
+const DISH_IMAGES = [
+  "/images/food/bariis.jpg",
+  "/images/food/canjeero.jpg",
+  "/images/food/sambusa.jpg",
+  "/images/food/halwa.jpg",
 ];
 
 export default function FoodPage() {
+  const t = useTranslations("FoodPage");
+  const dishes = t.raw("dishes.items").map((dish, index) => ({
+    ...dish,
+    image: DISH_IMAGES[index],
+  }));
+
   return (
     <>
       <Navbar />
@@ -47,14 +34,13 @@ export default function FoodPage() {
             <div className="container mx-auto px-6">
               <div className="max-w-3xl space-y-4 text-white">
                 <p className="text-xs font-semibold uppercase tracking-[0.35em] text-orange-200">
-                  Somali Cuisine
+                  {t("hero.eyebrow")}
                 </p>
                 <h1 className="text-4xl font-bold sm:text-5xl lg:text-6xl">
-                  Flavors of the Horn
+                  {t("hero.title")}
                 </h1>
                 <p className="text-lg text-orange-50 sm:text-xl">
-                  A fusion of African, Arab, and Indian influences, centered on
-                  Halal traditions and generous hospitality.
+                  {t("hero.subtitle")}
                 </p>
               </div>
             </div>
@@ -65,10 +51,10 @@ export default function FoodPage() {
           <div className="mx-auto max-w-5xl px-6">
             <div className="mb-8 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-orange-500">
-                The Philosophy
+                {t("philosophy.eyebrow")}
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-slate-900">
-                Soo Dhawoow (Welcome)
+                {t("philosophy.title")}
               </h2>
             </div>
 
@@ -77,9 +63,7 @@ export default function FoodPage() {
                 <Utensils className="h-5 w-5" />
               </div>
               <p className="text-base text-slate-700">
-                In Somalia, food is a love language. To host a guest is a
-                blessing. It is customary to share the best cut of meat and the
-                freshest milk with visitors.
+                {t("philosophy.body")}
               </p>
             </div>
           </div>
@@ -89,17 +73,17 @@ export default function FoodPage() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="mb-10 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-orange-500">
-                The National Dishes
+                {t("dishes.eyebrow")}
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-slate-900">
-                Signature Plates
+                {t("dishes.title")}
               </h2>
             </div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {DISHES.map((dish) => (
+              {dishes.map((dish, index) => (
                 <article
-                  key={dish.title}
+                  key={`${dish.title}-${index}`}
                   className="overflow-hidden rounded-2xl border border-orange-500/40 bg-white shadow-md"
                 >
                   <div className="relative h-64">
@@ -129,25 +113,22 @@ export default function FoodPage() {
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 lg:grid-cols-[1.1fr_1fr]">
             <div className="space-y-4">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-orange-500">
-                Tea Culture
+                {t("tea.eyebrow")}
               </p>
               <h2 className="text-3xl font-semibold text-slate-900">
-                The Art of Shaah
+                {t("tea.title")}
               </h2>
               <p className="text-base text-slate-700">
-                Shaah is the linchpin of social life. Brewed with cardamom
-                (hayl) and cloves, and served with plenty of sugar. It is drunk
-                in the afternoon (&apos;Asariya&apos;) as a time to connect and exchange
-                news.
+                {t("tea.body")}
               </p>
               <div className="flex flex-wrap items-center gap-4 text-orange-600">
                 <span className="inline-flex items-center gap-2 text-sm font-semibold">
                   <Coffee className="h-4 w-4" />
-                  Shaah Rituals
+                  {t("tea.tags.rituals")}
                 </span>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold">
                   <Wheat className="h-4 w-4" />
-                  Halal Traditions
+                  {t("tea.tags.halal")}
                 </span>
               </div>
             </div>

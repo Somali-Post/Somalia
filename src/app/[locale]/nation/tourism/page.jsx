@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { IdCard, Shield, Smartphone } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -15,55 +16,21 @@ const CAROUSEL_IMAGES = [
   "/images/tourism/carousel-3.jpg",
 ];
 
-const ESSENTIALS = [
-  {
-    title: "Visas & Entry",
-    description:
-      "Visa on Arrival (VOA) is available at Aden Adde International Airport ($60). E-Visa services are rolling out at visa.gov.so.",
-    icon: IdCard,
-  },
-  {
-    title: "The Cashless Economy (EVC+)",
-    description:
-      "Somalia is a cashless society. Mobile money (EVC Plus/Zaad) is used for everything from coffee to taxis.",
-    icon: Smartphone,
-  },
-  {
-    title: "Security & Logistics",
-    description:
-      "Mogadishu has secure Green Zones. Visitors are advised to coordinate with local hosts or security details for excursions. Liido Beach and Peace Park are popular secure public spots.",
-    icon: Shield,
-  },
-];
-
-const DESTINATIONS = [
-  {
-    title: "Liido Beach",
-    description:
-      "The vibrant heart of Mogadishu's social life. Seafood cafes, ocean breeze, and resilience.",
-    image: "/images/tourism/hero-1.jpg",
-  },
-  {
-    title: "Laas Geel",
-    description:
-      "5,000-year-old rock art near Hargeisa. One of the best-preserved Neolithic sites in Africa.",
-    image: "/images/tourism/hero-3.jpg",
-  },
-  {
-    title: "National Museum",
-    description:
-      "Recently reopened, housing the artifacts and history of the Somali people.",
-    image: "/images/tourism/museum.jpg",
-  },
-  {
-    title: "Jazeera Beach",
-    description:
-      "A serene, pristine stretch of coast for those seeking quiet beauty.",
-    image: "/images/tourism/jazeera.jpg",
-  },
+const ESSENTIAL_ICONS = [IdCard, Smartphone, Shield];
+const DESTINATION_IMAGES = [
+  "/images/tourism/hero-1.jpg",
+  "/images/tourism/hero-3.jpg",
+  "/images/tourism/museum.jpg",
+  "/images/tourism/jazeera.jpg",
 ];
 
 export default function TourismPage() {
+  const t = useTranslations("TourismPage");
+  const essentials = t.raw("essentials.items");
+  const destinations = t.raw("destinations.items").map((destination, index) => ({
+    ...destination,
+    image: DESTINATION_IMAGES[index],
+  }));
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -107,13 +74,13 @@ export default function TourismPage() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
-                  Somalia Tourism Guide
+                  {t("hero.eyebrow")}
                 </p>
                 <h1 className="text-4xl font-semibold sm:text-5xl lg:text-6xl">
-                  Discover the Pearl of the Indian Ocean.
+                  {t("hero.title")}
                 </h1>
                 <p className="text-lg text-white/85 sm:text-xl">
-                  Ancient History. Pristine Beaches. Resilient Spirit.
+                  {t("hero.subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -124,19 +91,19 @@ export default function TourismPage() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="mb-10 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-                Practical Guide
+                {t("essentials.eyebrow")}
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-blue-900">
-                Travel Essentials
+                {t("essentials.title")}
               </h2>
             </div>
 
             <div className="grid gap-6 md:grid-cols-3">
-              {ESSENTIALS.map((item) => {
-                const Icon = item.icon;
+              {essentials.map((item, index) => {
+                const Icon = ESSENTIAL_ICONS[index] ?? IdCard;
                 return (
                   <div
-                    key={item.title}
+                    key={`${item.title}-${index}`}
                     className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
                   >
                     <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600">
@@ -159,17 +126,17 @@ export default function TourismPage() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="mb-10 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-                Top Destinations
+                {t("destinations.eyebrow")}
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-blue-900">
-                Must-Visit Locations
+                {t("destinations.title")}
               </h2>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {DESTINATIONS.map((destination) => (
+              {destinations.map((destination, index) => (
                 <div
-                  key={destination.title}
+                  key={`${destination.title}-${index}`}
                   className="overflow-hidden rounded-2xl bg-white shadow-md"
                 >
                   <div className="relative h-56">
@@ -198,17 +165,17 @@ export default function TourismPage() {
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 px-6 text-center lg:flex-row lg:text-left">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
-                Ready to Visit?
+                {t("cta.eyebrow")}
               </p>
               <h3 className="mt-3 text-3xl font-semibold">
-                Start planning your journey.
+                {t("cta.title")}
               </h3>
             </div>
             <Link
               href="#"
               className="rounded-full border border-yellow-500 px-6 py-3 text-sm font-semibold text-yellow-500 transition hover:bg-yellow-500 hover:text-blue-900"
             >
-              Find a Registered Tour Operator
+              {t("cta.button")}
             </Link>
           </div>
         </section>

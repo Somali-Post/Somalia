@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -8,31 +9,19 @@ import Navbar from "@/components/Navbar";
 const ALINDI_STRIP =
   "h-4 w-full bg-[repeating-linear-gradient(90deg,#7f1d1d_0px,#7f1d1d_20px,#f59e0b_20px,#f59e0b_30px,#000_30px,#000_32px,#f59e0b_32px,#f59e0b_42px,#7f1d1d_42px,#7f1d1d_62px,#fff_62px,#fff_63px)]";
 
-const POETS = [
-  {
-    name: 'Mohamed Ibrahim Warsame "Hadraawi"',
-    quote: "Jacayl dhiig ma lagu qoray?",
-    description:
-      "The Shakespeare of Somalia, known for weaving social justice into romantic verse.",
-    image: "/images/culture/hadraawi.jpg",
-  },
-  {
-    name: "Sayid Mohamed Abdullah Hassan",
-    quote: "Dulmiga waan diiday, dalkayga waan dafiraa.",
-    description:
-      "The leader of the Dervish state who used poetry as a weapon against colonialism.",
-    image: "/images/culture/sayid.jpg",
-  },
-  {
-    name: 'Abdullahi Suldaan "Timacade"',
-    quote: "Kaana siib, kana saar.",
-    description:
-      "The poet of Independence, celebrating the birth of the Republic in 1960.",
-    image: "/images/culture/timacade.jpg",
-  },
+const POET_IMAGES = [
+  "/images/culture/hadraawi.jpg",
+  "/images/culture/sayid.jpg",
+  "/images/culture/timacade.jpg",
 ];
 
 export default function CulturePage() {
+  const t = useTranslations("CulturePage");
+  const poets = t.raw("poets.items").map((poet, index) => ({
+    ...poet,
+    image: POET_IMAGES[index],
+  }));
+
   return (
     <>
       <Navbar />
@@ -46,13 +35,13 @@ export default function CulturePage() {
             <div className="container mx-auto px-6">
               <div className="max-w-2xl space-y-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-yellow-500">
-                  People & Culture
+                  {t("hero.eyebrow")}
                 </p>
                 <h1 className="text-4xl font-bold text-yellow-500 sm:text-5xl">
-                  The Nation of Poets
+                  {t("hero.title")}
                 </h1>
                 <p className="text-lg text-white">
-                  A heritage of oral tradition, hospitality, and resilience.
+                  {t("hero.subtitle")}
                 </p>
               </div>
             </div>
@@ -63,17 +52,17 @@ export default function CulturePage() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="mb-8 space-y-2 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-                The Poets
+                {t("poets.eyebrow")}
               </p>
               <h2 className="text-3xl font-semibold text-blue-900">
-                Masters of the Oral Tradition
+                {t("poets.title")}
               </h2>
             </div>
 
             <div className="grid gap-6 md:grid-cols-3">
-              {POETS.map((poet) => (
+              {poets.map((poet, index) => (
                 <article
-                  key={poet.name}
+                  key={`${poet.name}-${index}`}
                   className="group overflow-hidden rounded-2xl bg-white shadow-md"
                 >
                   <div className="relative h-72">
@@ -105,15 +94,13 @@ export default function CulturePage() {
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 lg:grid-cols-[1.1fr_1fr]">
             <div className="space-y-4">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-                Social Customs
+                {t("customs.eyebrow")}
               </p>
               <h2 className="text-3xl font-semibold text-blue-900">
-                Soo Dhawoow: The Art of Hospitality
+                {t("customs.title")}
               </h2>
               <p className="text-base text-slate-600">
-                Hospitality is a duty in Somali culture. A guest is a blessing
-                from God, and generosity is a mark of honor. Refusing offered
-                food or tea is often considered impolite.
+                {t("customs.body")}
               </p>
             </div>
             <div className="overflow-hidden rounded-3xl border border-slate-100 shadow-sm">
@@ -125,8 +112,7 @@ export default function CulturePage() {
                 className="h-full w-full object-cover"
               />
               <p className="bg-white px-5 py-3 text-sm text-slate-600">
-                Shaah (Spiced Tea) is the center of social life, spiced with
-                cardamom and cloves.
+                {t("customs.caption")}
               </p>
             </div>
           </div>
@@ -138,16 +124,13 @@ export default function CulturePage() {
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 lg:grid-cols-[1fr_1.1fr]">
             <div className="order-2 space-y-4 lg:order-1">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-                Tradition
+                {t("tradition.eyebrow")}
               </p>
               <h2 className="text-3xl font-semibold text-blue-900">
-                Rhythm of the Land
+                {t("tradition.title")}
               </h2>
               <p className="text-base text-slate-600">
-                The Dhaanto dance, often compared to early reggae rhythms,
-                celebrates unity and courage, while Buraanbur honors the poetic
-                artistry of Somali women. Traditional dress such as the Guntiino
-                and the Macawis remain proud symbols of identity.
+                {t("tradition.body")}
               </p>
             </div>
             <div className="order-1 overflow-hidden rounded-3xl border border-slate-100 shadow-sm lg:order-2">

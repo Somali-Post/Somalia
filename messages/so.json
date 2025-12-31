@@ -1,41 +1,42 @@
 {
   "Navbar": {
+    "home": "Bogga Hore",
+    "nation": "Qaranka",
+    "gov": "Dawladda",
+    "services": "Adeegyada",
+    "contact": "Nala Soo Xiriir",
     "brand_prefix": "Jamhuuriyadda Federaalka ee",
     "brand_name": "Soomaaliya",
     "search_placeholder": "Raadi",
     "language_toggle_en": "Soomaali | English",
     "language_toggle_so": "English | Soomaali",
     "links": {
-      "home": "Bogga Hore",
-      "nation": "Qaranka",
-      "nation_children": [
-        "Taariikhda",
-        "Dhaqanka iyo Dadka",
-        "Cuntada iyo Hidaha Cuntada",
-        "Dalxiiska"
-      ],
-      "government": "Dawladda",
-      "government_children": [
-        "Dastuurka",
-        "Himilada Qaranka 2060",
-        "Laanta Fulinta",
-        "Golaha Wasiirrada",
-        "Baarlamaanka",
-        "Wasaaradaha",
-        "Hay’adaha Qaranka",
-        "Dawladdaha Xubnaha ka ah Federaalka"
-      ],
-      "services": "Adeegyada",
-      "services_children": [
-        "Dhammaan Adeegyada",
-        "Xiriirrada Degdegga ah",
-        "Shaqooyin iyo Xirfado",
-        "Maalgelin"
-      ],
-      "contact": "Nala Soo Xiriir"
-    }
+      "nation": {
+        "history": "Taariikhda",
+        "culture": "Dhaqanka iyo Dadka",
+        "tourism": "Dalxiiska",
+        "food": "Cuntada iyo Hidaha Cuntada"
+      },
+      "government": {
+        "constitution": "Dastuurka",
+        "vision": "Himilada Qaranka 2060",
+        "executive": "Laanta Fulinta",
+        "cabinet": "Golaha Wasiirrada",
+        "parliament": "Baarlamaanka",
+        "ministries": "Wasaaradaha",
+        "agencies": "Hay’adaha Qaranka",
+        "states": "Dawladdaha Xubnaha ka ah Federaalka"
+      },
+      "services": {
+        "all": "Dhammaan Adeegyada",
+        "emergency": "Xiriirrada Degdegga ah",
+        "jobs": "Shaqooyin iyo Xirfado",
+        "invest": "Maalgelin"
+      }
+    },
+    "brand_full": "Jamhuuriyadda Federaalka Soomaaliya",
+    "language_toggle_short": "EN | SO | AR"
   },
-
   "Footer": {
     "brand": "Jamhuuriyadda Federaalka ee Soomaaliya",
     "description": "Bogga rasmiga ah ee isgaarsiinta iyo macluumaadka dadweynaha ee Dowladda Federaalka Soomaaliya.",
@@ -82,25 +83,181 @@
       ]
     }
   },
-
+  "GlobalSearch": {
+    "placeholder": "Raadi adeegyo, wasaarado, ama dukumiinti...",
+    "button": "Raadi",
+    "sections": {
+      "government": "Dawladda",
+      "services": "Adeegyo & Fursado"
+    },
+    "no_results": "Natiijo lama helin.",
+    "meta": {
+      "minister": "Wasiir: {name}",
+      "ministry": "Wasaarad",
+      "agency": "Hay'ad",
+      "page": "Bog"
+    },
+    "static_pages": {
+      "constitution": "Dastuurka",
+      "vision": "Himilada 2060",
+      "invest": "Maalgeli Soomaaliya",
+      "services": "Adeegyada Elektaroonigga (E-Services)",
+      "jobs": "Shaqooyin & Xirfado"
+    }
+  },
+  "PostalService": {
+    "title": "Isku Xirka Soomaaliya iyo Dunida",
+    "track_placeholder": "Geli Lambarka Raad-raaca...",
+    "track_button": "Raad-raac"
+  },
+  "NationalCalendar": {
+    "title": "Taariikhaha Qaranka ee Muhiimka ah",
+    "events": [
+      {
+        "day": "21",
+        "month": "JAN",
+        "title": "Maalinta Af-Soomaaliga",
+        "description": "Dabaaldegga qaadashada qoraalka Laatiinka ee Af-Soomaaliga sannadkii 1972."
+      },
+      {
+        "day": "08",
+        "month": "MAR",
+        "title": "Maalinta Haweenka Adduunka",
+        "description": "Sharfidda doorka haweenka Soomaaliyeed ee dhismaha qaranka."
+      },
+      {
+        "day": "12",
+        "month": "APR",
+        "title": "Maalinta Ciidanka Qaranka",
+        "description": "Xuska aasaaska Ciidamada Qalabka Sida ee Soomaaliya."
+      },
+      {
+        "day": "15",
+        "month": "MAY",
+        "title": "Maalinta SYL",
+        "description": "Sharfidda aasaasayaashii Ururka SYL ee 1943."
+      },
+      {
+        "day": "26",
+        "month": "JUN",
+        "title": "Maalinta Xorriyadda (Waqooyi)",
+        "description": "Xorriyadda gobollada Waqooyi ee ka xoroobay Maxmiyaddii Ingiriiska."
+      },
+      {
+        "day": "01",
+        "month": "JUL",
+        "title": "Maalinta Jamhuuriyadda",
+        "description": "Midowga Waqooyi iyo Koonfur iyo dhalashadii Jamhuuriyadda Soomaaliya 1960."
+      },
+      {
+        "day": "12",
+        "month": "OCT",
+        "title": "Maalinta Calanka Qaranka",
+        "description": "Dabaaldegga qaadashada calanka buluugga ah iyo xiddigta cad sannadkii 1954."
+      }
+    ]
+  },
+  "PublicNotices": {
+    "eyebrow": "Daahfurnaan",
+    "title": "Ogeysiisyada Dadweynaha & Iibka Dowladda",
+    "active_tenders_title": "Qandaraasyada Firfircoon",
+    "civil_service_vacancies_title": "Fursadaha Shaqooyinka Rayidka",
+    "closing_prefix": "Xiritaanka:",
+    "tenders": [
+      {
+        "title": "Iibsiga Solar Panels ee Wasaaradda Tamarta (Tix: MOE/2025/01)",
+        "closing": "Jan 30"
+      },
+      {
+        "title": "Dhismaha Wadada Gobolka Galkayo (Tix: MOPW/2025/04)",
+        "closing": "Feb 15"
+      }
+    ],
+    "vacancies_body": "Eeg dhammaan fursadaha shaqo ee hadda jira (dowlad iyo gaar loo leeyahay) adigoo adeegsanaya Golaha Shaqooyinka Qaranka.",
+    "browse_jobs": "Eeg Shaqooyinka ->"
+  },
+  "StatesPage": {
+    "title": "Dowlad-goboleedyada Federaalka",
+    "description": "Jamhuuriyadda Federaalka waxay ka kooban tahay shan Dowlad-goboleed iyo Maamulka Gobolka Banaadir.",
+    "labels": {
+      "capital": "Caasimad",
+      "president": "Madaxweyne",
+      "economy": "Dhaqaale"
+    },
+    "buttons": {
+      "visit_website": "Booqo Bogga Rasmiga ah",
+      "website_unavailable": "Bogga Lama Heli Karo"
+    },
+    "states": [
+      {
+        "name": "Dawladda Puntland",
+        "capital": "Garoowe",
+        "president": "H.E. Said Abdullahi Deni",
+        "economy": "Xoolaha nool, Kalluumaysiga, Fooxa"
+      },
+      {
+        "name": "Dawladda Galmudug",
+        "capital": "Dhuusamareeb",
+        "president": "H.E. Ahmed Abdi Kariye (Qoorqoor)",
+        "economy": "Xoolaha nool, Beeraha"
+      },
+      {
+        "name": "Dawladda Jubbaland",
+        "capital": "Kismaayo",
+        "president": "H.E. Ahmed Mohamed Islam (Madobe)",
+        "economy": "Ganacsiga Dekedda, Beeraha, Kalluumaysiga"
+      },
+      {
+        "name": "Dawladda Koonfur Galbeed",
+        "capital": "Baydhabo",
+        "president": "H.E. Abdiaziz Hassan Mohamed (Laftagareen)",
+        "economy": "Beeraha (Masaggo/Galley), Xoolaha nool"
+      },
+      {
+        "name": "Dawladda Hirshabelle",
+        "capital": "Jowhar",
+        "president": "H.E. Ali Abdullahi Hussein (Gudlawe)",
+        "economy": "Beeraha (Webiga Shabeelle), Xoolaha nool"
+      },
+      {
+        "name": "Maamulka Gobolka Banaadir",
+        "capital": "Muqdisho",
+        "president": "H.E. Mohamed Ahmed (Guddoomiye)",
+        "economy": "Ganacsiga, Adeegyada, Saadka"
+      }
+    ]
+  },
   "Hero": {
     "badge": "Bogga Rasmiga ah ee Dowladda Federaalka",
     "title": "Jamhuuriyadda Federaalka ee Soomaaliya",
     "subtitle": "Nabad, Horumar, iyo Barwaaqo.",
     "popular": "Caanka ah: Baasaboor, Visa, Shaqooyin, Qandaraasyo"
   },
-
   "EmergencyBar": {
     "title": "LAMBARRO DEGDEG AH:",
     "contacts": [
-      { "label": "Booliiska", "number": "888" },
-      { "label": "Ambalaas", "number": "999" },
-      { "label": "Dab-damis", "number": "555" },
-      { "label": "Bisha Cas", "number": "446" },
-      { "label": "Khadka Talooyinka NISA", "number": "991" }
+      {
+        "label": "Booliiska",
+        "number": "888"
+      },
+      {
+        "label": "Ambalaas",
+        "number": "999"
+      },
+      {
+        "label": "Dab-damis",
+        "number": "555"
+      },
+      {
+        "label": "Bisha Cas",
+        "number": "446"
+      },
+      {
+        "label": "Khadka Talooyinka NISA",
+        "number": "991"
+      }
     ]
   },
-
   "KeyServices": {
     "title": "Adeegyada Dowladda ee Online",
     "services": [
@@ -123,13 +280,11 @@
     ],
     "cta": "Eeg Dhammaan Adeegyada →"
   },
-
   "CookieConsent": {
     "message": "Waxaan isticmaalnaa cookies si aan u wanaajino khibraddaada isla markaana u falanqeyno isticmaalka bogga. Markaad sii waddo, waxaad oggolaatay isticmaalka cookies. <privacyLink>Akhri Siyaasadda Asturnaanta</privacyLink>",
     "decline": "Diid",
     "accept": "Aqbal"
   },
-
   "InvestPage": {
     "title": "Maalgeli Soomaaliya",
     "description": "Furitaanka awoodda Geeska Afrika — suuq furan oo u diyaarsan koboc iyo hal-abuurnimo.",
@@ -204,7 +359,6 @@
       }
     }
   },
-
   "VisionPage": {
     "title": "Himilada Qaranka ee Boqol-Sano 2060",
     "description": "Khariidad-hagaajin lagu gaari karo Soomaaliya ammaan ah, dimoqraadi ah, isla markaana barwaaqo ah marka la gaaro boqol-guuradii xornimada.",
@@ -263,7 +417,7 @@
           {
             "year": "2060",
             "title": "Xuska Boqol-Guurada",
-            "description": "Soomaaliya ammaan ah, dimuqraadi ah, oo barwaaqo ah."
+            "description": "Soomaaliya ammaan ah, dimoqraadi ah, oo barwaaqo ah."
           }
         ]
       },
@@ -275,7 +429,6 @@
       }
     }
   },
-
   "ServicesPage": {
     "title": "Adeegyada Muwaadiniinta",
     "description": "Hel adeegyada dowladda, kuwa online iyo kuwa goob-joog ah.",
@@ -287,19 +440,23 @@
         "items": [
           {
             "title": "Diiwaangelinta Ganacsiga",
-            "description": "Ku diiwaangeli shirkad adigoo adeegsanaya SBRS."
+            "description": "Ku diiwaangeli shirkad adigoo adeegsanaya SBRS.",
+            "href": "https://ebusiness.gov.so"
           },
           {
             "title": "Codsiga E-Visa",
-            "description": "Codso Visa gelitaan (Dalxiis/Ganacsi)."
+            "description": "Codso Visa gelitaan (Dalxiis/Ganacsi).",
+            "href": "https://visa.gov.so"
           },
           {
             "title": "Natiijooyinka Imtixaannada Qaranka",
-            "description": "Hubi natiijooyinka Fasalka 8aad iyo 12aad."
+            "description": "Hubi natiijooyinka Fasalka 8aad iyo 12aad.",
+            "href": "https://soneb.gov.so"
           },
           {
             "title": "Macluumaadka Baasaboor",
-            "description": "Soo degso foomamka iyo shuruudaha."
+            "description": "Soo degso foomamka iyo shuruudaha.",
+            "href": "https://immigration.gov.so"
           }
         ],
         "cta": "Booqo bogga"
@@ -357,7 +514,6 @@
       }
     }
   },
-
   "ConstitutionPage": {
     "title": "Dastuurka Ku-Meelgaarka ah",
     "description": "Sharciga ugu sarreeya ee Jamhuuriyadda Federaalka ee Soomaaliya.",
@@ -392,5 +548,587 @@
         "body": "Awoodaha waxaa loo kala saaray Dowladda Federaalka iyo Dowlad-goboleedyada."
       }
     ]
+  },
+  "PrivacyPage": {
+    "title": "Siyaasadda Asturnaanta",
+    "description": "Sida aan u ilaalinno xogtaada shakhsiyeed iyo xuquuqdaada.",
+    "last_updated": "Cusboonaysiin Ugu Dambeysay: Diseembar 2025",
+    "key_takeaways_title": "Qodobbada Muhiimka ah",
+    "key_takeaways_body": "Boggan waxa uu u maareeyaa xogta iyadoo la raacayo Xeerka Ilaalinta Xogta (Data Protection Act) ee 2023 iyo Qodobka 14aad ee Dastuurka Ku-Meelgaarka ah (Xuquuqda Asturnaanta). Xogta waxaa la ururiyaa oo keliya ujeeddo adeeg-bixin, waxa lagu kaydiyaa gudaha Soomaaliya, waxaana lagu ilaaliyaa heerarka qaran ee sirgelineed (encryption).",
+    "sections": [
+      {
+        "title": "Aasaaska Sharciyeed",
+        "content": "Habaynta xogta shakhsiyeed waxaa hagaya Xeerka Ilaalinta Xogta (Data Protection Act) ee 2023 iyo Qodobka 14aad ee Dastuurka Ku-Meelgaarka ah, kaas oo dammaanad qaadaya xuquuqda asturnaanta. Waxaanu xog u habaynnaa oo keliya marka ay jirto saldhig sharciyeed iyo ujeeddo adeeg dadweyne oo cad."
+      },
+      {
+        "title": "Ururinta iyo Isticmaalka Xogta",
+        "content": "Waxaan ururinnaa xog kooban oo ku saabsan isticmaalka (oo ay ku jiraan cookies iyo analytics) si loo hubiyo adeeg-bixin ammaan ah, la isku halayn karo, oo hufan. Xogta shakhsiyeed ee lagu bixiyo foomamka ama codsiyada adeegyada (oo ay ku jiraan adeegyada Baasaboor ama aqoonsi) waxaa loo ururiyaa oo keliya in lagu bixiyo adeegga la codsaday, lagu xaqiijiyo aqoonsiga, laguna fuliyo waajibaadka sharciyeed."
+      },
+      {
+        "title": "Madaxbannaanida Xogta iyo Amniga",
+        "content": "Dhammaan xogta muwaadiniinta waxaa si ammaan ah loogu kaydiyaa serverro ku yaalla gudaha Jamhuuriyadda Federaalka ee Soomaaliya, waxaana la sirgeliyaa iyadoo la raacayo heerarka qaran. Waxaan hirgelinnaa tallaabooyin maamul, farsamo, iyo jireed si looga hortago gelitaan aan la oggolayn, beddelid, ama faafin xog."
+      },
+      {
+        "title": "Xuquuqdaada",
+        "content": "Muwaadiniintu waxay xaq u leeyihiin inay helaan, saxaan, ama codsadaan tirtiridda xogtooda shakhsiyeed, iyagoo waafaqsan Xeerka Ilaalinta Xogta (Data Protection Act) ee 2023. Codsiyada waa in loo gudbiyaa National Identification and Registration Authority (NIRA), oo ah hay’adda loo idmaday maamulka aqoonsiga iyo maamulka/maareynta xogta."
+      }
+    ]
+  },
+  "TermsPage": {
+    "title": "Shuruudaha iyo Xaaladaha",
+    "description": "Xeerarka hagaya isticmaalka Bogga Rasmiga ah ee Dowladda.",
+    "last_updated": "Cusboonaysiin Ugu Dambeysay: Diseembar 2025",
+    "sections": [
+      {
+        "title": "1. Hordhac",
+        "content": "Shuruudahan iyo Xaaladahani waxay xukumaan helitaanka iyo isticmaalka Bogga Rasmiga ah ee Dowladda. Adeegsiga boggan, waxaad oggolaatay inaad u hoggaansanto shuruudahan iyo dhammaan shuruucda khuseeya ee Jamhuuriyadda Federaalka ee Soomaaliya."
+      },
+      {
+        "title": "2. Afeef",
+        "content": "Macluumaadka boggan ku jira waxa uu u yahay hagis guud. Wargeysyada Rasmiga ah (Official Gazettes) iyo digreetooyinka/shuruucda rasmiga ah ayaa mudnaan ka leh dhammaan arrimaha sharciga iyo siyaasadda."
+      },
+      {
+        "title": "3. Hantida Maskaxeed",
+        "content": "Dhammaan nuxurka, oo ay ku jiraan Astaanta Qaranka (Coat of Arms) iyo astaamaha wasaaradaha, waa hanti ay leedahay Dowladda Federaalka Soomaaliya. Isticmaal, nuqul-qaadid, ama faafin aan oggolaansho lahayn waa mamnuuc."
+      },
+      {
+        "title": "4. Si Xun u Adeegsiga iyo Amniga",
+        "content": "Isku day kasta oo lagu jabsado, lagu xoqo (scrape), lagu carqaladeeyo, ama si kale loogu farageliyo adeeggan, waa dambi ciqaabeed sida ku xusan Xeerka Ciqaabta Qaranka. Dowladda waxay xaq u leedahay inay baarto oo ay maxkamadeyso fal kasta oo sharci-darro ah."
+      },
+      {
+        "title": "5. Sharciga Lagu Dhaqayo",
+        "content": "Shuruudahan waxaa xukuma shuruucda Jamhuuriyadda Federaalka ee Soomaaliya. Khilaafaad kasta waxa ay geli doonaan awoodda maxkamadaha Muqdisho oo keliya."
+      }
+    ]
+  },
+  "AccessibilityPage": {
+    "title": "Bayaanka Helitaanka",
+    "description": "Hubinta helitaan siman oo ay leeyihiin dhammaan muwaadiniinta.",
+    "last_updated": "Cusboonaysiin Ugu Dambeysay: Diseembar 2025",
+    "sections": {
+      "standard": {
+        "title": "Heerka Helitaanka ee Aan Raacno",
+        "body": "Waxaan ku dadaalnaa inaan gaadhno heerarka WCAG 2.1 Level AA, waxaana si joogto ah u qiimeynaa bogga si loo kordhiyo helitaanka dhammaan isticmaaleyaasha."
+      },
+      "features": {
+        "title": "Astaamaha U Hoggaansanaanta",
+        "items": [
+          "La jaanqaadidda akhristayaasha shaashadda (screen reader) ee hab-raacyada adeegyada aasaasiga ah.",
+          "Hagitaan kiiboodh (keyboard navigation) oo ka shaqeeya liisaska iyo foomamka muhiimka ah.",
+          "Qoraal kala-duwanaansho sare leh (high-contrast) si loo hagaajiyo akhriska."
+        ]
+      },
+      "inclusion": {
+        "title": "Ballanqaadka Ka-Qaybgalka",
+        "body": "Dowladda Federaalka waxa ay ka go’an tahay ka-qaybgal dijitaal ah oo ay helaan dadka naafada ah, waxa ayna sii wadi doontaa horumarinta astaamaha helitaanka iyadoo la waafajinayo heerarka caalamiga ah."
+      },
+      "feedback": {
+        "title": "Jawaab-celin",
+        "email": "accessibility@opm.gov.so",
+        "body": "Haddii aad la kulanto caqabado, fadlan la xiriir <emailLink>accessibility@opm.gov.so</emailLink>."
+      }
+    }
+  },
+  "ExecutivePage": {
+    "title": "Laanta Fulinta",
+    "description": "Heerka ugu sarreeya ee hoggaaminta dowladda.",
+    "presidency": {
+      "eyebrow": "Madaxweynaha",
+      "name": "H.E. Hassan Sheikh Mohamud",
+      "title": "Madaxweynaha Jamhuuriyadda Federaalka ee Soomaaliya",
+      "bio": "Waxaa la doortay May 2022, Mudane Xasan Sheekh Maxamuud waxa uu u adeegaa Madaxa Dowladda iyo astaanta midnimada qaranka. Sidoo kale waa Taliyaha Guud ee Ciidamada Qalabka Sida."
+    },
+    "office": {
+      "eyebrow": "Xafiiska Ra’iisul Wasaaraha",
+      "title": "Hoggaaminta Dowladda",
+      "description": "Hoggaaminta Golaha Wasiirrada ee mas’uulka ka ah fulinta siyaasadaha qaranka.",
+      "leaders": [
+        {
+          "name": "H.E. Salah Ahmed Jama",
+          "title": "Ra’iisul Wasaare Ku-xigeen"
+        },
+        {
+          "name": "H.E. Hamza Abdi Barre",
+          "title": "Ra’iisul Wasaare",
+          "role": "Madaxa Dowladda, mas’uul ka ah Golaha Wasiirrada iyo hirgelinta siyaasadaha qaranka."
+        },
+        {
+          "name": "H.E. Jibril Abdirashid Haji",
+          "title": "Ra’iisul Wasaare Ku-xigeen Labaad",
+          "note": "La magacaabay 2025."
+        }
+      ]
+    },
+    "mandate": {
+      "eyebrow": "Doorka iyo Waajibaadka",
+      "title": "Hawlaha Laanta Fulinta",
+      "body": "Laanta Fulintu waxay mas’uul ka tahay fulinta shuruucda, hoggaaminta arrimaha dibadda, iyo maaraynta hawlaha maalinlaha ah ee Dowladda Federaalka. Waxayna isla xisaabtan la leedahay Baarlamaanka.",
+      "cta": "Eeg Golaha Wasiirrada oo Dhammaystiran"
+    }
+  },
+  "CabinetPage": {
+    "title": "Golaha Wasiirrada",
+    "description": "Golaha Wasiirrada ee Jamhuuriyadda Federaalka ee Soomaaliya",
+    "leadership": {
+      "eyebrow": "Hoggaanka Golaha",
+      "title": "Hoggaaminta Fulinta",
+      "leaders": [
+        {
+          "name": "H.E. Hamza Abdi Barre",
+          "title": "Ra’iisul Wasaare"
+        },
+        {
+          "name": "H.E. Salah Ahmed Jama",
+          "title": "Ra’iisul Wasaare Ku-xigeen"
+        },
+        {
+          "name": "H.E. Jibril Abdirashid Haji",
+          "title": "Ra’iisul Wasaare Ku-xigeen Labaad"
+        }
+      ]
+    },
+    "members": {
+      "eyebrow": "Xubnaha Golaha",
+      "title": "Wasiirrada Federaalka",
+      "view_profile": "Eeg Xogta"
+    }
+  },
+  "ParliamentPage": {
+    "title": "Baarlamaanka Federaalka",
+    "description": "Laanta Sharci-dejinta ee laba-gole ee Jamhuuriyadda Federaalka",
+    "intro": "Baarlamaanka Federaalka wuxuu ka kooban yahay laba gole: Golaha Shacabka (275 xubnood) iyo Aqalka Sare (54 xubnood). Wuxuu mas’uul ka yahay dejinta shuruucda, kormeerka Laanta Fulinta, iyo matalaadda shacabka Soomaaliyeed.",
+    "lower_house": {
+      "title": "Golaha Shacabka",
+      "members_label": "275 Xubnood",
+      "speaker_title": "Guddoomiyaha Golaha Shacabka",
+      "deputy_titles": [
+        "Guddoomiye Ku-xigeenka Koowaad",
+        "Guddoomiye Ku-xigeenka Labaad"
+      ],
+      "members": {
+        "speaker": "H.E. Sheikh Adan Mohamed Nur \"Madobe\"",
+        "deputies": [
+          "Xildhibaan Saadiya Yasin Haji Samatar",
+          "Xildhibaan Abdullahi Omar Abshirow"
+        ]
+      }
+    },
+    "upper_house": {
+      "title": "Aqalka Sare",
+      "members_label": "54 Xubnood",
+      "speaker_title": "Guddoomiyaha Aqalka Sare",
+      "deputy_titles": [
+        "Guddoomiye Ku-xigeenka Koowaad",
+        "Guddoomiye Ku-xigeenka Labaad"
+      ],
+      "members": {
+        "speaker": "H.E. Abdi Hashi Abdullahi",
+        "deputies": [
+          "Xildhibaan Ali Shabaan Ibrahim",
+          "Xildhibaan Abdullahi Ali Hirsi \"Tima-cadde\""
+        ]
+      }
+    }
+  },
+  "FeedbackWidget": {
+    "question": "Boggan ma kaa caawiyay?",
+    "yes": "Haa",
+    "no": "Maya",
+    "thanks": "Waad ku mahadsan tahay jawaab-celintaada!"
+  },
+  "LatestNews": {
+    "title": "Wararkii Ugu Dambeeyay ee Dowladda",
+    "description": "Cusboonaysiin rasmi ah, war-saxaafadeedyo, iyo horumarro ka socda Jamhuuriyadda Federaalka.",
+    "view_archive": "Eeg Kaydka Wararka",
+    "read_press_release": "Akhri War-saxaafadeedka"
+  },
+  "MinistryDirectory": {
+    "title": "Wasaaradaha Federaalka",
+    "view_profile": "Eeg Xogta",
+    "view_all": "Eeg Dhammaan Wasaaradaha ->"
+  },
+  "MinistriesPage": {
+    "title": "Tusmada Wasaaradaha"
+  },
+  "GovernmentPage": {
+    "title": "Dawladda",
+    "description": "Sahami hay'adaha, hoggaanka, iyo jihada istiraatiijiga ah ee Jamhuuriyadda Federaalka.",
+    "header": {
+      "eyebrow": "Hay'adaha",
+      "title": "Tusmada Dowladda Federaalka",
+      "description": "Gelitaan degdeg ah oo ku aaddan laamaha aasaasiga ah iyo hay'adaha qaranka."
+    },
+    "learn_more": "Wax badan ka ogow",
+    "sections": {
+      "executive": {
+        "title": "Laanta Fulinta",
+        "description": "Hoggaanka Madaxa Dowladda iyo Dowladda."
+      },
+      "cabinet": {
+        "title": "Golaha Wasiirrada",
+        "description": "Golaha Wasiirrada iyo faylalka federaalka."
+      },
+      "parliament": {
+        "title": "Baarlamaanka",
+        "description": "Golaha sharci-dejinta laba aqal."
+      },
+      "ministries": {
+        "title": "Wasaaradaha",
+        "description": "Wasaaradaha federaalka iyo waajibaadkooda."
+      },
+      "agencies": {
+        "title": "Hay'adaha Qaranka",
+        "description": "Hay'adaha madaxbannaan iyo guddiyada."
+      },
+      "states": {
+        "title": "Dawladdaha Xubnaha ka ah Federaalka",
+        "description": "Dawladdaha xubnaha ka ah Federaalka iyo maamulka gobollada."
+      },
+      "constitution": {
+        "title": "Dastuurka",
+        "description": "Sharciga ugu sarreeya ee Jamhuuriyadda Federaalka."
+      },
+      "vision": {
+        "title": "Himilada Qaranka 2060",
+        "description": "Istiraatiijiyad fog iyo tiirarka NDP-9."
+      }
+    }
+  },
+  "NationalAgencies": {
+    "title": "Hay'adaha Qaranka",
+    "view_profile": "Eeg Xogta",
+    "view_all": "Eeg Dhammaan Hay'adaha ->"
+  },
+  "AgenciesPage": {
+    "title": "Hay'adaha Qaranka",
+    "description": "Hay'ado madaxbannaan oo u adeegaya danta guud."
+  },
+  "Vision2060": {
+    "label": "HIMILADA 2060",
+    "title": "Soomaaliya nabdoon, barwaaqo ah, kana faan badan.",
+    "description": "Khariidadda istiraatiijiga ah ee horumar, xasillooni, iyo maamul dimuqraadi ah.",
+    "cta": "Soo Degso Istiraatiijiyadda"
+  },
+  "MediaPage": {
+    "title": "Xafiiska Warfaafinta Dowladda",
+    "description": "War-saxaafadeedyo, bayaano rasmi ah, iyo warar ka imanaya Jamhuuriyadda Federaalka.",
+    "latest_title": "War-saxaafadeedkii Ugu Dambeeyay",
+    "latest_description": "Warar la xaqiijiyay oo ka socda Xafiiska Ra'iisul Wasaaraha.",
+    "filters": {
+      "all": "Dhammaan",
+      "politics": "Siyaasad",
+      "economy": "Dhaqaale",
+      "diplomacy": "Dibloomaasiyad"
+    },
+    "read_press_release": "Akhri War-saxaafadeedka",
+    "press_contact": "Si loo helo aqoonsiga warbaahinta, la xiriir <emailLink>media@opm.gov.so</emailLink>."
+  },
+  "MemberStates": {
+    "title": "Dawladdaha Xubnaha ka ah Federaalka",
+    "view_profile": "Eeg Xogta",
+    "states": [
+      "Dawladda Galmudug",
+      "Dawladda Hirshabelle",
+      "Dawladda Jubbaland",
+      "Dawladda Puntland",
+      "Dawladda Koonfur Galbeed",
+      "Maamulka Gobolka Banaadir"
+    ]
+  },
+  "Breadcrumbs": {
+    "home": "Bogga Hore",
+    "government": "Dawladda",
+    "ministries": "Wasaaradaha",
+    "agencies": "Hay'adaha"
+  },
+  "MinistryProfile": {
+    "about_title": "Ku Saabsan Wasaaradda",
+    "responsibilities_title": "Waajibaadka Muhiimka ah",
+    "departments_title": "Qaab-dhismeedka Hay'adda",
+    "contact_title": "Macluumaadka Xiriirka",
+    "visit_website": "Booqo Website-ka",
+    "minister_title": "Wasiirka {name}"
+  },
+  "AgencyProfile": {
+    "mandate_title": "Waajibaadka iyo Hawlaha",
+    "contact_title": "Faahfaahinta Xiriirka",
+    "visit_website": "Booqo Website-ka"
+  },
+  "ContactPage": {
+    "title": "Nala Soo Xiriir",
+    "description": "Sideen maanta kuu caawin karnaa? La xiriir Dowladda Federaalka Soomaaliya.",
+    "cards": [
+      {
+        "title": "Su'aalaha Guud",
+        "value": "info@opm.gov.so",
+        "description": "Su'aalaha guud ee dowladda."
+      },
+      {
+        "title": "Warbaahinta iyo Saxaafadda",
+        "value": "media@opm.gov.so",
+        "description": "Bayaanada rasmiga ah iyo aqoonsiga saxaafadda."
+      },
+      {
+        "title": "Nagu Soo Booqda",
+        "value": "Villa Somalia, Muqdisho",
+        "description": "Xafiiska Ra'iisul Wasaaraha."
+      }
+    ],
+    "form": {
+      "title": "Soo Dir Fariin",
+      "name": "Magaca",
+      "email": "Iimayl",
+      "phone": "Taleefoon",
+      "department": "Waax",
+      "message": "Fariintaada",
+      "submit": "Gudbi Codsiga"
+    },
+    "departments": [
+      "Su'aalaha Guud",
+      "Xafiiska Warbaahinta",
+      "Hab-maamuus",
+      "Adeegyada Muwaadiniinta"
+    ],
+    "other_ways": {
+      "title": "Waddooyin Kale oo Xiriir",
+      "hours_label": "Saacadaha Shaqada",
+      "hours_week": "Sabti - Khamiis: 8:00 AM - 4:00 PM (Waqtiga Bariga Afrika)",
+      "hours_weekend": "Jimce: Xiran",
+      "ministries_label": "Wasaarado Gaar ah",
+      "ministries_body": "Ma raadineysaa waax gaar ah? Ka hel xogta xiriirka ee Waxbarashada, Caafimaadka, ama Socdaalka gudaha tusmada.",
+      "ministries_cta": "Eeg Tusmada Wasaaradaha ->",
+      "social_label": "Warbaahinta Bulshada"
+    }
+  },
+  "NotFound": {
+    "title": "404 - Bogga Lama Helin",
+    "description": "Bogga aad codsatay lagama helin Bogga Dowladda Federaalka.",
+    "return_home": "Ku Laabo Bogga Hore",
+    "browse_ministries": "Eeg Wasaaradaha",
+    "contact_support": "La Xiriir Taageero"
+  },
+  "PressReleasePage": {
+    "title": "War-saxaafadeed",
+    "description": "Isgaarsiinta Rasmiga ah iyo Wararka",
+    "return_home": "Ku Laabo Bogga Hore"
+  },
+  "Leadership": {
+    "title": "Hoggaanka Fulinta",
+    "leaders": [
+      {
+        "role": "Madaxweyne",
+        "name": "H.E. Hassan Sheikh Mohamud",
+        "title": "Madaxweynaha Jamhuuriyadda Federaalka"
+      },
+      {
+        "role": "Ra'iisul Wasaare",
+        "name": "H.E. Hamza Abdi Barre",
+        "title": "Ra'iisul Wasaaraha Jamhuuriyadda Federaalka"
+      },
+      {
+        "role": "Guddoomiye",
+        "name": "H.E. Sheikh Adan Mohamed Nur",
+        "title": "Guddoomiyaha Golaha Shacabka"
+      },
+      {
+        "role": "Guddoomiye",
+        "name": "H.E. Abdi Hashi Abdullahi",
+        "title": "Guddoomiyaha Aqalka Sare"
+      }
+    ]
+  },
+  "HomePage": {
+    "newsletter": {
+      "eyebrow": "Warka La Soco",
+      "title": "Ku Biir Wargeyska",
+      "placeholder": "Geli iimaylkaaga",
+      "button": "Isdiiwaangeli"
+    }
+  },
+  "HistoryPage": {
+    "title": "Taariikhdeenna",
+    "description": "Laga soo bilaabo Dhulka Punt ilaa Jamhuuriyad soo kacaysa: sheeko adkaysi iyo rajo.",
+    "sections": {
+      "ancient": {
+        "eyebrow": "Xididdo Qadiimi ah",
+        "title": "Dhulka Punt",
+        "body": "Sheekada Soomaaliya waxay ka bilaabataa Dhulka Punt ee halyeeyga ah, oo caan ku ahaa ganacsigii Masar Qadiimka ah. Saldanado dhexe sida Adal iyo Ajuuraan ayaa ka hana-qaaday Geeska Afrika, halka Muqdisho ay noqotay xarun kosmopolitan ah oo Ibn Battuta ku tilmaamay Magaalada Islaamka."
+      },
+      "struggle": {
+        "eyebrow": "Halganka iyo Adkaysiga",
+        "title": "Marxalad Adkaysi",
+        "body": "Burburkii dowladnimada 1991 iyo dagaalladii sokeeye ee xigay waxay tijaabiyeen qaranka. Si kastaba, bulshooyinka Soomaaliyeed waxay sii wadeen ganacsiga, iimaanka, iyo dhaqanka iyagoo ku tiirsan adkaysi, hal-abuur, iyo is-garab istaag, xitaa xilli dowlad dhexe aysan jirin.",
+        "quote": "?Dalkaa ninkii lahaa, dabka u qaadaa?"
+      },
+      "rising": {
+        "eyebrow": "Soo Kabashada",
+        "title": "Soomaaliya Soo Kacaysa: Himilada 2060",
+        "body": "Dib-u-dhis ayaa ka socda hay?adaha iyo kaabayaasha, iyadoo la xoojiyay guulihii deyn-dhimista 2023 iyo 2024. Ku biirista Soomaaliya ee Bulshada Bariga Afrika iyo soo laabashada qurbejoogta ayaa dardar gelinaya maalgelinta, waxbarashada, iyo mustaqbal qaran oo ifaya."
+      },
+      "facts": {
+        "eyebrow": "Xog Qaran 2025",
+        "title": "Soomaaliya Kooban",
+        "items": [
+          {
+            "title": "Goobta",
+            "description": "Geeska Afrika, albaabka Badda Cas iyo Badweynta Hindiya."
+          },
+          {
+            "title": "Xeebta",
+            "description": "3,333 km - xeebta ugu dheer Afrika qaaraddeeda."
+          },
+          {
+            "title": "Dhaqaalaha",
+            "description": "Xoolaha nool (50% dhoofka), Beeraha (Moos/Sisin), Foox."
+          },
+          {
+            "title": "Caasimada",
+            "description": "Muqdisho (Luulka Cad)."
+          },
+          {
+            "title": "Gobollada",
+            "description": "18 gobol oo hore, oo u kala baxa 5 dowlad-goboleed + Banaadir."
+          },
+          {
+            "title": "Luqadaha Rasmiga ah",
+            "description": "Soomaali (Maxaa-tiri) iyo Carabi."
+          }
+        ]
+      }
+    }
+  },
+  "CulturePage": {
+    "hero": {
+      "eyebrow": "Dadka iyo Dhaqanka",
+      "title": "Qaran Abwaan",
+      "subtitle": "Dhaxal af-maal, soo dhawayn, iyo adkaysi."
+    },
+    "poets": {
+      "eyebrow": "Abwaanada",
+      "title": "Hoggaamiyeyaasha Dhaqanka Afka",
+      "items": [
+        {
+          "name": "Mohamed Ibrahim Warsame \"Hadraawi\"",
+          "quote": "Jacayl dhiig ma lagu qoray?",
+          "description": "Shakespeare-ka Soomaaliya, caan ku ah isu xirka caddaaladda bulshada iyo hal-abuurka suugaanta."
+        },
+        {
+          "name": "Sayid Mohamed Abdullah Hassan",
+          "quote": "Dulmiga waan diiday, dalkayga waan dafiraa.",
+          "description": "Hoggaamiyihii Daraawiishta ee gabayga u adeegsaday hub ka dhan ah gumaysiga."
+        },
+        {
+          "name": "Abdullahi Suldaan \"Timacade\"",
+          "quote": "Kaana siib, kana saar.",
+          "description": "Abwaankii xornimada, u dabbaaldegay dhalashadii Jamhuuriyadda 1960."
+        }
+      ]
+    },
+    "customs": {
+      "eyebrow": "Caadooyinka Bulshada",
+      "title": "Soo Dhawoow: Fanka Martisoorka",
+      "body": "Martisoorku waa waajib dhaqameed. Martidu waa barako, deeqsinimaduna waa astaan sharaf. Diidista cunto ama shaah la bixiyay badanaa waa anshax-xumo.",
+      "caption": "Shaah (kuleylleh) waa xarunta nolosha bulshada, lagu udgoonay kaardamoon iyo qaranfuul."
+    },
+    "tradition": {
+      "eyebrow": "Hiddo",
+      "title": "Garaaca Dhulka",
+      "body": "Dhaanto, oo mararka qaar loo barbardhigo heesaha reggae-ga hore, waxay u dabaaldegtaa midnimo iyo geesinimo, halka Buraanbur uu maamuuso hal-abuurka haweenka Soomaaliyeed. Dharka dhaqanka sida Guntiino iyo Macawis waa astaamo lagu faano."
+    }
+  },
+  "FoodPage": {
+    "hero": {
+      "eyebrow": "Cuntada Soomaaliyeed",
+      "title": "Dhadhanka Geeska",
+      "subtitle": "Isku-dar Afrika, Carab, iyo Hindi; iyadoo la ilaalinayo xeerarka Xalaasha iyo martisoorka."
+    },
+    "philosophy": {
+      "eyebrow": "Falsafadda",
+      "title": "Soo Dhawoow (Ku Soo Dhawoow)",
+      "body": "Soomaaliya, cuntadu waa luqad jacayl. Marti-gelintu waa barako. Waxaa caado ah in martida loo qaybiyo hilibka ugu fiican iyo caanaha ugu nadiifsan."
+    },
+    "dishes": {
+      "eyebrow": "Cuntooyinka Qaranka",
+      "title": "Suxuunta Caanka ah",
+      "items": [
+        {
+          "title": "Bariis Iskukaris",
+          "description": "Bariis udgoon oo lagu carfiyay kaardamoon, kumin, iyo qaranfuul, laguna daro hilib ari ama geel."
+        },
+        {
+          "title": "Canjeero (Anjero)",
+          "description": "Canjeero khamiir leh oo ah cunto quraac maalinle ah, badanaa lagu darsado saliid sisin iyo sonkor."
+        },
+        {
+          "title": "Sambusa",
+          "description": "Cajiin saddex-xagal ah oo qafilan, laguna buuxiyo hilib, basal, iyo basbaas cagaaran."
+        },
+        {
+          "title": "Xalwo (Halwa)",
+          "description": "Boqorka macmacaanka. Macmacaan cufan oo laga sameeyo sonkor, istaarij, iyo udgoon; loogu talagalay aroosyada iyo ciidaha."
+        }
+      ]
+    },
+    "tea": {
+      "eyebrow": "Dhaqanka Shaaha",
+      "title": "Fanka Shaaha",
+      "body": "Shaahu waa tiirka nolosha bulshada. Waxaa lagu kariyaa kaardamoon (hayl) iyo qaranfuul, laguna macaaneeyaa sonkor badan. Waxaa la cabbaa galabtii (Casar) si loo wada sheekeysto loona kala ogaado wararka.",
+      "tags": {
+        "rituals": "Hab-dhaqanka Shaaha",
+        "halal": "Dhaqan Xalaal ah"
+      }
+    }
+  },
+  "TourismPage": {
+    "hero": {
+      "eyebrow": "Hagaha Dalxiiska Soomaaliya",
+      "title": "Soo Ogaaw Luulka Badweynta Hindiya.",
+      "subtitle": "Taariikh qadiimi ah. Xeebo qurux badan. Ruux adkaysi leh."
+    },
+    "essentials": {
+      "eyebrow": "Hagaha Faa?iidada",
+      "title": "Waxyaabaha Safarka Muhiimka ah",
+      "items": [
+        {
+          "title": "Fiiso iyo Gelitaan",
+          "description": "Fiisaha marka la yimaado (VOA) waxaa laga heli karaa Garoonka Caalamiga ah ee Aadan Cadde ($60). Adeegga E-Visa waxaa laga bilaabay visa.gov.so."
+        },
+        {
+          "title": "Dhaqaale Lacag-La?aan (EVC+)",
+          "description": "Soomaaliya waa bulsho lacag-la?aan ah. Lacagta mobile-ka (EVC Plus/Zaad) ayaa loo adeegsadaa wax kasta, laga bilaabo qaxwo ilaa taksi."
+        },
+        {
+          "title": "Amni iyo Isku-dubbarid",
+          "description": "Muqdisho waxay leedahay Aagag Amni (Green Zones). Booqdayaasha waxaa lagu talinayaa inay la shaqeeyaan martigeliyeyaasha ama amniga marka ay socdaalayaan. Xeebta Liido iyo Peace Park waa meelo amni leh oo caanka ah."
+        }
+      ]
+    },
+    "destinations": {
+      "eyebrow": "Meelaha Ugu Caansan",
+      "title": "Goobaha Laga Booqdo",
+      "items": [
+        {
+          "title": "Xeebta Liido",
+          "description": "Xarunta nolol bulsho ee Muqdisho. Kalluun, dabayl badeed, iyo adkaysi."
+        },
+        {
+          "title": "Laas Geel",
+          "description": "Farshaxan dhagaxeed 5,000 sano jir ah oo u dhow Hargeysa; mid ka mid ah goobaha Neolithic ee ugu fiican Afrika."
+        },
+        {
+          "title": "Matxafka Qaranka",
+          "description": "Dib loo furay, waxa uu hoy u yahay alaabtii iyo taariikhda dadka Soomaaliyeed."
+        },
+        {
+          "title": "Xeebta Jazeera",
+          "description": "Xeeb deggen oo nadiif ah, loogu talagalay kuwa raadinaya xasillooni."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Diyaar ma u tahay inaad booqato?",
+      "title": "Bilow qorshaynta safarkaaga.",
+      "button": "Raadi Wakiil Dalxiis oo Diiwaangashan"
+    }
   }
 }

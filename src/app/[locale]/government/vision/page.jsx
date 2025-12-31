@@ -1,92 +1,39 @@
 "use client";
 
 import { Scale, Shield, TrendingUp, Users } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 
-const PILLARS = [
-  {
-    title: "Inclusive Politics & Democratization",
-    description:
-      "Finalizing the Federal Constitution, implementing One Person, One Vote elections, and strengthening the federal member state system.",
-    icon: Scale,
-  },
-  {
-    title: "Security & Rule of Law",
-    description:
-      "Assuming full security responsibility from ATMIS, rebuilding the National Army (SNA), and establishing independent courts to ensure justice for all.",
-    icon: Shield,
-  },
-  {
-    title: "Economic Growth",
-    description:
-      "Leveraging the Blue Economy (Fisheries), modernizing Agriculture, and energy diversification. Creating a welcoming climate for foreign and diaspora investment.",
-    icon: TrendingUp,
-  },
-  {
-    title: "Social Development",
-    description:
-      "Investing in human capital: Universal primary education, accessible healthcare, and empowering women and youth in the workforce.",
-    icon: Users,
-  },
-];
-
-const MILESTONES = [
-  {
-    year: "2023",
-    title: "Admission to EAC",
-    description: "Joining the East African Community.",
-  },
-  {
-    year: "2024",
-    title: "Debt Relief (HIPC)",
-    description: "Completion of the debt relief process.",
-  },
-  {
-    year: "2025",
-    title: "Constitutional Review & Elections",
-    description: "Advancing electoral reforms and governance.",
-  },
-  {
-    year: "2030",
-    title: "Achieving SDGs",
-    description: "Progress toward the Sustainable Development Goals.",
-  },
-  {
-    year: "2060",
-    title: "Centennial Celebration",
-    description: "A secure, democratic, and prosperous Somalia.",
-  },
-];
+const PILLAR_ICONS = [Scale, Shield, TrendingUp, Users];
 
 export default function VisionPage() {
+  const t = useTranslations("VisionPage");
+  const pillars = t.raw("sections.pillars.items");
+  const milestones = t.raw("sections.milestones.items");
+
   return (
     <>
       <Navbar />
       <main className="bg-white text-slate-900">
         <PageHeader
-          title="Centennial Vision 2060"
-          description="A roadmap to a secure, democratic, and prosperous Somalia by our 100th year of independence."
+          title={t("title")}
+          description={t("description")}
         />
 
         <section className="py-16">
           <div className="mx-auto max-w-5xl px-6">
             <div className="space-y-4 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-                The Core Mission
+                {t("sections.mission.eyebrow")}
               </p>
               <h2 className="text-3xl font-semibold text-blue-900">
-                The Journey to 2060
+                {t("sections.mission.title")}
               </h2>
               <p className="mx-auto max-w-3xl text-base text-slate-600">
-                Vision 2060 is Somalia&apos;s long-term framework to transform the
-                nation into a middle-income economy anchored by effective
-                governance, inclusive growth, and a high quality of life. Recent
-                milestones like the HIPC Debt Relief Completion and accession to
-                the East African Community (EAC) provide critical foundations for
-                sustained national renewal.
+                {t("sections.mission.body")}
               </p>
             </div>
           </div>
@@ -96,19 +43,19 @@ export default function VisionPage() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="mb-10 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-                NDP-9 Pillars
+                {t("sections.pillars.eyebrow")}
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-blue-900">
-                The Four Pillars of Development
+                {t("sections.pillars.title")}
               </h2>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {PILLARS.map((pillar) => {
-                const Icon = pillar.icon;
+              {pillars.map((pillar, index) => {
+                const Icon = PILLAR_ICONS[index] ?? Scale;
                 return (
                   <div
-                    key={pillar.title}
+                    key={`${pillar.title}-${index}`}
                     className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
                   >
                     <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600">
@@ -131,17 +78,17 @@ export default function VisionPage() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="mb-10 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-                Key Milestones
+                {t("sections.milestones.eyebrow")}
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-blue-900">
-                The Road to 2060
+                {t("sections.milestones.title")}
               </h2>
             </div>
 
             <div className="grid gap-6 md:grid-cols-5">
-              {MILESTONES.map((milestone) => (
+              {milestones.map((milestone, index) => (
                 <div
-                  key={milestone.year}
+                  key={`${milestone.year}-${index}`}
                   className="rounded-2xl border border-slate-100 bg-white p-5 text-center shadow-sm"
                 >
                   <p className="text-2xl font-semibold text-blue-600">
@@ -163,21 +110,20 @@ export default function VisionPage() {
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 text-center lg:flex-row lg:text-left">
             <div className="max-w-2xl space-y-2">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
-                Downloads
+                {t("sections.downloads.eyebrow")}
               </p>
               <h2 className="text-3xl font-semibold">
-                National Development Plan (NDP-9)
+                {t("sections.downloads.title")}
               </h2>
               <p className="text-sm text-white/80">
-                Access the full policy framework guiding Somalia&apos;s long-term
-                transformation agenda.
+                {t("sections.downloads.body")}
               </p>
             </div>
             <a
               href="#"
               className="inline-flex items-center justify-center rounded-full border border-yellow-500 px-6 py-3 text-sm font-semibold text-yellow-500 transition hover:bg-yellow-500 hover:text-blue-900"
             >
-              Download National Development Plan (NDP-9)
+              {t("sections.downloads.cta")}
             </a>
           </div>
         </section>

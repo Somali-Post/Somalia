@@ -3,113 +3,57 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { Anchor, Briefcase, Sprout, Sun, TrendingUp } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 
-const PITCH_CARDS = [
-  {
-    title: "Strategic Location",
-    description:
-      "The gateway to the Red Sea and Indian Ocean, connecting African markets to the Middle East and Asia.",
-    icon: Anchor,
-  },
-  {
-    title: "Untapped Resources",
-    description:
-      "Home to the longest coastline in Africa, vast arable land, and unexploited energy reserves.",
-    icon: Sun,
-  },
-  {
-    title: "Reformed Business Climate",
-    description:
-      "New Company Laws and the One-Stop Business Registration System (SBRS) make starting a business faster than ever.",
-    icon: TrendingUp,
-  },
+const PITCH_ICONS = [Anchor, Sun, TrendingUp];
+
+const SECTOR_IMAGES = [
+  "/images/invest/livestock.jpg",
+  "/images/invest/agriculture.jpg",
+  "/images/invest/energy.jpg",
+  "/images/invest/logistics.jpg",
+  "/images/invest/ict.jpg",
+  "/images/tourism/hero-1.jpg",
 ];
 
-const SECTORS = [
-  {
-    title: "Livestock",
-    description: "The backbone of the economy. World leader in live animal exports.",
-    image: "/images/invest/livestock.jpg",
-  },
-  {
-    title: "Agriculture",
-    description:
-      "Vast arable land along the Shabelle and Jubba rivers. Opportunities in bananas, sesame, and lemons.",
-    image: "/images/invest/agriculture.jpg",
-  },
-  {
-    title: "Renewable Energy",
-    description:
-      "Highest solar potential in the region. Investment ready for wind and solar grids.",
-    image: "/images/invest/energy.jpg",
-  },
-  {
-    title: "Ports & Logistics",
-    description:
-      "Strategic location on the Red Sea route. Modernizing ports to serve the Horn of Africa.",
-    image: "/images/invest/logistics.jpg",
-  },
-  {
-    title: "ICT & Finance",
-    description:
-      "A cashless society driven by mobile money. Thriving telecom and fintech sector.",
-    image: "/images/invest/ict.jpg",
-  },
-  {
-    title: "Tourism & Hospitality",
-    description:
-      "Untapped potential in pristine beaches and historical sites for eco-tourism and hotels.",
-    image: "/images/tourism/hero-1.jpg",
-  },
-];
-
-const STEPS = [
-  {
-    title: "Register Company",
-    description: "Submit your application through the SBRS portal.",
-    href: "https://ebusiness.gov.so",
-  },
-  {
-    title: "Obtain License",
-    description: "Coordinate with the Ministry of Commerce for licensing.",
-  },
-  {
-    title: "Investment Incentives",
-    description: "Engage SOMINVEST for priority sector incentives.",
-  },
-];
+const STEP_LINKS = ["https://ebusiness.gov.so", null, null];
 
 export default function InvestPage() {
+  const t = useTranslations("InvestPage");
+  const pitchCards = t.raw("sections.pitch.cards");
+  const sectors = t.raw("sections.sectors.items");
+  const steps = t.raw("sections.steps.items");
+
   return (
     <>
       <Navbar />
       <main className="bg-white text-slate-900">
         <PageHeader
-          title="Invest in Somalia"
-          description="Unlocking the potential of the Horn of Africa. A frontier for growth and innovation."
+          title={t("title")}
+          description={t("description")}
         />
 
         <section className="py-16">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mb-10 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-                Why Somalia?
+                {t("sections.pitch.eyebrow")}
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-blue-900">
-                The Investment Pitch
+                {t("sections.pitch.title")}
               </h2>
             </div>
 
             <div className="grid gap-6 md:grid-cols-3">
-              {PITCH_CARDS.map((card) => {
-                const Icon = card.icon;
+              {(Array.isArray(pitchCards) ? pitchCards : []).map((card, index) => {
+                const Icon = PITCH_ICONS[index] ?? Sprout;
                 return (
                   <div
-                    key={card.title}
+                    key={card.title ?? index}
                     className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
                   >
                     <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600">
@@ -132,23 +76,23 @@ export default function InvestPage() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="mb-10 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-                Key Sectors
+                {t("sections.sectors.eyebrow")}
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-blue-900">
-                Priority Investment Sectors
+                {t("sections.sectors.title")}
               </h2>
             </div>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {SECTORS.map((sector) => (
+              {(Array.isArray(sectors) ? sectors : []).map((sector, index) => (
                 <div
-                  key={sector.title}
+                  key={sector.title ?? index}
                   className="overflow-hidden rounded-2xl bg-white shadow-md"
                 >
                   <div className="relative h-64">
                     <Image
-                      src={sector.image}
-                      alt={sector.title}
+                      src={SECTOR_IMAGES[index] ?? "/images/hero.jpg"}
+                      alt={sector.title ?? "Sector"}
                       fill
                       className="object-cover"
                     />
@@ -171,17 +115,17 @@ export default function InvestPage() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="mb-10 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-                Doing Business
+                {t("sections.steps.eyebrow")}
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-blue-900">
-                Start Your Journey
+                {t("sections.steps.title")}
               </h2>
             </div>
 
             <div className="grid gap-6 md:grid-cols-3">
-              {STEPS.map((step, index) => (
+              {(Array.isArray(steps) ? steps : []).map((step, index) => (
                 <div
-                  key={step.title}
+                  key={step.title ?? index}
                   className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
                 >
                   <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white">
@@ -193,14 +137,14 @@ export default function InvestPage() {
                   <p className="mt-3 text-sm text-slate-600">
                     {step.description}
                   </p>
-                  {step.href && (
+                  {STEP_LINKS[index] && (
                     <Link
-                      href={step.href}
+                      href={STEP_LINKS[index]}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700"
                     >
-                      Visit SBRS
+                      {t("sections.steps.sbrs_link_label")}
                       <Briefcase className="h-4 w-4" />
                     </Link>
                   )}
@@ -215,7 +159,7 @@ export default function InvestPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
               >
-                Visit the Online Business Portal (SBRS)
+                {t("sections.steps.cta")}
               </Link>
             </div>
           </div>

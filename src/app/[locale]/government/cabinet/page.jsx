@@ -2,56 +2,50 @@
 
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
-import { ministries } from "@/data/ministries";
+import { ministries as ministriesEn } from "@/data/ministries";
+import { ministries as ministriesSo } from "@/data/ministries-so";
 
-const LEADERSHIP = [
-  {
-    name: "H.E. Hamza Abdi Barre",
-    title: "Prime Minister",
-    image: "/images/pm.jpg",
-    featured: true,
-  },
-  {
-    name: "H.E. Salah Ahmed Jama",
-    title: "Deputy Prime Minister",
-    image: "/images/dpm1.jpg",
-  },
-  {
-    name: "H.E. Jibril Abdirashid Haji",
-    title: "Second Deputy Prime Minister",
-    image: "/images/dpm2.jpg",
-  },
-];
+const LEADERSHIP_IMAGES = ["/images/pm.jpg", "/images/dpm1.jpg", "/images/dpm2.jpg"];
 
 export default function CabinetPage() {
+  const t = useTranslations("CabinetPage");
+  const locale = useLocale();
+  const ministries = locale === "so" ? ministriesSo : ministriesEn;
+  const leadership = t.raw("leadership.leaders").map((leader, index) => ({
+    ...leader,
+    image: LEADERSHIP_IMAGES[index],
+    featured: leader.featured ?? index === 0,
+  }));
+
   return (
     <>
       <Navbar />
       <main className="bg-white text-slate-900">
         <PageHeader
-          title="The Cabinet"
-          description="The Council of Ministers of the Federal Republic of Somalia"
+          title={t("title")}
+          description={t("description")}
         />
 
       <section className="py-16">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-10 text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-              Cabinet Leadership
+              {t("leadership.eyebrow")}
             </p>
             <h2 className="mt-2 text-3xl font-semibold text-blue-900">
-              Executive Leadership
+              {t("leadership.title")}
             </h2>
           </div>
 
           <div className="flex flex-col items-center gap-6">
-            {LEADERSHIP.filter((leader) => leader.featured).map((leader) => (
+            {leadership.filter((leader) => leader.featured).map((leader) => (
               <div
-                key={leader.name}
+                key={`${leader.name}-featured`}
                 className="w-full max-w-xl overflow-hidden rounded-xl bg-white shadow-lg"
               >
                 <div className="relative h-80">
@@ -78,7 +72,7 @@ export default function CabinetPage() {
             ))}
 
             <div className="grid w-full gap-6 md:grid-cols-2">
-              {LEADERSHIP.filter((leader) => !leader.featured).map((leader) => (
+              {leadership.filter((leader) => !leader.featured).map((leader) => (
                 <div
                   key={leader.name}
                   className="overflow-hidden rounded-xl bg-white shadow-lg"
@@ -114,10 +108,10 @@ export default function CabinetPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-10 text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-              Cabinet Members
+              {t("members.eyebrow")}
             </p>
             <h2 className="mt-2 text-3xl font-semibold text-blue-900">
-              Federal Ministers
+              {t("members.title")}
             </h2>
           </div>
 
@@ -146,7 +140,7 @@ export default function CabinetPage() {
                     href={`/government/ministries/${ministry.slug}`}
                     className="inline-flex items-center justify-center rounded-full border border-blue-600 px-4 py-2 text-xs font-semibold text-blue-600 transition hover:bg-blue-600 hover:text-white"
                   >
-                    View Profile
+                    {t("members.view_profile")}
                   </Link>
                 </div>
               </div>

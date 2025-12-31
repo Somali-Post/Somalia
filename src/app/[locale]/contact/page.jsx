@@ -11,38 +11,11 @@ import {
   Mic,
   Twitter,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
-
-const CONTACT_CARDS = [
-  {
-    title: "General Inquiries",
-    value: "info@opm.gov.so",
-    description: "For general government questions.",
-    icon: Mail,
-  },
-  {
-    title: "Media & Press",
-    value: "media@opm.gov.so",
-    description: "For official statements and press accreditation.",
-    icon: Mic,
-  },
-  {
-    title: "Visit Us",
-    value: "Villa Somalia, Mogadishu",
-    description: "Office of the Prime Minister.",
-    icon: MapPin,
-  },
-];
-
-const DEPARTMENTS = [
-  "General Inquiry",
-  "Press Office",
-  "Protocol",
-  "Citizen Services",
-];
 
 const SOCIALS = [
   { label: "X", href: "https://x.com/somalia", icon: Twitter },
@@ -57,13 +30,23 @@ const SOCIALS = [
 ];
 
 export default function ContactPage() {
+  const t = useTranslations("ContactPage");
+  const cards = t.raw("cards");
+  const departments = t.raw("departments");
+
+  const CONTACT_CARDS = [
+    { ...cards[0], icon: Mail },
+    { ...cards[1], icon: Mic },
+    { ...cards[2], icon: MapPin },
+  ];
+
   return (
     <>
       <Navbar />
       <main className="bg-white text-slate-900">
         <PageHeader
-          title="Contact Us"
-          description="How can we assist you today? Reach out to the Federal Government of Somalia."
+          title={t("title")}
+          description={t("description")}
         />
 
         <section className="py-12">
@@ -97,12 +80,12 @@ export default function ContactPage() {
           <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-lg">
               <h2 className="text-2xl font-semibold text-slate-900">
-                Send a Message
+                {t("form.title")}
               </h2>
               <form className="mt-6 space-y-5">
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-700">
-                    Name
+                    {t("form.name")}
                   </label>
                   <input
                     type="text"
@@ -111,7 +94,7 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-700">
-                    Email
+                    {t("form.email")}
                   </label>
                   <input
                     type="email"
@@ -120,7 +103,7 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-700">
-                    Phone
+                    {t("form.phone")}
                   </label>
                   <input
                     type="tel"
@@ -129,10 +112,10 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-700">
-                    Department
+                    {t("form.department")}
                   </label>
                   <select className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 outline-none focus:border-blue-600">
-                    {DEPARTMENTS.map((dept) => (
+                    {departments.map((dept) => (
                       <option key={dept} value={dept}>
                         {dept}
                       </option>
@@ -141,7 +124,7 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-700">
-                    Your Message
+                    {t("form.message")}
                   </label>
                   <textarea
                     rows={5}
@@ -152,7 +135,7 @@ export default function ContactPage() {
                   type="submit"
                   className="w-full rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
                 >
-                  Submit Inquiry
+                  {t("form.submit")}
                 </button>
               </form>
             </div>
@@ -160,36 +143,35 @@ export default function ContactPage() {
             <div className="space-y-6">
               <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-slate-900">
-                  Other Ways to Connect
+                  {t("other_ways.title")}
                 </h3>
                 <div className="mt-4 space-y-4 text-sm text-slate-600">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
-                      Working Hours
+                      {t("other_ways.hours_label")}
                     </p>
                     <p className="mt-2 font-semibold text-slate-700">
-                      Sat - Thu: 8:00 AM - 4:00 PM (East Africa Time)
+                      {t("other_ways.hours_week")}
                     </p>
-                    <p className="mt-1 text-slate-500">Friday: Closed</p>
+                    <p className="mt-1 text-slate-500">{t("other_ways.hours_weekend")}</p>
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
-                      Specific Ministries
+                      {t("other_ways.ministries_label")}
                     </p>
                     <p className="mt-2 text-slate-600">
-                      Looking for a specific department? Find direct contact info
-                      for Education, Health, or Immigration in our directory.
+                      {t("other_ways.ministries_body")}
                     </p>
                     <Link
                       href="/government/ministries"
                       className="mt-3 inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700"
                     >
-                      Browse Ministry Directory -&gt;
+                      {t("other_ways.ministries_cta")}
                     </Link>
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
-                      Social Media
+                      {t("other_ways.social_label")}
                     </p>
                     <div className="mt-3 flex gap-4">
                       {SOCIALS.map((social) => {

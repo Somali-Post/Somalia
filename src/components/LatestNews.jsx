@@ -1,10 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight, Calendar } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 
-import { newsArticles } from "@/data/news";
+import { newsArticles as newsArticlesEn } from "@/data/news";
+import { newsArticles as newsArticlesSo } from "@/data/news-so";
 
 export default function LatestNews() {
+  const t = useTranslations("LatestNews");
+  const locale = useLocale();
+  const newsArticles = locale === "so" ? newsArticlesSo : newsArticlesEn;
   const recentNews = newsArticles.slice(0, 3);
 
   return (
@@ -13,18 +20,17 @@ export default function LatestNews() {
         <div className="mb-12 flex flex-col items-end justify-between gap-6 md:flex-row">
           <div>
             <h2 className="mb-4 text-4xl font-bold text-blue-900">
-              Latest Government News
+              {t("title")}
             </h2>
             <p className="max-w-xl text-blue-700">
-              Official updates, press releases, and milestones from the Federal
-              Republic.
+              {t("description")}
             </p>
           </div>
           <Link
             href="/media"
             className="hidden items-center gap-2 font-semibold text-blue-700 transition-all hover:gap-3 md:flex"
           >
-            View News Archive <ArrowRight size={20} />
+            {t("view_archive")} <ArrowRight size={20} />
           </Link>
         </div>
 
@@ -64,7 +70,7 @@ export default function LatestNews() {
                   href={`/media/${news.id}`}
                   className="mt-auto inline-flex w-full items-center justify-center rounded-lg border border-blue-100 py-3 font-semibold text-blue-700 transition-colors hover:bg-blue-50"
                 >
-                  Read Press Release
+                  {t("read_press_release")}
                 </Link>
               </div>
             </div>
@@ -76,7 +82,7 @@ export default function LatestNews() {
             href="/media"
             className="inline-flex items-center gap-2 font-semibold text-blue-700"
           >
-            View News Archive <ArrowRight size={20} />
+            {t("view_archive")} <ArrowRight size={20} />
           </Link>
         </div>
       </div>

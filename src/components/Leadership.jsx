@@ -2,48 +2,35 @@
 
 import Image from "next/image";
 import { Facebook, Twitter } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-const LEADERS = [
-  {
-    role: "President",
-    name: "H.E. Hassan Sheikh Mohamud",
-    title: "President of the Federal Republic",
-    image: "/images/president.jpg",
-  },
-  {
-    role: "Prime Minister",
-    name: "H.E. Hamza Abdi Barre",
-    title: "Prime Minister of the Federal Republic",
-    image: "/images/pm.jpg",
-  },
-  {
-    role: "Speaker",
-    name: "H.E. Sheikh Adan Mohamed Nur",
-    title: "Speaker of the House of the People",
-    image: "/images/speaker-parliament.jpg",
-  },
-  {
-    role: "Speaker",
-    name: "H.E. Abdi Hashi Abdullahi",
-    title: "Speaker of the Upper House",
-    image: "/images/speaker-senate.jpg",
-  },
+const LEADER_IMAGES = [
+  "/images/president.jpg",
+  "/images/pm.jpg",
+  "/images/speaker-parliament.jpg",
+  "/images/speaker-senate.jpg",
 ];
 
 export default function Leadership() {
+  const t = useTranslations("Leadership");
+  const leaders = t.raw("leaders").map((leader, index) => ({
+    ...leader,
+    image: LEADER_IMAGES[index],
+  }));
+
   return (
     <section className="bg-white py-12">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-8 text-center">
           <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
-            Executive Leadership
+            {t("title")}
           </h2>
         </div>
 
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          {LEADERS.map((leader) => (
+          {leaders.map((leader, index) => (
             <article
-              key={leader.name}
+              key={`${leader.name}-${index}`}
               className="group relative overflow-hidden rounded-3xl border border-slate-100 bg-slate-100 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
             >
               <div className="relative aspect-[3/4] w-full">

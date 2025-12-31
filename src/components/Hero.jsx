@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 import GlobalSearch from "@/components/GlobalSearch";
 export default function Hero() {
+  const t = useTranslations("Hero");
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-blue-900 to-blue-800 py-20 text-white">
       <div className="container mx-auto flex min-h-[600px] flex-col items-center gap-12 px-6 lg:flex-row lg:justify-between">
@@ -15,17 +18,17 @@ export default function Hero() {
           className="flex w-full max-w-xl flex-col items-start gap-6 text-left"
         >
           <span className="rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
-            Official Portal of the Federal Government
+            {t("badge")}
           </span>
           <h1 className="text-5xl font-bold leading-tight sm:text-6xl">
-            Federal Republic of Somalia
+            {t("title")}
           </h1>
-          <p className="text-xl text-blue-100">Peace, Progress, and Prosperity.</p>
+          <p className="text-xl text-blue-100">{t("subtitle")}</p>
 
           <GlobalSearch />
 
           <p className="text-sm text-white/70">
-            Popular: Passport, Visa, Jobs, Tender
+            {t("popular")}
           </p>
         </motion.div>
 

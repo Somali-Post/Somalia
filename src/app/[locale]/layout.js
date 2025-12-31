@@ -1,6 +1,5 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import { notFound } from "next/navigation";
 import CookieConsent from "@/components/CookieConsent";
 import { routing } from "@/i18n/routing";
 
@@ -19,14 +18,14 @@ export function generateStaticParams() {
 }
 
 export default async function LocaleLayout({ children, params }) {
-  const { locale } = params;
-
-  if (!routing.locales.includes(locale)) {
-    notFound();
-  }
+  const { locale: rawLocale } = await params;
+  const locale = routing.locales.includes(rawLocale)
+    ? rawLocale
+    : routing.defaultLocale;
+  const dir = locale === "ar" ? "rtl" : "ltr";
 
   setRequestLocale(locale);
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -47,9 +46,11 @@ export default async function LocaleLayout({ children, params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <NextIntlClientProvider messages={messages}>
-        {children}
-        <CookieConsent />
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <div dir={dir}>
+          {children}
+          <CookieConsent />
+        </div>
       </NextIntlClientProvider>
     </>
   );

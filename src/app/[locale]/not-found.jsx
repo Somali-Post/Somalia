@@ -2,8 +2,11 @@
 
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function NotFound() {
+  const t = useTranslations("NotFound");
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-gray-50 px-6 py-16 text-slate-900">
       <div className="max-w-xl text-center">
@@ -17,30 +20,30 @@ export default function NotFound() {
           />
         </div>
         <h1 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
-          404 - Page Not Found
+          {t("title")}
         </h1>
         <p className="mt-3 text-sm text-slate-600 sm:text-base">
-          The requested page could not be found on the Federal Government Portal.
+          {t("description")}
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             href="/"
             className="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
           >
-            Return Home
+            {t("return_home")}
           </Link>
           <Link
             href="/government/ministries"
             className="inline-flex items-center justify-center rounded-full border border-blue-600 px-6 py-3 text-sm font-semibold text-blue-600 transition hover:bg-blue-600 hover:text-white"
           >
-            Browse Ministries
+            {t("browse_ministries")}
           </Link>
         </div>
         <Link
           href="/contact"
           className="mt-4 inline-flex text-sm font-semibold text-blue-600 transition hover:text-blue-700"
         >
-          Contact Support
+          {t("contact_support")}
         </Link>
       </div>
     </main>

@@ -2,22 +2,28 @@
 
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
-import { newsArticles } from "@/data/news";
+import { newsArticles as newsArticlesEn } from "@/data/news";
+import { newsArticles as newsArticlesSo } from "@/data/news-so";
 
-const FILTERS = ["All", "Politics", "Economy", "Diplomacy"];
+const FILTER_KEYS = ["all", "politics", "economy", "diplomacy"];
 
 export default function MediaPage() {
+  const t = useTranslations("MediaPage");
+  const locale = useLocale();
+  const newsArticles = locale === "so" ? newsArticlesSo : newsArticlesEn;
+
   return (
     <>
       <Navbar />
       <main className="bg-white text-slate-900">
         <PageHeader
-          title="Government Newsroom"
-          description="Press releases, official statements, and updates from the Federal Republic."
+          title={t("title")}
+          description={t("description")}
         />
 
         <section className="py-16">
@@ -25,24 +31,24 @@ export default function MediaPage() {
             <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
               <div>
                 <h2 className="text-3xl font-semibold text-blue-900">
-                  Latest Press Releases
+                  {t("latest_title")}
                 </h2>
                 <p className="mt-2 text-sm text-slate-600">
-                  Verified updates from the Office of the Prime Minister.
+                  {t("latest_description")}
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">
-                {FILTERS.map((filter) => (
+                {FILTER_KEYS.map((filterKey) => (
                   <button
-                    key={filter}
+                    key={filterKey}
                     type="button"
                     className={`rounded-full border px-4 py-2 text-xs font-semibold transition ${
-                      filter === "All"
+                      filterKey === "all"
                         ? "border-blue-600 bg-blue-600 text-white"
                         : "border-slate-200 text-slate-600 hover:border-blue-600 hover:text-blue-600"
                     }`}
                   >
-                    {filter}
+                    {t(`filters.${filterKey}`)}
                   </button>
                 ))}
               </div>
@@ -80,7 +86,7 @@ export default function MediaPage() {
                       href={`/media/${news.id}`}
                       className="mt-auto inline-flex w-full items-center justify-center rounded-lg border border-blue-100 py-3 font-semibold text-blue-700 transition-colors hover:bg-blue-50"
                     >
-                      Read Press Release
+                      {t("read_press_release")}
                     </Link>
                   </div>
                 </div>
@@ -92,14 +98,16 @@ export default function MediaPage() {
         <section className="bg-slate-50 py-12">
           <div className="mx-auto max-w-6xl px-6 text-center">
             <p className="text-sm text-slate-600">
-              For press accreditation, contact{" "}
-              <a
-                href="mailto:media@opm.gov.so"
-                className="font-semibold text-blue-600 hover:text-blue-700"
-              >
-                media@opm.gov.so
-              </a>
-              .
+              {t.rich("press_contact", {
+                emailLink: (chunks) => (
+                  <a
+                    href="mailto:media@opm.gov.so"
+                    className="font-semibold text-blue-600 hover:text-blue-700"
+                  >
+                    {chunks}
+                  </a>
+                ),
+              })}
             </p>
           </div>
         </section>

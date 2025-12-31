@@ -1,16 +1,20 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Tag } from "lucide-react";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
-import { newsArticles } from "@/data/news";
+import { newsArticles as newsArticlesEn } from "@/data/news";
+import { newsArticles as newsArticlesSo } from "@/data/news-so";
 
 export default async function PressReleasePage({ params }) {
-  const { id } = await params;
+  const { id, locale } = await params;
+  const newsArticles = locale === "so" ? newsArticlesSo : newsArticlesEn;
   const article = newsArticles.find((item) => item.id === id);
+  const t = await getTranslations({ locale, namespace: "PressReleasePage" });
 
   if (!article) {
     notFound();
@@ -21,8 +25,8 @@ export default async function PressReleasePage({ params }) {
       <Navbar />
       <main className="min-h-screen bg-gray-50 pb-20">
         <PageHeader
-          title="Press Release"
-          description="Official Communications & News"
+          title={t("title")}
+          description={t("description")}
         />
 
         <div className="container mx-auto relative z-10 -mt-20 px-6">
@@ -59,7 +63,7 @@ export default async function PressReleasePage({ params }) {
                   href="/"
                   className="inline-flex items-center gap-2 font-semibold text-blue-700 hover:underline"
                 >
-                  <ArrowLeft size={20} /> Return to Homepage
+                  <ArrowLeft size={20} /> {t("return_home")}
                 </Link>
               </div>
             </div>

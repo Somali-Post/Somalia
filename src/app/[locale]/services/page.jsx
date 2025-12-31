@@ -1,102 +1,43 @@
 import { ExternalLink } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import FeedbackWidget from "@/components/FeedbackWidget";
 
-const DIGITAL_SERVICES = [
-  {
-    title: "Business Registration",
-    description: "Register a company online via SBRS.",
-    href: "https://ebusiness.gov.so",
-  },
-  {
-    title: "E-Visa Application",
-    description: "Apply for entry visa (Tourist/Business).",
-    href: "https://visa.gov.so",
-  },
-  {
-    title: "National Exam Results",
-    description: "Check Grade 8 & 12 results.",
-    href: "https://soneb.gov.so",
-  },
-  {
-    title: "Passport Information",
-    description: "Download forms and view requirements.",
-    href: "https://immigration.gov.so",
-  },
-];
+export default async function Page({ params }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "ServicesPage" });
+  const digitalServices = t.raw("sections.digital.items");
+  const generalServices = t.raw("sections.general.items");
+  const emergencyContacts = t.raw("sections.emergency.items");
 
-const GENERAL_SERVICES = [
-  {
-    title: "Driver's License",
-    description: "Available at Traffic Police HQ and Regional Centers.",
-  },
-  {
-    title: "Civil Registration",
-    description: "Birth and Marriage Certificates at Local Municipality.",
-  },
-  {
-    title: "Land Registration",
-    description: "Benadir Regional Administration / Local Courts.",
-  },
-];
-
-const EMERGENCY_CONTACTS = [
-  {
-    title: "Police",
-    number: "888",
-    description: "For reporting crimes and immediate danger.",
-  },
-  {
-    title: "Ambulance",
-    number: "999",
-    description: "Medical emergencies and urgent transport.",
-  },
-  {
-    title: "Fire",
-    number: "555",
-    description: "Fire outbreaks and rescue response.",
-  },
-  {
-    title: "Red Crescent",
-    number: "446",
-    description: "Humanitarian relief and emergency support.",
-  },
-  {
-    title: "NISA Tip-line",
-    number: "991",
-    description: "Security tips and threat reporting.",
-  },
-];
-
-export default function Page() {
   return (
     <>
       <Navbar />
       <main className="bg-white text-slate-900">
         <PageHeader
-          title="Citizen Services"
-          description="Access government services online and offline."
+          title={t("title")}
+          description={t("description")}
         />
 
       <section className="py-14">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-8 space-y-2">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-              E-Government
+              {t("sections.digital.eyebrow")}
             </p>
             <h2 className="text-3xl font-semibold text-slate-900">
-              Digital Services
+              {t("sections.digital.title")}
             </h2>
             <p className="text-sm text-slate-600">
-              Secure portals to access core government services online.
+              {t("sections.digital.description")}
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            {DIGITAL_SERVICES.map((service) => (
+            {digitalServices.map((service) => (
               <a
                 key={service.title}
                 href={service.href}
@@ -113,7 +54,7 @@ export default function Page() {
                   </p>
                 </div>
                 <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-600">
-                  Visit portal
+                  {t("sections.digital.cta")}
                   <ExternalLink className="h-4 w-4" />
                 </div>
               </a>
@@ -126,18 +67,18 @@ export default function Page() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-8 space-y-2">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-              Essential Services
+              {t("sections.general.eyebrow")}
             </p>
             <h2 className="text-3xl font-semibold text-slate-900">
-              General Services
+              {t("sections.general.title")}
             </h2>
             <p className="text-sm text-slate-600">
-              In-person services delivered through regional offices.
+              {t("sections.general.description")}
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {GENERAL_SERVICES.map((service) => (
+            {generalServices.map((service) => (
               <div
                 key={service.title}
                 className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
@@ -158,18 +99,18 @@ export default function Page() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-8 space-y-2">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600">
-              Safety
+              {t("sections.emergency.eyebrow")}
             </p>
             <h2 className="text-3xl font-semibold text-slate-900">
-              Emergency Assistance
+              {t("sections.emergency.title")}
             </h2>
             <p className="text-sm text-slate-600">
-              Immediate support numbers for urgent situations.
+              {t("sections.emergency.description")}
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            {EMERGENCY_CONTACTS.map((contact) => (
+            {emergencyContacts.map((contact) => (
               <div
                 key={contact.title}
                 className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"

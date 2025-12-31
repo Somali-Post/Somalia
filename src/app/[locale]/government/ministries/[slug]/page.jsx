@@ -1,4 +1,5 @@
 import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { CheckCircle, Globe, Mail, MapPin, Phone, Twitter, Facebook } from "lucide-react";
 
@@ -6,7 +7,8 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import FeedbackWidget from "@/components/FeedbackWidget";
 import SmartImage from "@/components/SmartImage";
-import { ministries } from "@/data/ministries";
+import { ministries as ministriesEn } from "@/data/ministries";
+import { ministries as ministriesSo } from "@/data/ministries-so";
 
 const getSocials = (socials = {}) => [
   { key: "twitter", href: socials.twitter, icon: Twitter, label: "Twitter" },
@@ -14,8 +16,11 @@ const getSocials = (socials = {}) => [
 ];
 
 export default async function MinistryProfilePage({ params }) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const ministries = locale === "so" ? ministriesSo : ministriesEn;
   const ministry = ministries.find((item) => item.slug === slug);
+  const t = await getTranslations({ locale, namespace: "MinistryProfile" });
+  const tBreadcrumbs = await getTranslations({ locale, namespace: "Breadcrumbs" });
 
   if (!ministry) {
     notFound();
@@ -37,18 +42,18 @@ export default async function MinistryProfilePage({ params }) {
             <div className="flex-1">
               <nav className="text-xs uppercase tracking-[0.3em] text-white/70">
                 <Link href="/" className="transition hover:text-white">
-                  Home
+                  {tBreadcrumbs("home")}
                 </Link>
                 <span className="mx-2 text-white/40">/</span>
                 <Link href="/government" className="transition hover:text-white">
-                  Government
+                  {tBreadcrumbs("government")}
                 </Link>
                 <span className="mx-2 text-white/40">/</span>
                 <Link
                   href="/government/ministries"
                   className="transition hover:text-white"
                 >
-                  Ministries
+                  {tBreadcrumbs("ministries")}
                 </Link>
               </nav>
 
@@ -95,7 +100,7 @@ export default async function MinistryProfilePage({ params }) {
                     {ministry.ministerName}
                   </p>
                   <p className="text-sm text-blue-100">
-                    Minister of {ministry.name}
+                    {t("minister_title", { name: ministry.name })}
                   </p>
                   {ministerSocials.length > 0 && (
                     <div className="mt-4 flex items-center justify-center gap-3">
@@ -127,7 +132,7 @@ export default async function MinistryProfilePage({ params }) {
             <div className="space-y-8">
               <div>
                 <h2 className="text-xl font-semibold text-slate-900">
-                  About the Ministry
+                  {t("about_title")}
                 </h2>
                 <p className="mt-3 text-sm text-slate-600">
                   {ministry.description}
@@ -136,7 +141,7 @@ export default async function MinistryProfilePage({ params }) {
 
               <div>
                 <h3 className="text-lg font-semibold text-slate-900">
-                  Key Responsibilities
+                  {t("responsibilities_title")}
                 </h3>
                 <div className="mt-4 grid gap-4 sm:grid-cols-2">
                   {ministry.responsibilities.map((item) => (
@@ -154,7 +159,7 @@ export default async function MinistryProfilePage({ params }) {
               {ministry.departments && ministry.departments.length > 0 && (
                 <div>
                   <h3 className="text-lg font-semibold text-slate-900">
-                    Organizational Structure
+                    {t("departments_title")}
                   </h3>
                   <div className="mt-4 flex flex-wrap gap-3">
                     {ministry.departments.map((department) => (
@@ -173,7 +178,7 @@ export default async function MinistryProfilePage({ params }) {
             <aside className="space-y-6">
               <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
-                  Contact Information
+                  {t("contact_title")}
                 </h3>
                 <div className="mt-4 space-y-3 text-sm text-slate-600">
                   <p className="flex items-start gap-3">
@@ -200,7 +205,7 @@ export default async function MinistryProfilePage({ params }) {
                   rel="noopener noreferrer"
                 >
                   <Globe className="mr-2 h-4 w-4" />
-                  Visit Website
+                  {t("visit_website")}
                 </Link>
                 {socials.length > 0 && (
                   <div className="mt-5 flex items-center justify-center gap-3">

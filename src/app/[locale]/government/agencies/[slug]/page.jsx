@@ -1,15 +1,20 @@
 import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { CheckCircle, Globe, Mail, MapPin, Phone, Twitter, Facebook } from "lucide-react";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import SmartImage from "@/components/SmartImage";
-import { agencies } from "@/data/agencies";
+import { agencies as agenciesEn } from "@/data/agencies";
+import { agencies as agenciesSo } from "@/data/agencies-so";
 
 export default async function AgencyProfilePage({ params }) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const agencies = locale === "so" ? agenciesSo : agenciesEn;
   const agency = agencies.find((item) => item.slug === slug);
+  const t = await getTranslations({ locale, namespace: "AgencyProfile" });
+  const tBreadcrumbs = await getTranslations({ locale, namespace: "Breadcrumbs" });
 
   if (!agency) {
     notFound();
@@ -31,18 +36,18 @@ export default async function AgencyProfilePage({ params }) {
             <div className="flex-1">
               <nav className="text-xs uppercase tracking-[0.3em] text-white/70">
                 <Link href="/" className="transition hover:text-white">
-                  Home
+                  {tBreadcrumbs("home")}
                 </Link>
                 <span className="mx-2 text-white/40">/</span>
                 <Link href="/government" className="transition hover:text-white">
-                  Government
+                  {tBreadcrumbs("government")}
                 </Link>
                 <span className="mx-2 text-white/40">/</span>
                 <Link
                   href="/government/agencies"
                   className="transition hover:text-white"
                 >
-                  Agencies
+                  {tBreadcrumbs("agencies")}
                 </Link>
               </nav>
 
@@ -119,7 +124,7 @@ export default async function AgencyProfilePage({ params }) {
             <div className="space-y-8">
               <div>
                 <h2 className="text-xl font-semibold text-slate-900">
-                  Mandate &amp; Functions
+                  {t("mandate_title")}
                 </h2>
                 <div className="mt-4 grid gap-4 sm:grid-cols-2">
                   {agency.responsibilities.map((item) => (
@@ -138,7 +143,7 @@ export default async function AgencyProfilePage({ params }) {
             <aside className="space-y-6">
               <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-sm">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
-                  Contact Details
+                  {t("contact_title")}
                 </h3>
                 <div className="mt-4 space-y-3 text-sm text-slate-600">
                   <p className="flex items-start gap-3">
@@ -161,7 +166,7 @@ export default async function AgencyProfilePage({ params }) {
                   rel="noopener noreferrer"
                 >
                   <Globe className="mr-2 h-4 w-4" />
-                  Visit Website
+                  {t("visit_website")}
                 </Link>
               </div>
             </aside>
