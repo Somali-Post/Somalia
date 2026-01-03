@@ -84,10 +84,10 @@ export default function AccessibilityPage() {
                   <p className="mt-3 text-slate-700 leading-relaxed">
                     If you encounter barriers, please contact{" "}
                     <a
-                      href="mailto:accessibility@opm.gov.so"
+                      href="mailto:e-gov@moct.gov.so"
                       className="font-semibold text-blue-700 hover:text-blue-800"
                     >
-                      accessibility@opm.gov.so
+                      e-gov@moct.gov.so
                     </a>
                     .
                   </p>

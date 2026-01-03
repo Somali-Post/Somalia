@@ -65,7 +65,7 @@
     },
     "connect": {
       "title": "Connect With Us",
-      "email": "info@opm.gov.so",
+      "email": "e-gov@moct.gov.so",
       "social": [
         "X",
         "Facebook",
@@ -481,8 +481,8 @@
       },
       "feedback": {
         "title": "Feedback",
-        "email": "accessibility@opm.gov.so",
-        "body": "If you encounter barriers, please contact <emailLink>accessibility@opm.gov.so</emailLink>."
+        "email": "e-gov@moct.gov.so",
+        "body": "If you encounter barriers, please contact <emailLink>e-gov@moct.gov.so</emailLink>."
       }
     }
   },
@@ -822,7 +822,7 @@
       "diplomacy": "Diplomacy"
     },
     "read_press_release": "Read Press Release",
-    "press_contact": "For press accreditation, contact <emailLink>media@opm.gov.so</emailLink>."
+    "press_contact": "For press accreditation, contact <emailLink>e-gov@moct.gov.so</emailLink>."
   },
   "MemberStates": {
     "title": "Federal Member States",
@@ -861,12 +861,12 @@
     "cards": [
       {
         "title": "General Inquiries",
-        "value": "info@opm.gov.so",
+        "value": "e-gov@moct.gov.so",
         "description": "For general government questions."
       },
       {
         "title": "Media & Press",
-        "value": "media@opm.gov.so",
+        "value": "e-gov@moct.gov.so",
         "description": "For official statements and press accreditation."
       },
       {

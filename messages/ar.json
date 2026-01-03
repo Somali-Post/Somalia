@@ -65,7 +65,7 @@
     },
     "connect": {
       "title": "تواصل معنا",
-      "email": "info@opm.gov.so",
+      "email": "e-gov@moct.gov.so",
       "social": [
         "X",
         "Facebook",
@@ -481,8 +481,8 @@
       },
       "feedback": {
         "title": "الملاحظات",
-        "email": "accessibility@opm.gov.so",
-        "body": "إذا واجهت عوائق، يرجى التواصل عبر <emailLink>accessibility@opm.gov.so</emailLink>."
+        "email": "e-gov@moct.gov.so",
+        "body": "إذا واجهت عوائق، يرجى التواصل عبر <emailLink>e-gov@moct.gov.so</emailLink>."
       }
     }
   },
@@ -822,7 +822,7 @@
       "diplomacy": "الدبلوماسية"
     },
     "read_press_release": "قراءة البيان الصحفي",
-    "press_contact": "للاعتماد الصحفي، يرجى التواصل عبر <emailLink>media@opm.gov.so</emailLink>."
+    "press_contact": "للاعتماد الصحفي، يرجى التواصل عبر <emailLink>e-gov@moct.gov.so</emailLink>."
   },
   "MemberStates": {
     "title": "الولايات الأعضاء الفيدرالية",
@@ -861,12 +861,12 @@
     "cards": [
       {
         "title": "الاستفسارات العامة",
-        "value": "info@opm.gov.so",
+        "value": "e-gov@moct.gov.so",
         "description": "للأسئلة الحكومية العامة."
       },
       {
         "title": "الإعلام والصحافة",
-        "value": "media@opm.gov.so",
+        "value": "e-gov@moct.gov.so",
         "description": "للتصريحات الرسمية والاعتماد الصحفي."
       },
       {

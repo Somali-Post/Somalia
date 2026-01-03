@@ -65,7 +65,7 @@
     },
     "connect": {
       "title": "Nagala Xiriir",
-      "email": "info@opm.gov.so",
+      "email": "e-gov@moct.gov.so",
       "social": [
         "X",
         "Facebook",
@@ -625,8 +625,8 @@
       },
       "feedback": {
         "title": "Jawaab-celin",
-        "email": "accessibility@opm.gov.so",
-        "body": "Haddii aad la kulanto caqabado, fadlan la xiriir <emailLink>accessibility@opm.gov.so</emailLink>."
+        "email": "e-gov@moct.gov.so",
+        "body": "Haddii aad la kulanto caqabado, fadlan la xiriir <emailLink>e-gov@moct.gov.so</emailLink>."
       }
     }
   },
@@ -822,7 +822,7 @@
       "diplomacy": "Dibloomaasiyad"
     },
     "read_press_release": "Akhri War-saxaafadeedka",
-    "press_contact": "Si loo helo aqoonsiga warbaahinta, la xiriir <emailLink>media@opm.gov.so</emailLink>."
+    "press_contact": "Si loo helo aqoonsiga warbaahinta, la xiriir <emailLink>e-gov@moct.gov.so</emailLink>."
   },
   "MemberStates": {
     "title": "Dawladdaha Xubnaha ka ah Federaalka",
@@ -861,12 +861,12 @@
     "cards": [
       {
         "title": "Su'aalaha Guud",
-        "value": "info@opm.gov.so",
+        "value": "e-gov@moct.gov.so",
         "description": "Su'aalaha guud ee dowladda."
       },
       {
         "title": "Warbaahinta iyo Saxaafadda",
-        "value": "media@opm.gov.so",
+        "value": "e-gov@moct.gov.so",
         "description": "Bayaanada rasmiga ah iyo aqoonsiga saxaafadda."
       },
       {

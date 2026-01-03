@@ -101,7 +101,7 @@ export default function MediaPage() {
               {t.rich("press_contact", {
                 emailLink: (chunks) => (
                   <a
-                    href="mailto:media@opm.gov.so"
+                    href="mailto:e-gov@moct.gov.so"
                     className="font-semibold text-blue-600 hover:text-blue-700"
                   >
                     {chunks}
